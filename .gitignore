@@ -7,3 +7,5 @@ build/
 .env
 yarn.lock 
 package-lock.json
+
+echo "package-lock.json" >> .gitignore
