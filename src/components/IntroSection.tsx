@@ -5,7 +5,15 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import clsx from "clsx";
 import Container from "./container/container";
+import { useState } from "react";
+import { FormConsultation } from "./form/FormConsultation";
+
 const IntroSection = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Box
       sx={{
@@ -94,7 +102,7 @@ const IntroSection = () => {
       </Container>
       <Container>
         <button
-          // onClick={() => setShow(true)}
+          onClick={handleOpen}
           className="text-white  text-[20px]  border border-solid rounded-md border-white cursor-pointer mx-auto items-center flex bg-gradient-to-l from-[#e16a92] to-[#f190b1] py-[8px] px-[30px] font-[500]"
         >
           <p className="text-md md:text-lg flex-wrap items-center flex ">
@@ -107,6 +115,64 @@ const IntroSection = () => {
             tại đây
           </p>
         </button>
+        {open && (
+          <>
+            {/* Overlay mờ nền */}
+            <Box
+              onClick={handleClose}
+              className="fixed inset-0 bg-black bg-opacity-50 z-40"
+              sx={{
+                backgroundColor: "rgba(255, 255, 255, 0.5)",
+              }}
+            />
+
+            {/* Popup chính */}
+            <Box
+              sx={{
+                borderRadius: 3,
+                bgcolor: "white",
+                boxShadow: "0 0 30px rgba(0, 0, 0, 0.4)",
+                maxWidth: 400,
+                width: "90vw",
+                p: 4,
+                zIndex: 50,
+                position: "fixed",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              {/* Header */}
+              <Box className="flex justify-between items-center mb-4">
+                <h3 className="text-blue-800 font-bold text-lg">
+                  ĐIỀN THÔNG TIN ĐĂNG KÝ
+                </h3>
+                <button
+                  onClick={handleClose}
+                  className="text-gray-400 hover:text-gray-600 font-bold text-xl leading-none"
+                  aria-label="Close popup"
+                >
+                  ×
+                </button>
+              </Box>
+
+              {/* Form */}
+              <FormConsultation layout="vertical" isTextarea={false} />
+              <p
+                style={{
+                  fontSize: "0.75rem",
+                  fontStyle: "italic",
+                  marginTop: "0.75rem",
+                  color: "#4B5563",
+                }}
+              >
+                * Thông tin của Quý khách gửi đi sẽ không được công khai hoặc sử
+                dụng với mục đích spam. Đông Tây Land chỉ kết nối tư vấn đúng dự
+                án và những thắc mắc của Quý khách.
+              </p>
+            </Box>
+          </>
+        )}
       </Container>
     </Box>
   );
