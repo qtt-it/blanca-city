@@ -3,6 +3,64 @@
 import { Box, Container, Typography, Grid, Paper } from "@mui/material";
 import { motion } from "framer-motion";
 
+export const FormDesign = () => {
+  return (
+    <Paper
+    component={motion.div}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.3 }}
+    viewport={{ once: true }}
+    elevation={0}
+    sx={{
+      p: 3,
+      bgcolor: "rgba(255,255,255,0.1)",
+      borderRadius: 2,
+    }}
+  >
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+      <Box sx={{ bgcolor: "white", borderRadius: 1, p: 1 }}>
+        <Typography variant="body2" sx={{ color: "#666" }}>
+          Họ tên (*)
+        </Typography>
+      </Box>
+
+      <Box sx={{ bgcolor: "white", borderRadius: 1, p: 1 }}>
+        <Typography variant="body2" sx={{ color: "#666" }}>
+          Số điện thoại (*)
+        </Typography>
+      </Box>
+
+      <Box sx={{ bgcolor: "white", borderRadius: 1, p: 1 }}>
+        <Typography variant="body2" sx={{ color: "#666" }}>
+          Email
+        </Typography>
+      </Box>
+
+      <Box
+        sx={{
+          bgcolor: "secondary.main",
+          borderRadius: 1,
+          p: 1.5,
+          textAlign: "center",
+          cursor: "pointer",
+          "&:hover": {
+            bgcolor: "secondary.dark",
+          },
+        }}
+      >
+        <Typography
+          variant="body1"
+          sx={{ color: "white", fontWeight: "bold" }}
+        >
+          NHẬN BẢNG GIÁ
+        </Typography>
+      </Box>
+    </Box>
+  </Paper>
+  )
+}
+
 const DesignSection = () => {
   return (
     <Box
@@ -69,59 +127,7 @@ const DesignSection = () => {
               </Typography>
             </Box>
 
-            <Paper
-              component={motion.div}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              elevation={0}
-              sx={{
-                p: 3,
-                bgcolor: "rgba(255,255,255,0.1)",
-                borderRadius: 2,
-              }}
-            >
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                <Box sx={{ bgcolor: "white", borderRadius: 1, p: 1 }}>
-                  <Typography variant="body2" sx={{ color: "#666" }}>
-                    Họ tên (*)
-                  </Typography>
-                </Box>
-
-                <Box sx={{ bgcolor: "white", borderRadius: 1, p: 1 }}>
-                  <Typography variant="body2" sx={{ color: "#666" }}>
-                    Số điện thoại (*)
-                  </Typography>
-                </Box>
-
-                <Box sx={{ bgcolor: "white", borderRadius: 1, p: 1 }}>
-                  <Typography variant="body2" sx={{ color: "#666" }}>
-                    Email
-                  </Typography>
-                </Box>
-
-                <Box
-                  sx={{
-                    bgcolor: "secondary.main",
-                    borderRadius: 1,
-                    p: 1.5,
-                    textAlign: "center",
-                    cursor: "pointer",
-                    "&:hover": {
-                      bgcolor: "secondary.dark",
-                    },
-                  }}
-                >
-                  <Typography
-                    variant="body1"
-                    sx={{ color: "white", fontWeight: "bold" }}
-                  >
-                    NHẬN BẢNG GIÁ
-                  </Typography>
-                </Box>
-              </Box>
-            </Paper>
+            <FormDesign/>
           </Grid>
 
           <Grid size={{ xs: 12, md: 6 }}>

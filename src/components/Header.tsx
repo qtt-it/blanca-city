@@ -4,7 +4,6 @@ import {
   Box,
   AppBar,
   Toolbar,
-  Container,
   Button,
   IconButton,
   Drawer,
@@ -15,7 +14,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
+import clsx from "clsx";
+import Container from "./container/container";
 interface HeaderProps {
   onNavigate: (section: string) => void;
 }
@@ -23,6 +23,7 @@ interface HeaderProps {
 const Header = ({ onNavigate }: HeaderProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isFixed, setIsFixed] = useState(false);
 
   const menuItems = [
     { label: "Vị trí", id: "location" },
@@ -32,6 +33,22 @@ const Header = ({ onNavigate }: HeaderProps) => {
     { label: "Thiết kế", id: "design" },
     { label: "Sun Group", id: "sungroup" },
   ];
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleScroll = () => {
+        if (window.scrollY > 350) {
+          // Khi người dùng cuộn qua vị trí đầu trang
+          setIsFixed(true);
+        } else {
+          setIsFixed(false);
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,36 +79,31 @@ const Header = ({ onNavigate }: HeaderProps) => {
 
   return (
     <>
-      <AppBar
-        position="fixed"
-        sx={{
-          backgroundColor: scrolled ? "white" : "transparent",
-          boxShadow: scrolled ? 1 : 0,
-          transition: "all 0.3s ease-in-out",
-        }}
+      <Box
+        className={clsx(
+          isFixed ? "sticky top-0 left-0" : "relative",
+          "!w-full z-10 px-4 py-2 lg:py-0  duration-500 !bg-white shadow-md  "
+        )}
       >
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <Box sx={{ display: "flex", flexGrow: 1, alignItems: "center" }}>
-              <Box
-                sx={{
-                  bgcolor: "red",
-                  width: 150,
-                  height: 60,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "white",
-                  fontWeight: "bold",
-                }}
-              >
-                LOGO
+        <Container className="!py-0 !max-w-full">
+          <Toolbar disableGutters className="flex justify-between items-center">
+            <Box
+              className="!w-max"
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Box className="w-[103px] h-[60px] ">
+                <img src="/logo-main.png" className="w-full h-full" />
               </Box>
             </Box>
 
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               {menuItems.map((item) => (
                 <Button
+                  className="!text-[#000203] !uppercase !text-[14.4px]"
                   key={item.id}
                   onClick={() => handleMenuClick(item.id)}
                   sx={{
@@ -114,14 +126,14 @@ const Header = ({ onNavigate }: HeaderProps) => {
               onClick={handleDrawerToggle}
               sx={{
                 display: { md: "none" },
-                color: scrolled ? "primary.main" : "white",
+                color: scrolled ? "primary.main" : "primary.main",
               }}
             >
               <MenuIcon />
             </IconButton>
           </Toolbar>
         </Container>
-      </AppBar>
+      </Box>
 
       <Drawer
         variant="temporary"

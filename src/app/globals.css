@@ -11,14 +11,16 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* background: linear-gradient(
       to bottom,
       rgb(var(--background-start-rgb)),
       rgb(var(--background-end-rgb))
     )
-    fixed;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
-    'Helvetica Neue', Arial, sans-serif;
+    fixed; */
+    font-family: 'Manrope', sans-serif;
+
+background-color: #11174c !important;
+  font-size: 17px !important;
 }
 
 .hero-gradient {
@@ -49,7 +51,8 @@ body {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }
 
 .section-title {
@@ -58,7 +61,7 @@ body {
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -72,9 +75,15 @@ body {
 }
 
 @keyframes floating {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .btn-primary {
@@ -94,4 +103,16 @@ body {
 .contact-button {
   @apply flex items-center justify-center w-14 h-14 rounded-full bg-amber-500 text-white 
   shadow-lg hover:bg-amber-600 transition-all duration-300;
+}
+
+
+
+.blinking-image {
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }

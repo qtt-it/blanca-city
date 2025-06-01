@@ -2,13 +2,13 @@
 
 import { Box, Container, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import BannerComponent from "./commons/HeroBannerComponent";
 
 const HeroSection = () => {
   return (
     <Box
       sx={{
         position: "relative",
-        height: { xs: "60vh", md: "80vh" },
         width: "100%",
         overflow: "hidden",
         bgcolor: "red", // Placeholder for image as requested
@@ -17,7 +17,12 @@ const HeroSection = () => {
         justifyContent: "center",
       }}
     >
-      <Container maxWidth="lg">
+      <BannerComponent
+        img="/components/hero/hero.jpg"
+        imgTablet="/components/hero/hero.jpg"
+        imgMb="/components/hero/hero-mb.jpg"
+      />
+      {/* <Container maxWidth="lg">
         <Box
           component={motion.div}
           initial={{ opacity: 0, y: 50 }}
@@ -30,7 +35,7 @@ const HeroSection = () => {
             position: "relative",
           }}
         >
-          <Typography
+          {/* <Typography
             variant="h1"
             component={motion.h1}
             initial={{ opacity: 0 }}
@@ -56,9 +61,9 @@ const HeroSection = () => {
             }}
           >
             Đô thị "Biểu tượng mới" của Sun Group tại TP Vũng Tàu
-          </Typography>
-        </Box>
-      </Container>
+          </Typography> */}
+      {/* </Box>
+      </Container> */}
     </Box>
   );
 };

@@ -12,7 +12,7 @@ import {
 import { Oswald } from "next/font/google";
 import { styled } from "@mui/material/styles";
 
-const InputCustom = styled("input")(({ theme }) => ({
+export const InputCustom = styled("input")(({ theme }) => ({
   width: "100%",
   padding: ".375rem .75rem",
   fontSize: "1rem",

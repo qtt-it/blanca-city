@@ -19,6 +19,7 @@ import { ReceiveInformationSection } from "./ReceiveInformationSection";
 import { TotalAreaSection } from "./TotalAreaSection";
 import { MapAddressSection } from "./MapAddressSection";
 import { ConsultingSection } from "./ConsultingSection";
+import BannerComponent from "@/components/commons/HeroBannerComponent";
 
 export const MainPage: React.FC = () => {
   const locationRef = useRef<HTMLDivElement>(null);
@@ -55,27 +56,43 @@ export const MainPage: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Grid
-        container
-        columnGap={12}
-        // marginBottom={{
-        //   lg: 64,
-        //   xs: 24,
-        // }}
-      >
+      <Grid container columnGap={12}>
+        <Grid size={{ xs: 12 }}>
+          <Box className="max-w-[1920px] mx-auto w-full">
+            <BannerComponent
+              img="/hero1.jpg"
+              imgTablet="/hero1-tablet.webp"
+              imgMb="/hero1-mb.webp"
+            />
+          </Box>
+        </Grid>
         <Grid size={{ xs: 12 }}>
           <Header onNavigate={handleNavigate} />
         </Grid>
         <Grid size={{ xs: 12 }}>
-          <HeroSection />
+          <Box
+          // className="lg:pt-[64px] xl:pt-[76px] pt-[80px] md:pt-[80px]"
+          >
+            <HeroSection />
+          </Box>
         </Grid>
         <Grid size={{ xs: 12 }}>
-          <IntroSection />
+          <Box
+            className="
+          mt-[-80px] md:mt-[-100px] lg:mt-[-160px] !xl:mt-[-180px] relative z-[2]"
+          >
+            <IntroSection />
+          </Box>
         </Grid>
         <Grid size={{ xs: 12 }}>
           <Box ref={locationRef}>
             <LocationSection />
           </Box>
+        </Grid>
+        <Grid size={{ xs: 12 }}>
+          {" "}
+          {/*xong, sai vị trí, chưa review */}
+          <MapAddressSection />
         </Grid>
         <Grid size={{ xs: 12 }}>
           <Box ref={overviewRef}>
@@ -98,41 +115,45 @@ export const MainPage: React.FC = () => {
           </Box>
         </Grid>
         <Grid size={{ xs: 12 }}>
+          {" "}
           {/*xong, chưa review */}
           <ConsultingSection />
         </Grid>
+       
         <Grid size={{ xs: 12 }}>
-          {/*xong, sai vị trí, chưa review */}
-          <MapAddressSection />
-        </Grid>
-        <Grid size={{ xs: 12 }}>
+          {" "}
           {/*xong, sai vị trí, chưa review */}
           <TotalAreaSection />
         </Grid>
         <Grid size={{ xs: 12 }}>
           <Box ref={sungroupRef}>
+            {" "}
             {/*xong, chưa review */}
             <SunGroupSection />
           </Box>
         </Grid>
         <Grid size={{ xs: 12 }}>
+          {" "}
           {/*xong, chưa review */}
           <ReceiveInformationSection />
         </Grid>
         <Grid size={{ xs: 12 }}>
+          {" "}
           {/*xong, chưa review */}
-          <ContactSection />
+          {/* <ContactSection /> */}
         </Grid>
-        {/*xong Ifram */}
-        {/* <Grid size={{ xs: 12 }}>
+
+        <Grid size={{ xs: 12 }}>
+          {" "}
+          {/*xong Ifram */}
           <Box>
             <IFrameMap />
           </Box>
-        </Grid> */}
-        {/* <Grid size={{ xs: 12 }}>
+        </Grid>
+        <Grid size={{ xs: 12 }}>
           <ContactWidget />
           <Footer />
-        </Grid> */}
+        </Grid>
       </Grid>
     </React.Fragment>
   );
