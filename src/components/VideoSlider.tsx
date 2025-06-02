@@ -10,8 +10,6 @@ import {
 } from "@mui/icons-material";
 import { Box, Modal } from "@mui/material";
 // import Container from "../container/container";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import clsx from "clsx";
 import Container from "./container/container";
 
@@ -87,7 +85,7 @@ const VideoSlider: React.FC<VideoSliderProps> = ({
 
   return (
     <Box className="bg-[#0a254b]">
-      <Container className="w-full !pt-[20px] mx-auto">
+      <Container className="w-full  mx-auto">
         {/* <Slider {...settings}> */}
         {[videos[0]]?.map((video: VideoI, idx: number) => (
           <div
@@ -97,6 +95,16 @@ const VideoSlider: React.FC<VideoSliderProps> = ({
               "px-0 w-full  h-auto mx-auto md:px-1"
             )}
           >
+            <div className="mb-3 text-center">
+              <h3 className="text-lg md:px-1 text-[#fff] lg:px-2 font-bold">
+                {video?.description}
+              </h3>
+              {/* {isButton && (
+                <div className="bg-[#0B3050] cursor-pointer border border-solid border-white mt-7 mx-auto py-2 px-[30px] text-white uppercase w-max">
+                  tìm hiểu ngay
+                </div>
+              )} */}
+            </div>
             <div className="relative !h-full !w-full group rounded-lg overflow-hidden ">
               <img
                 src={video.thumbnail}
@@ -118,16 +126,6 @@ const VideoSlider: React.FC<VideoSliderProps> = ({
                 </Box>
               </div>
             </div>
-            <div className="mt-3 text-center">
-              <h3 className="text-lg md:px-1 text-[#f3ba5e] lg:px-2 font-bold">
-                {video?.description}
-              </h3>
-              {/* {isButton && (
-                <div className="bg-[#0B3050] cursor-pointer border border-solid border-white mt-7 mx-auto py-2 px-[30px] text-white uppercase w-max">
-                  tìm hiểu ngay
-                </div>
-              )} */}
-            </div>
           </div>
         ))}
         {/* </Slider> */}
@@ -139,7 +137,7 @@ const VideoSlider: React.FC<VideoSliderProps> = ({
           closeAfterTransition
           BackdropProps={{ className: "bg-black/50" }}
         >
-          <div className="relative w-[90%] lg:w-[70%] h-[80vh] xl:w-[60%] max-w-[630px] bg-white rounded-lg overflow-hidden">
+          <div className="relative w-[90%] lg:w-[70%] h-[80vh] xl:w-[60%] max-w-[1230px] bg-white rounded-lg overflow-hidden">
             <Box
               onClick={handleCloseModal}
               className="absolute top-1 h-fit !right-0 bg-opacity-70 hover:bg-opacity-100 z-10"

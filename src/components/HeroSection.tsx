@@ -11,7 +11,6 @@ const HeroSection = () => {
         position: "relative",
         width: "100%",
         overflow: "hidden",
-        bgcolor: "red", // Placeholder for image as requested
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

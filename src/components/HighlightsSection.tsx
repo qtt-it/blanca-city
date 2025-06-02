@@ -119,7 +119,6 @@ const HighlightsSection = () => {
                   mt: "auto",
                   width: "100%",
                   height: 200,
-                  bgcolor: "red", // Placeholder for image
                   borderRadius: 1,
                   overflow: "hidden",
                 }}

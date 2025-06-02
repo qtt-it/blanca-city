@@ -16,6 +16,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import Container from "./container/container";
+// import Container from "./container/container";
 interface HeaderProps {
   onNavigate: (section: string) => void;
 }
@@ -81,8 +82,8 @@ const Header = ({ onNavigate }: HeaderProps) => {
     <>
       <Box
         className={clsx(
-          isFixed ? "fixed top-0 left-0" : "relative",
-          "!w-full z-50 px-4 py-2 lg:py-0 duration-[300ms] ease-in-out !bg-white shadow-md"
+          isFixed ? "sticky" : "relative",
+          "!w-full z-50 px-4 shadow-lg py-2 lg:py-0 top-0 left-0 duration-[300ms] ease-in-out !bg-white "
         )}
       >
         <Container className="!py-0 !max-w-full">
@@ -100,17 +101,25 @@ const Header = ({ onNavigate }: HeaderProps) => {
               </Box>
             </Box>
 
-            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Box
+              sx={{
+                display: { xs: "none", md: "flex" },
+              }}
+            >
               {menuItems.map((item) => (
                 <Button
+                  style={{
+                    fontFamily: "Oswald",
+                  }}
                   className="!text-[#000203] !uppercase !text-[14.4px]"
                   key={item.id}
                   onClick={() => handleMenuClick(item.id)}
                   sx={{
                     color: scrolled ? "primary.main" : "white",
-                    mx: 1,
+                    // mx: 1,
                     "&:hover": {
                       backgroundColor: "rgba(255, 255, 255, 0.1)",
+                      color: "#0e3b7c",
                     },
                   }}
                 >

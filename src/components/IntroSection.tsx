@@ -13,6 +13,7 @@ const IntroSection = () => {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Box
@@ -78,10 +79,6 @@ const IntroSection = () => {
             sx={{
               background: "linear-gradient(to bottom, #e88da4, #191b4f)",
               borderRadius: 3, // ~24px
-              // height: 400,
-              // maxWidth: 720,
-              // mx: "auto",
-              // mt: 4,
               boxShadow: "0 0 30px rgba(0, 0, 0, 0.4)",
               padding: "16px",
             }}
@@ -103,7 +100,16 @@ const IntroSection = () => {
       <Container>
         <button
           onClick={handleOpen}
-          className="text-white  text-[20px]  border border-solid rounded-md border-white cursor-pointer mx-auto items-center flex bg-gradient-to-l from-[#e16a92] to-[#f190b1] py-[8px] px-[30px] font-[500]"
+          className={clsx(
+            "text-white duration-500 text-[20px]  border-solid border-white rounded-md  cursor-pointer mx-auto flex items-center py-[8px] px-[30px] font-[500]",
+            {
+              "bg-gradient-to-l from-[#e16a92] to-[#f190b1] border": !isHovered,
+              "bg-[#0b3051] border-0": isHovered,
+            }
+          )}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          // className="text-white !hover:bg-[#0b3051]  text-[20px]  border border-solid rounded-md border-white cursor-pointer mx-auto items-center flex bg-gradient-to-l from-[#e16a92] to-[#f190b1] py-[8px] px-[30px] font-[500]"
         >
           <p className="text-md md:text-lg flex-wrap items-center flex ">
             <img

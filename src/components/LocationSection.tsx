@@ -73,25 +73,31 @@ const LocationSection = () => {
       <Container>
         <Box className="flex w-full lg:gap-x-[70px] flex-wrap lg:flex-nowrap justify-between mb-3 lg:mb-12 items-end">
           <Box className="">
-            <span className="text-[48px] mx-1 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f190b1] bg-clip-text text-transparent">
+            <span
+              style={{
+                fontFamily: "Newsreader",
+              }}
+              className="text-[48px] mx-1 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f190b1] bg-clip-text text-transparent"
+            >
               Vị trí
             </span>
             <Typography
               sx={{
                 fontStyle: "italic",
+                fontFamily: "Newsreader",
               }}
-              className="!lg:text-[32px] w-max !text-[30px] mb-[40px] lg:mb-0"
+              className="!lg:text-[32px] font-semibold w-max !text-[30px] mb-[40px] lg:mb-0"
             >
               "Trung tâm của Trung tâm"
             </Typography>
           </Box>
 
-          <Box className="!w-max !xl:max-w-[633px] !lg:max-w-[433px]">
-            <p>
-              Từ năm 2026, mọi trục động lực hạ tầng huyết mạch của miền Nam sẽ
-              rút ngắn khoảng cách và thời gian đến Blanca City Vũng Tàu:
-            </p>
-          </Box>
+          <p className="max-w-[633px] !lg:max-w-[433px]">
+            {/* <p className="!w-full"> */}
+            Từ năm 2026, mọi trục động lực hạ tầng huyết mạch của miền Nam sẽ
+            rút ngắn khoảng cách và thời gian đến Blanca City Vũng Tàu:
+            {/* </p> */}
+          </p>
         </Box>
         <Box className="lg:grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 flex-wrap xl:flex-nowrap gap-4">
           {transportOptions.map((option, idx) => (
@@ -102,7 +108,7 @@ const LocationSection = () => {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
               }}
-              className="!lg:w-1/2 !xl:w-1/4 w-full rounded-lg overflow-hidden duration-500 hover:translate-y-[-10px]"
+              className="!lg:w-1/2 mt-4 border border-solid border-[#f08daf] lg:mt-0 !xl:w-1/4 w-full rounded-lg overflow-hidden duration-500 hover:translate-y-[-10px]"
               key={idx}
             >
               <Paper
@@ -127,7 +133,7 @@ const LocationSection = () => {
 
                 {/* Nếu có item dạng danh sách */}
                 {option.items?.map((item, i) => (
-                  <React.Fragment key={i}>
+                  <Box key={i}>
                     <p className=" font-[500] w-full mb-1 items-center leading-6">
                       <span className="mr-2 text-secondary  text-[#0665a8]">
                         ⬘
@@ -137,7 +143,7 @@ const LocationSection = () => {
                       </span>
                       {item.desc}
                     </p>
-                  </React.Fragment>
+                  </Box>
                 ))}
 
                 {/* Nếu có description dạng paragraph */}

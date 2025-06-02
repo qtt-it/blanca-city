@@ -1,61 +1,61 @@
-'use client';
+"use client";
 
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 let theme = createTheme({
   palette: {
     primary: {
-      main: '#0e3b7c', // Dark blue from the website
-      light: '#1e5bb8',
-      dark: '#0a2a58',
-      contrastText: '#fff',
+      main: "#0e3b7c", // Dark blue from the website
+      light: "#1e5bb8",
+      dark: "#0a2a58",
+      contrastText: "#fff",
     },
     secondary: {
-      main: '#e86a8d', // Pink from the website
-      light: '#ff9bb9',
-      dark: '#b23a63',
-      contrastText: '#fff',
+      main: "#e86a8d", // Pink from the website
+      light: "#ff9bb9",
+      dark: "#b23a63",
+      contrastText: "#fff",
     },
     background: {
-      default: '#ffffff',
-      paper: '#f5f5f5',
+      default: "#ffffff",
+      paper: "#f5f5f5",
     },
     text: {
-      primary: '#333333',
-      secondary: '#666666',
+      primary: "#333333",
+      secondary: "#666666",
     },
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Manrope","Oswald", "Helvetica", "Arial", sans-serif',
     h1: {
-      fontSize: '2.5rem',
+      fontSize: "2.5rem",
       fontWeight: 700,
     },
     h2: {
-      fontSize: '2rem',
+      fontSize: "2rem",
       fontWeight: 600,
     },
     h3: {
-      fontSize: '1.75rem',
+      fontSize: "1.75rem",
       fontWeight: 600,
     },
     h4: {
-      fontSize: '1.5rem',
+      fontSize: "1.5rem",
       fontWeight: 500,
     },
     h5: {
-      fontSize: '1.25rem',
+      fontSize: "1.25rem",
       fontWeight: 500,
     },
     h6: {
-      fontSize: '1.1rem',
+      fontSize: "1.1rem",
       fontWeight: 500,
     },
     body1: {
-      fontSize: '1rem',
+      fontSize: "1rem",
     },
     body2: {
-      fontSize: '0.875rem',
+      fontSize: "0.875rem",
     },
   },
   components: {
@@ -63,13 +63,13 @@ let theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 4,
-          textTransform: 'none',
+          textTransform: "none",
           fontWeight: 500,
         },
         contained: {
-          boxShadow: 'none',
-          '&:hover': {
-            boxShadow: '0px 2px 4px rgba(0,0,0,0.2)',
+          boxShadow: "none",
+          "&:hover": {
+            boxShadow: "0px 2px 4px rgba(0,0,0,0.2)",
           },
         },
       },
@@ -78,7 +78,7 @@ let theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 8,
-          boxShadow: '0px 2px 8px rgba(0,0,0,0.1)',
+          boxShadow: "0px 2px 8px rgba(0,0,0,0.1)",
         },
       },
     },

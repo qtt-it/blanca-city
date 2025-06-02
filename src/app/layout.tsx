@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"], // tương ứng với các trọng số (wght) bạn cần
+  weight: ["300", "400", "500", "600", "700", "800"], // tương ứng với các trọng số (wght) bạn cần
   display: "swap",
 });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="vi">
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
       </Head>

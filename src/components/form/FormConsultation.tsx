@@ -2,18 +2,22 @@
 
 import React from "react";
 import { ButtonComponent, InputComponent } from "../../components/commons";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 interface IFormConsultationProps {
   layout: "vertical" | "grid";
   isInputEmail?: boolean;
   isTextarea?: boolean;
+  btnClassName?: string;
+  textBtn?: string;
 }
 
 export const FormConsultation: React.FC<IFormConsultationProps> = ({
   layout = "grid",
   isInputEmail = true,
   isTextarea = true,
+  btnClassName,
+  textBtn
 }) => {
   const [formData, setFormData] = React.useState({
     name: "",
@@ -73,6 +77,8 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
     display: "flex",
     flexDirection: "column",
     gap: "1rem",
+    width: "100%",
+    // alignItems: "center"
   };
 
   const errorBoxStyle: React.CSSProperties = {
@@ -141,9 +147,11 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
               />
             )}
           </Grid>
-          <Grid size={{ xs: 12, md: 3 }} style={gridItemStyle}>
-            <ButtonComponent>ĐĂNG KÝ TƯ VẤN</ButtonComponent>
-          </Grid>
+          <Box className="flex justify-center" style={gridItemStyle}>
+            <ButtonComponent className={btnClassName}>
+            {textBtn ||  "ĐĂNG KÝ TƯ VẤN"}
+            </ButtonComponent>
+          </Box>
         </Grid>
       );
     }
@@ -178,7 +186,9 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
         )}
 
         {isTextarea ?? <textarea />}
-        <ButtonComponent>GỬI THÔNG TIN</ButtonComponent>
+        <ButtonComponent className={btnClassName}>
+          {textBtn ||  "GỬI THÔNG TIN"}
+        </ButtonComponent>
         {/* <p style={italicNoteStyle}>(*) = thông tin bắt buộc</p> */}
       </div>
     );

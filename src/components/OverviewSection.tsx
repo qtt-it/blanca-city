@@ -45,7 +45,6 @@ const OverviewSection = () => {
               sx={{
                 width: "100%",
                 height: { xs: "300px", md: "500px" },
-                bgcolor: "red", // Placeholder for image
                 borderRadius: 2,
                 overflow: "hidden",
               }}
