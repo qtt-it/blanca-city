@@ -95,6 +95,11 @@ export const MainPage: React.FC = () => {
           <MapAddressSection />
         </Grid>
         <Grid size={{ xs: 12 }}>
+          {" "}
+          {/*xong, chưa review */}
+          <ConsultingSection />
+        </Grid>
+        <Grid size={{ xs: 12 }}>
           <Box ref={overviewRef}>
             <OverviewSection />
           </Box>
@@ -103,6 +108,11 @@ export const MainPage: React.FC = () => {
           <Box ref={highlightsRef}>
             <HighlightsSection />
           </Box>
+        </Grid>
+        <Grid size={{ xs: 12 }}>
+          {" "}
+          {/*xong, sai vị trí, chưa review */}
+          <TotalAreaSection />
         </Grid>
         <Grid size={{ xs: 12 }}>
           <Box ref={productsRef}>
@@ -120,11 +130,7 @@ export const MainPage: React.FC = () => {
           <ConsultingSection />
         </Grid>
        
-        <Grid size={{ xs: 12 }}>
-          {" "}
-          {/*xong, sai vị trí, chưa review */}
-          <TotalAreaSection />
-        </Grid>
+     
         <Grid size={{ xs: 12 }}>
           <Box ref={sungroupRef}>
             {" "}
