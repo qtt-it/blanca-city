@@ -6,10 +6,14 @@ import { Grid } from "@mui/material";
 
 interface IFormConsultationProps {
   layout: "vertical" | "grid";
+  isInputEmail?: boolean;
+  isTextarea?: boolean;
 }
 
 export const FormConsultation: React.FC<IFormConsultationProps> = ({
   layout = "grid",
+  isInputEmail = true,
+  isTextarea = true,
 }) => {
   const [formData, setFormData] = React.useState({
     name: "",
@@ -71,7 +75,6 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
     gap: "1rem",
   };
 
-
   const errorBoxStyle: React.CSSProperties = {
     marginTop: "1rem",
     padding: "0.2em 1em",
@@ -122,17 +125,24 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
             />
           </Grid>
           <Grid size={{ xs: 12, md: 3 }} style={gridItemStyle}>
-            <InputComponent
-              placeholder="Quan tâm sản phẩm..."
-              value={formData.email}
-              onChange={handleChange("email")}
-              error={errors.email}
-            />
+            {isInputEmail ? (
+              <InputComponent
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange("email")}
+                error={errors.email}
+              />
+            ) : (
+              <InputComponent
+                placeholder="Quan tâm sản phẩm..."
+                value={formData.email}
+                onChange={handleChange("email")}
+                error={errors.email}
+              />
+            )}
           </Grid>
           <Grid size={{ xs: 12, md: 3 }} style={gridItemStyle}>
-            <ButtonComponent>
-              ĐĂNG KÝ TƯ VẤN
-            </ButtonComponent>
+            <ButtonComponent>ĐĂNG KÝ TƯ VẤN</ButtonComponent>
           </Grid>
         </Grid>
       );
@@ -151,15 +161,25 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
           onChange={handleChange("phone")}
           error={errors.phone}
         />
-        <InputComponent
-          placeholder="Quan tâm sản phẩm..."
-          value={formData.email}
-          onChange={handleChange("email")}
-          error={errors.email}
-        />
-        <textarea />
+        {isInputEmail ? (
+          <InputComponent
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange("email")}
+            error={errors.email}
+          />
+        ) : (
+          <InputComponent
+            placeholder="Quan tâm sản phẩm..."
+            value={formData.email}
+            onChange={handleChange("email")}
+            error={errors.email}
+          />
+        )}
+
+        {isTextarea ?? <textarea />}
         <ButtonComponent>GỬI THÔNG TIN</ButtonComponent>
-        <p style={italicNoteStyle}>(*) = thông tin bắt buộc</p>
+        {/* <p style={italicNoteStyle}>(*) = thông tin bắt buộc</p> */}
       </div>
     );
   };

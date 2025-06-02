@@ -37,7 +37,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleScroll = () => {
-        if (window.scrollY > 350) {
+        if (window.scrollY > 650) {
           // Khi người dùng cuộn qua vị trí đầu trang
           setIsFixed(true);
         } else {
@@ -81,8 +81,8 @@ const Header = ({ onNavigate }: HeaderProps) => {
     <>
       <Box
         className={clsx(
-          isFixed ? "sticky top-0 left-0" : "relative",
-          "!w-full z-10 px-4 py-2 lg:py-0  duration-500 !bg-white shadow-md  "
+          isFixed ? "fixed top-0 left-0" : "relative",
+          "!w-full z-50 px-4 py-2 lg:py-0 duration-[300ms] ease-in-out !bg-white shadow-md"
         )}
       >
         <Container className="!py-0 !max-w-full">
@@ -118,55 +118,55 @@ const Header = ({ onNavigate }: HeaderProps) => {
                 </Button>
               ))}
             </Box>
-
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{
-                display: { md: "none" },
-                color: scrolled ? "primary.main" : "primary.main",
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
+            {mobileOpen ? (
+              <>
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  sx={{
+                    display: { sm: "none" },
+                    color: scrolled ? "primary.main" : "primary.main",
+                  }}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Box
+                  onClick={handleDrawerToggle}
+                  sx={{ display: { sm: "none" } }}
+                >
+                  {mobileOpen && (
+                    <List>
+                      {menuItems.map((item) => (
+                        <ListItemButton
+                          key={item.id}
+                          onClick={() => handleMenuClick(item.id)}
+                        >
+                          <ListItemText primary={item.label} />
+                        </ListItemButton>
+                      ))}
+                    </List>
+                  )}
+                </Box>
+              </>
+            ) : (
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{
+                  display: { md: "none" },
+                  color: scrolled ? "primary.main" : "primary.main",
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
+            )}
           </Toolbar>
         </Container>
       </Box>
-
-      <Drawer
-        variant="temporary"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        ModalProps={{ keepMounted: true }}
-        sx={{
-          display: { xs: "block", md: "none" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240 },
-        }}
-      >
-        <Box
-          sx={{
-            textAlign: "center",
-            p: 2,
-            bgcolor: "primary.main",
-            color: "white",
-          }}
-        >
-          BLANCA CITY
-        </Box>
-        <List>
-          {menuItems.map((item) => (
-            <ListItemButton
-              key={item.id}
-              onClick={() => handleMenuClick(item.id)}
-            >
-              <ListItemText primary={item.label} />
-            </ListItemButton>
-          ))}
-        </List>
-      </Drawer>
-
       <Box
         component={motion.div}
         initial={{ opacity: 0 }}
