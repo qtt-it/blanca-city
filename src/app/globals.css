@@ -1,5 +1,6 @@
 /* @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css"; */
+/* @import "@mui/material/CssBaseline"; */
 @import "tailwindcss";
 
 :root {
@@ -22,7 +23,7 @@ body {
     font-family: 'Manrope';
 
 background-color: #11174c !important;
-  font-size: 17px !important;
+  font-size: 17.333px !important;
 }
 
 .hero-gradient {

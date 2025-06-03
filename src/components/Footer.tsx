@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
                   90 phút
                 </span> */}
                 <Link href="tel:+0977487777" className="ml-[6px] flex gap-x-1 ">
-                  <Box className="font-bold">Hotline: </Box>
+                  <p className="font-bold">Hotline: </p>
                   <strong className="font-extrabold"> 0977 48 7777</strong>
                 </Link>{" "}
               </p>
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
                   href="mailto:cskh@sungroup.io.vn"
                   className="ml-[6px] flex gap-x-1 "
                 >
-                  <Box className="font-bold">Email: </Box>
+                  <p className="font-bold">Email: </p>
                   <strong className="font-extrabold">
                     cskh@sungroup.io.vn
                   </strong>

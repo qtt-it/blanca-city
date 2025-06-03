@@ -125,7 +125,7 @@ const DesignSection = () => {
 
           {/* <FormDesign isBorder={false}/> */}
           <FormConsultation
-            btnClassName="!w-max !mx-auto !mt-3 !py-2 !px-[32px]"
+            btnClassName="!w-max !text-[16px] !mx-auto !mt-3 !py-1 !px-[32px]"
             layout="vertical"
             isTextarea={false}
             textBtn={"NHẬN BẢNG GIÁ"}

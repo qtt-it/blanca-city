@@ -66,7 +66,7 @@ const ProductsSection = () => {
       <Box className="xl:w-[39%] md:w-full  lg:w-full w-[150%] lg:h-[75%] md:h-1/2 h-3/10 absolute right-0 bottom-0">
         <img src="/decor2.png" className="w-full h-full " />
       </Box>
-      <Container className="!lg:px-0 relative z-[2] flex gap-x-7 flex-wrap lg:flex-nowrap items-center">
+      <Container className="!lg:px-0 relative z-0 flex gap-x-7 flex-wrap lg:flex-nowrap items-center">
         <Box
           component={motion.div}
           initial={{ opacity: 0 }}
@@ -88,13 +88,14 @@ const ProductsSection = () => {
           {productLines.map((line, idx) => (
             <div
               key={idx}
-              className="mb-8 w-full flex flex-col md:flex-row justify-between items-start"
+              className="mb-8 relative w-full flex flex-col md:flex-row justify-between items-start"
             >
               <div className="flex-1">
                 <h3 className="text-lg font-[600]">
                   {map(line.title, (title: string, idx: number) => {
                     return (
                       <Box
+                        key={idx}
                         style={{
                           fontFamily: "Newsreader",
                         }}

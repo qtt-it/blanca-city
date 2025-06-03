@@ -52,7 +52,7 @@ const LocationSection = () => {
       image: "/sublocation4.jpg",
 
       description: [
-        `Tọa lạc ngay mặt tiền đường 3/2 - một trong 3  <span style="color: #0665a8; font-weight: bold">trục xương sống</span> của Vũng Tàu, kết nối đường Thùy Vân, Bãi Sau và hàng loạt các địa điểm khác của thành phố.`,
+        `Tọa lạc ngay mặt tiền đường 3/2 - một trong 3  <span style="color: #0665a8; font-weight: bold">"trục xương sống"</span> của Vũng Tàu, kết nối đường Thùy Vân, Bãi Sau và hàng loạt các địa điểm khác của thành phố.`,
         `Đây cũng là vị trí <span style="color: #0665a8; font-weight: bold">trung tâm mới</span> của Vũng Tàu, TPHCM.`,
       ],
       delay: 0.4,
@@ -68,11 +68,14 @@ const LocationSection = () => {
           // bgcolor: "#0e3b7c",
         }
       }
-      className="bg-gradient-to-b text-white from-[#0f184c] to-[#0e3b7c]"
+      className="bg-gradient-to-b relative text-white from-[#0f184c] to-[#0565a8]"
     >
+       <Box className="xl:w-[39%] md:w-full  lg:w-full w-[150%] lg:h-[75%] md:h-1/2 h-3/10 absolute right-0 bottom-0">
+        <img src="/decor1.png" className="w-full h-full " />
+      </Box>
       <Container>
         <Box className="flex w-full lg:gap-x-[70px] flex-wrap lg:flex-nowrap justify-between mb-3 lg:mb-12 items-end">
-          <Box className="">
+          <Box className="mb-10 md:mt-0">
             <span
               style={{
                 fontFamily: "Newsreader",
@@ -86,7 +89,7 @@ const LocationSection = () => {
                 fontStyle: "italic",
                 fontFamily: "Newsreader",
               }}
-              className="!lg:text-[32px] font-semibold w-max !text-[30px] mb-[40px] lg:mb-0"
+              className="!lg:text-[32px] font-semibold w-max !text-[30px] mb-[40px] lg:mb-0 mt-[-10px] md:mt-0"
             >
               "Trung tâm của Trung tâm"
             </Typography>
@@ -99,7 +102,7 @@ const LocationSection = () => {
             {/* </p> */}
           </p>
         </Box>
-        <Box className="lg:grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 flex-wrap xl:flex-nowrap gap-4">
+        <Box className="lg:grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 flex-wrap xl:flex-nowrap gap-3">
           {transportOptions.map((option, idx) => (
             <Box
               style={{
@@ -108,7 +111,7 @@ const LocationSection = () => {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
               }}
-              className="!lg:w-1/2 mt-4 border border-solid border-[#f08daf] lg:mt-0 !xl:w-1/4 w-full rounded-lg overflow-hidden duration-500 hover:translate-y-[-10px]"
+              className=" z-[3] !lg:w-1/2 mt-4 border border-solid border-[#f08daf] lg:mt-0 !xl:w-1/4 w-full rounded-lg overflow-hidden duration-500 hover:translate-y-[-10px]"
               key={idx}
             >
               <Paper
@@ -124,9 +127,13 @@ const LocationSection = () => {
                 className="rgba(255,255,255,0.1) lg:p-[24px] lg:pb-[60px] p-[20px] pb-[60px]"
               >
                 <Typography
-                  className="!mb-2"
+                  className="!mb-2 !font-semibold"
                   variant="h5"
-                  sx={{ color: "secondary.light" }}
+                  sx={{
+                    color: "#ef87ac",
+
+                    fontFamily: "Newsreader",
+                  }}
                 >
                   {option.title}
                 </Typography>
@@ -135,9 +142,7 @@ const LocationSection = () => {
                 {option.items?.map((item, i) => (
                   <Box key={i}>
                     <p className=" font-[500] w-full mb-1 items-center leading-6">
-                      <span className="mr-2 text-secondary  text-[#0665a8]">
-                        ⬘
-                      </span>
+                      <span className=" text-secondary  text-[#0665a8]">⬘</span>
                       <span className="mx-1 font-semibold bg-gradient-to-r text-[#0665a8] ">
                         {item.time}
                       </span>
@@ -148,13 +153,7 @@ const LocationSection = () => {
 
                 {/* Nếu có description dạng paragraph */}
                 {option.description?.map((desc, i) => (
-                  // <Typography
-                  //   key={i}
-                  //   variant="body2"
-                  //   sx={{ mt: 2 }}
-                  //   dangerouslySetInnerHTML={{ __html: desc }}
-                  // />
-                  <Box key={desc}>
+                  <Box key={i}>
                     <Box
                       dangerouslySetInnerHTML={{ __html: desc }}
                       className="mt-2 font-[500] items-center leading-6"

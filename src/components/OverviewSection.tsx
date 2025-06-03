@@ -1,210 +1,240 @@
 "use client";
 
-import { Box, Container, Typography, Grid, Divider } from "@mui/material";
+import { Box, Typography, Grid, Divider } from "@mui/material";
 import { motion } from "framer-motion";
+import Container from "./container/container";
 
 const OverviewSection = () => {
   return (
     <Box
       sx={{
-        height: { xs: "600px", md: "910px" },
         py: 4,
         paddingTop: { xs: 0, md: "130px" },
         paddingBottom: 0,
-        bgcolor: "#0e3b7c",
-        color: "white",
+        // bgcolor: "#0e3b7c",
+        color: "#E3E3E3",
         overflow: "hidden",
       }}
+      className="bg-gradient-to-b text-white from-[#12194f] to-[#0764a6]"
     >
-      <Box id="overview" sx={{ position: "relative", height: "100%" }}>
+      <Box
+        id="overview"
+        className="h-auto"
+        sx={{ position: "relative", height: "100%" }}
+      >
         {/* Background image with animation */}
 
         {/* Content */}
         {/* <Container sx={{ position: "relative", margin: 0,  zIndex: 1 }}> */}
-        <Grid container spacing={4} alignItems="center" width="100%">
-          <Grid size={{ xs: 12, md: 6 }}></Grid>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-              // sx={{
-              //   width: "100%",
-              //   height: { xs: "300px", md: "500px" },
-              //   borderRadius: 2,
-              //   overflow: "hidden",
-              // }}
+        <Container className="relative !pt-0">
+          <Box
+            component={motion.div}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="lg:w-[45%] lg:top-[64px]  lg:absolute w-full lg:left-[52%]"
+          >
+            <h2
+              style={{
+                fontFamily: "Newsreader",
+              }}
+              className="xl:text-[48px] text-[44px] mb-5 lg:mb-5 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f192b1] bg-clip-text text-transparent"
+            >
+              Tổng Quan Dự Án
+            </h2>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "8px",
+              }}
+            >
+              <Typography
+                sx={{ fontSize: "17px", padding: "4px 0", fontWeight: 500 }}
+              >
+                <span className="mr-1 text-secondary  text-[#e16a92] ">⬘</span>
+                <strong className="text-white">Tên dự án:</strong> Khu đô thị
+                Blanca City by Sun Group
+              </Typography>
+            </Box>
+            <Divider
+              sx={{
+                // width: "40%",
+                marginTop: "5px",
+                marginBottom: "10px",
+                backgroundColor: "white",
+              }}
             />
-          </Grid>
 
             <Box
-              component={motion.div}
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "8px",
+              }}
             >
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginBottom: "8px",
-                }}
+              <Typography
+                sx={{ fontSize: "17px", padding: "4px 0", fontWeight: 500 }}
               >
-                <Box sx={{ color: "secondary.main", mr: "2px" }}>⬘</Box>
-                <Typography sx={{ fontSize: "18px", fontWeight: 500 }}>
-                  <strong>Tên dự án:</strong> Khu đô thị Blanca City by Sun
-                  Group
-                </Typography>
-              </Box>
-              <Divider
-                sx={{
-                  width: "70%",
-                  marginTop: "5px",
-                  marginBottom: "10px",
-                  backgroundColor: "white",
-                }}
-              />
-
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginBottom: "8px",
-                }}
-              >
-                <Box sx={{ color: "secondary.main", mr: "2px" }}>⬘</Box>
-                <Typography sx={{ fontSize: "18px", fontWeight: 500 }}>
-                  <strong>Vị trí:</strong> Mặt tiền đường 3/2, Phường 10, Phường
-                  11, TP Vũng Tàu, TP HCM
-                </Typography>
-              </Box>
-              <Divider
-                sx={{
-                  width: "70%",
-                  marginTop: "5px",
-                  marginBottom: "10px",
-                  backgroundColor: "white",
-                }}
-              />
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  height: "32px",
-                  marginBottom: "8px",
-                }}
-              >
-                <Box sx={{ color: "secondary.main", mr: "2px" }}>⬘</Box>
-                <Box>
+                <span className="mr-1 text-secondary  text-[#e16a92] ">⬘</span>
+                <strong className="text-white">Vị trí:</strong> Mặt tiền đường
+                3/2, Phường 10, Phường 11, TP Vũng Tàu, TP HCM
+              </Typography>
+            </Box>
+            <Divider
+              sx={{
+                // width: "70%",
+                marginTop: "5px",
+                marginBottom: "10px",
+                backgroundColor: "white",
+              }}
+            />
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                height: "32px",
+                marginBottom: "8px",
+              }}
+            >
+              <Box>
+                <Typography
+                  sx={{
+                    fontSize: "17px",
+                    padding: "4px 0",
+                    fontWeight: 500,
+                    display: "flex",
+                    alignItems: "end",
+                  }}
+                >
+                  <strong>
+                    <span className="mr-1 text-secondary  text-[#e16a92] ">
+                      ⬘
+                    </span>
+                    Quy mô:
+                  </strong>
                   <Typography
+                    component="span"
                     sx={{
-                      fontSize: "18px",
-                      fontWeight: 500,
-                      display: "flex",
-                      alignItems: "center",
+                      color: "secondary.main",
+                      fontSize: "2rem",
+                      fontWeight: "bold",
+                      ml: 1,
                     }}
                   >
-                    <strong>Quy mô:</strong>
-                    <Typography
-                      component="span"
-                      sx={{
-                        color: "secondary.main",
-                        fontSize: "2rem",
-                        fontWeight: "bold",
-                        mx: 1,
+                    <p
+                      style={{
+                        fontFamily: "Newsreader",
                       }}
+                      className="  leading-none font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
                     >
                       96
-                    </Typography>
-                    ha
+                    </p>
                   </Typography>
-                </Box>
-              </Box>
-              <Divider
-                sx={{
-                  width: "70%",
-                  marginTop: "5px",
-                  marginBottom: "10px",
-                  backgroundColor: "white",
-                }}
-              />
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  height: "32px",
-                  marginBottom: "8px",
-                }}
-              >
-                <Box sx={{ color: "secondary.main", mr: "2px" }}>⬘</Box>
-                <Box>
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontWeight: 500,
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <strong>Mật độ xây dựng:</strong>
-                    <Typography
-                      component="span"
-                      sx={{
-                        color: "secondary.main",
-                        fontSize: "2rem",
-                        fontWeight: "bold",
-                        mx: 1,
-                      }}
-                    >
-                      27
-                    </Typography>
-                    %
-                  </Typography>
-                </Box>
-              </Box>
-              <Divider
-                sx={{
-                  width: "70%",
-                  marginTop: "5px",
-                  marginBottom: "10px",
-                  backgroundColor: "white",
-                }}
-              />
-
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginBottom: "8px",
-                }}
-              >
-                <Box sx={{ color: "secondary.main", mr: "2px" }}>⬘</Box>
-                <Typography
-                  sx={{ width: "680px", fontSize: "18px", fontWeight: 500 }}
-                >
-                  <strong> Tiện ích:</strong> Công viên nước Sun World, Trung
-                  tâm thương mại Sun Retail, Khách sạn 5 sao
+                  ha
                 </Typography>
               </Box>
-              <Divider
-                sx={{
-                  width: "70%",
-                  marginTop: "5px",
-                  marginBottom: "10px",
-                  backgroundColor: "white",
-                }}
-              />
             </Box>
-          </Grid>
-          
+            <Divider
+              sx={{
+                // width: "70%",
+                marginTop: "5px",
+                marginBottom: "10px",
+                backgroundColor: "white",
+              }}
+            />
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                height: "32px",
+                marginBottom: "8px",
+              }}
+            >
+              <Box>
+                <Typography
+                  sx={{
+                    fontSize: "17px",
+                    padding: "4px 0",
+                    fontWeight: 500,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <span className="mr-1 text-secondary  text-[#e16a92] ">
+                    ⬘
+                  </span>
+                  <strong className="text-white">Mật độ xây dựng:</strong>
+                  <Typography
+                    component="span"
+                    sx={{
+                      color: "secondary.main",
+                      fontSize: "2rem",
+                      fontWeight: "bold",
+                      mx: 1,
+                    }}
+                  >
+                    <h2
+                      style={{
+                        fontFamily: "Newsreader",
+                      }}
+                      className="  lg:mt-4 xl:mb-5 font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
+                    >
+                      27,6
+                    </h2>
+                  </Typography>
+                  %
+                </Typography>
+              </Box>
+            </Box>
+            <Divider
+              sx={{
+                // width: "70%",
+                marginTop: "5px",
+                marginBottom: "10px",
+                backgroundColor: "white",
+              }}
+            />
+
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "8px",
+              }}
+            >
+              <Typography
+                sx={{
+                  width: "680px",
+                  fontSize: "17px",
+                  padding: "4px 0",
+                  fontWeight: 500,
+                }}
+              >
+                <span className="mr-1 text-secondary  text-[#e16a92] ">⬘</span>
+                <strong className="text-white"> Tiện ích:</strong> Công viên
+                nước Sun World, Trung tâm thương mại Sun Retail, Khách sạn 5 sao
+              </Typography>
+            </Box>
+            <Divider
+              sx={{
+                // width: "70%",
+                marginTop: "5px",
+                marginBottom: "10px",
+                backgroundColor: "white",
+              }}
+            />
+          </Box>
+        </Container>
+
         {/* </Grid> */}
-     
+
         {/* </Container> */}
         <Box
+          className=""
           sx={{
-            position: "absolute",
+            // position: "absolute",
             top: { xs: "unset", md: 0 },
             bottom: { xs: 0, md: "unset" },
             left: 0,
@@ -215,7 +245,7 @@ const OverviewSection = () => {
             pointerEvents: "none",
           }}
         >
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -224,20 +254,29 @@ const OverviewSection = () => {
               width: "100%",
               height: "auto",
             }}
-          >
-            <img
-              src="/ProjectOverview/tong-quan-du-an-min.png"
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "cover",
-                objectPosition: "bottom center",
-                display: "block",
-              }}
-            />
-          </motion.div>
+          > */}
+          <img
+            src="/ProjectOverview/tong-quan-du-an-min.png"
+            style={{
+              width: "100%",
+              height: "auto",
+              objectFit: "cover",
+              objectPosition: "bottom center",
+            }}
+            className="lg:flex hidden"
+          />
+          <img
+            src="/ProjectOverview/tong-quan-du-an-min-mb.png"
+            style={{
+              width: "100%",
+              height: "auto",
+              objectFit: "cover",
+              objectPosition: "bottom center",
+            }}
+            className="flex lg:hidden"
+          />
+          {/* </motion.div> */}
         </Box>
-        
       </Box>
     </Box>
   );

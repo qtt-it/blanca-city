@@ -58,134 +58,129 @@ export const MainPage: React.FC = () => {
   };
 
   return (
-    <React.Fragment>
-      <Grid container columnGap={12}>
-        <Grid size={{ xs: 12 }}>
-          <Box className="max-w-[1920px] relative mx-auto w-full">
-            <BannerComponent
-              img="/hero1.jpg"
-              imgTablet="/hero1-tablet.webp"
-              imgMb="/hero1-mb.webp"
-            />
-            <Box className="absolute left-[50%] translate-x-[-50%] bottom-[30px] z-10 cursor-pointer z-10 mx-auto w-full flex-col flex justify-center items-center">
-              <span className="border-t-2 animationInOut1 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
-
-              <span className="border-t-2 animationInOut2 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
-
-              <span className="border-t-2 animationInOut3 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
-            </Box>
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          <Header onNavigate={handleNavigate} />
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          <Box
-          // className="lg:pt-[64px] xl:pt-[76px] pt-[80px] md:pt-[80px]"
-          >
-            <HeroSection />
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          <Box
-            className="
-          mt-[-80px] md:mt-[-100px] lg:mt-[-160px] !xl:mt-[-180px] relative z-[2]"
-          >
-            <IntroSection />
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          <Box ref={locationRef}>
-            <LocationSection />
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          {" "}
-          {/*xong, sai vị trí, chưa review */}
-          <MapAddressSection />
-        </Grid>
-
-        <Grid size={{ xs: 12 }}>
-          {" "}
-          {/*video */}
-          <VideoSlider
-            videos={[
-              {
-                title: "Ocean Waves",
-                description:
-                  "Shophouse STC Long Thành - 'Cực Phẩm' đáp ứng đúng nhu cầu mà các nhà đầu tư đang tìm kiếm đầu năm 2025.",
-                src: "https://www.youtube.com/embed/VFkb7z127x0?si=BluHcSgR8J2HokbG",
-                thumbnail: "/video1.jpg",
-              },
-            ]}
+    <Box>
+      <Box>
+        <Box id="#hero" className="max-w-[1920px]  relative mx-auto w-full">
+          <BannerComponent
+            img="/hero1.jpg"
+            imgTablet="/hero1-tablet.jpg"
+            imgMb="/hero1-mb.webp"
           />
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          {" "}
-          {/*xong, chưa review */}
-          <ConsultingSection />
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          <Box ref={overviewRef}>
-            <OverviewSection />
+          <Box className="absolute hidden md:flex left-[50%] translate-x-[-50%] bottom-[30px] z-10 cursor-pointer z-10 mx-auto w-full flex-col  justify-center items-center">
+            <span className="border-t-2 animationInOut1 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
+            <span className="border-t-2 animationInOut2 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
+            <span className="border-t-2 animationInOut3 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
           </Box>
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          <Box ref={highlightsRef}>
-            <HighlightsSection />
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          {" "}
-          {/*xong, sai vị trí, chưa review */}
-          <TotalAreaSection />
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          <Box ref={productsRef}>
-            <ProductsSection />
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          <Box ref={designRef}>
-            <DesignSection />
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          <Box ref={sungroupRef}>
-            {" "}
-            {/*xong, chưa review */}
-            <SunGroupSection />
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          {/* <ConsultingSection />  // xong, chưa review  */}
-        </Grid>
-
-        <Grid size={{ xs: 12 }}>
-          {" "}
-          {/*xong, chưa review */}
-          <ReceiveInformationSection />
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          {" "}
-          {/*xong, chưa review */}
-          {/* <ContactSection /> */}
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          <CommentSection />
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          {" "}
-          {/*xong Ifram */}
-          <Box>
-            <IFrameMap />
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          <ContactWidget />
-          <Footer />
-        </Grid>
+        </Box>
+      </Box>
+      <Header onNavigate={handleNavigate} />
+      <Grid size={{ xs: 12 }}></Grid>
+      <Grid size={{ xs: 12 }}>
+        <Box
+        // className="lg:pt-[64px] xl:pt-[76px] pt-[80px] md:pt-[80px]"
+        >
+          <HeroSection />
+        </Box>
       </Grid>
-    </React.Fragment>
+      <Grid size={{ xs: 12 }}>
+        <Box
+          className="
+          mt-[-56px] md:mt-[-100px] lg:mt-[-160px] !xl:mt-[-200px] relative z-[2]"
+        >
+          <IntroSection />
+        </Box>
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        <Box ref={locationRef}>
+          <LocationSection />
+        </Box>
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        {" "}
+        {/*xong, sai vị trí, chưa review */}
+        <MapAddressSection />
+      </Grid>
+
+      <Grid size={{ xs: 12 }}>
+        {" "}
+        {/*video */}
+        <VideoSlider
+          videos={[
+            {
+              title: "Ocean Waves",
+              description:
+                "Shophouse STC Long Thành - 'Cực Phẩm' đáp ứng đúng nhu cầu mà các nhà đầu tư đang tìm kiếm đầu năm 2025.",
+              src: "https://www.youtube.com/embed/VFkb7z127x0?si=BluHcSgR8J2HokbG",
+              thumbnail: "/video1.jpg",
+            },
+          ]}
+        />
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        {" "}
+        {/*xong, chưa review */}
+        <ConsultingSection />
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        <Box ref={overviewRef}>
+          <OverviewSection />
+        </Box>
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        <Box ref={highlightsRef}>
+          <HighlightsSection />
+        </Box>
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        {" "}
+        {/*xong, sai vị trí, chưa review */}
+        <TotalAreaSection />
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        <Box ref={productsRef}>
+          <ProductsSection />
+        </Box>
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        <Box ref={designRef}>
+          <DesignSection />
+        </Box>
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        <Box ref={sungroupRef}>
+          {" "}
+          {/*xong, chưa review */}
+          <SunGroupSection />
+        </Box>
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        {/* <ConsultingSection />  // xong, chưa review  */}
+      </Grid>
+
+      <Grid size={{ xs: 12 }}>
+        {" "}
+        {/*xong, chưa review */}
+        <ReceiveInformationSection />
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        {" "}
+        {/*xong, chưa review */}
+        {/* <ContactSection /> */}
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        <CommentSection />
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        {" "}
+        {/*xong Ifram */}
+        <Box>
+          <IFrameMap />
+        </Box>
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        <ContactWidget />
+        <Footer />
+      </Grid>
+    </Box>
   );
 };

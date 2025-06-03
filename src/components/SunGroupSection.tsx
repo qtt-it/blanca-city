@@ -24,17 +24,17 @@ const SunGroupSection = () => {
         >
           <Stack
             sx={{
-              width: "50%",
-              background: "linear-gradient(90deg, #df658e 0, #f293b3)",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
+              // background: "linear-gradient(90deg, #df658e 0, #f293b3)",
+              // WebkitBackgroundClip: "text",
+              // color: "transparent",
               fontSize: "48px",
               fontWeight: 600,
               fontFamily: "Newsreader",
             }}
+            className="lg:w-1/2 w-full"
           >
-            <span>Những "Biểu Tượng"</span>
-            <span>Du Lịch & Đô Thị Sun Group</span>
+            <span className="text-[#e7779c]">Những "Biểu Tượng"</span>
+            <span className="text-[#f292b3]">Du Lịch & Đô Thị Sun Group</span>
           </Stack>
           <Typography
             sx={{
@@ -48,7 +48,7 @@ const SunGroupSection = () => {
             Đã triển khai
           </Typography>
         </motion.div>
-        <Grid container spacing={1}>
+        <Box className="flex flex-col lg:flex-row gap-y-4 lg:gap-x-2">
           {[
             "/SunGroup/sungroup01.webp",
             "/SunGroup/sungroup02.webp",
@@ -56,22 +56,21 @@ const SunGroupSection = () => {
             "/SunGroup/sungroup04.webp",
             "/SunGroup/sungroup05.webp",
           ].map((imgSrc, index) => (
-            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2.4 }} key={index}>
-              <Box sx={{ borderRadius: "10px", overflow: "hidden" }}>
-                <ImageComponent img={imgSrc} />
-              </Box>
-            </Grid>
+            <Box sx={{ borderRadius: "10px", overflow: "hidden" }} key={index}>
+              <ImageComponent img={imgSrc} />
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Container>
 
       <Box
         sx={{
           position: "relative",
           width: "100%",
-          top: "-40px",
+          // marginTop: "-120px",
           marginBottom: "-40px",
         }}
+        className="lg:mt-[-140px] md:mt-[-120px] mt-[-40px]"
       >
         <ImageComponent img={"/SunGroup/sungroup.png"} />
       </Box>

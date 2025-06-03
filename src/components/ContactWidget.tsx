@@ -24,41 +24,7 @@ export const ContactWidget: React.FC = () => {
         fontFamily: "var(--font-oswald)",
       }}
     >
-      <Box sx={{ position: "relative" }}>
-        <Box
-          component="img"
-          src="/ic_mess.svg"
-          alt="dong tay land"
-          sx={{
-            width: 70,
-            height: 70,
-            bgcolor: "#fff",
-            borderRadius: "50%",
-            position: "relative",
-          }}
-        />
-        <Box
-          sx={{
-            position: "absolute",
-            top: "-5px",
-            right: 0,
-            width: 19,
-            height: 24,
-            pl: "5px",
-            bgcolor: "#dc3545",
-            color: "#fff",
-            borderRadius: "5px",
-            fontSize: 16,
-            fontWeight: 700,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            userSelect: "none",
-          }}
-        >
-          5
-        </Box>
-      </Box>
+      <Box sx={{ position: "relative" }}></Box>
 
       <Box sx={{ display: "flex", gap: 2 }}>
         <Button
@@ -86,26 +52,18 @@ export const ContactWidget: React.FC = () => {
           0977 48 7777
         </Button>
 
-        <Button
-          variant="contained"
+        {/* <Box
+          component="img"
+          src="/ic_mess.svg"
+          alt="dong tay land"
           sx={{
-            height: 32,
-            px: "15px",
-            py: 0,
-            backgroundColor: "#007bff",
-            textTransform: "none",
-            "&:hover": {
-              backgroundColor: "#0066cc",
-            },
+            width: 60,
+            height: 60,
+            bgcolor: "#fff",
+            borderRadius: "50%",
+            position: "relative",
           }}
-        >
-          <Box
-            component="img"
-            src="/ic_zalo-logo.webp"
-            alt="dong tay land"
-            sx={{ width: 43 }}
-          />
-        </Button>
+        /> */}
       </Box>
     </Box>
   );

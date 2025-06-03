@@ -16,6 +16,7 @@ export const ReceiveInformationSection: React.FC = () => {
           // backgroundPosition: "right",
           backgroundRepeat: "no-repeat",
         }}
+        className="bg-right lg:bg-auto"
       >
         <Container className="flex w-full lg:py-[80px] flex-col items-center">
           <Box width="184px" height="110px">

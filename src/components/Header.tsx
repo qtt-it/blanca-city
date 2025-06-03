@@ -38,7 +38,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleScroll = () => {
-        if (window.scrollY > 650) {
+        if (window.scrollY > 0) {
           // Khi người dùng cuộn qua vị trí đầu trang
           setIsFixed(true);
         } else {
@@ -50,6 +50,8 @@ const Header = ({ onNavigate }: HeaderProps) => {
       return () => window.removeEventListener("scroll", handleScroll);
     }
   }, []);
+
+  console.log("isFixed", isFixed);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,10 +82,16 @@ const Header = ({ onNavigate }: HeaderProps) => {
 
   return (
     <>
-      <Box
+      <div
+        id="header"
+        style={{
+          position: isFixed ? "sticky" : "relative",
+          left: 0,
+          top: 0,
+        }}
         className={clsx(
-          isFixed ? "sticky" : "relative",
-          "!w-full z-50 px-4 shadow-lg py-2 lg:py-0 top-0 left-0 duration-[300ms] ease-in-out !bg-white "
+          // isFixed ? "sticky" : "relative",
+          "left-0 top-0 !w-full z-50 px-4 shadow-lg py-2 lg:py-0 duration-[300ms] ease-in-out !bg-white "
         )}
       >
         <Container className="!py-0 !max-w-full">
@@ -110,7 +118,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
                 <Button
                   style={{
                     fontFamily: "Oswald",
-                  }}
+                  } as any}
                   className="!text-[#000203] !uppercase !text-[14.4px]"
                   key={item.id}
                   onClick={() => handleMenuClick(item.id)}
@@ -127,56 +135,55 @@ const Header = ({ onNavigate }: HeaderProps) => {
                 </Button>
               ))}
             </Box>
-            {mobileOpen ? (
-              <>
-                <IconButton
-                  color="inherit"
-                  aria-label="open drawer"
-                  edge="start"
-                  onClick={handleDrawerToggle}
-                  sx={{
-                    display: { sm: "none" },
-                    color: scrolled ? "primary.main" : "primary.main",
-                  }}
-                >
-                  <MenuIcon />
-                </IconButton>
-                <Box
-                  onClick={handleDrawerToggle}
-                  sx={{ display: { sm: "none" } }}
-                >
-                  {mobileOpen && (
-                    <List>
-                      {menuItems.map((item) => (
-                        <ListItemButton
-                          key={item.id}
-                          onClick={() => handleMenuClick(item.id)}
-                        >
-                          <ListItemText primary={item.label} />
-                        </ListItemButton>
-                      ))}
-                    </List>
-                  )}
-                </Box>
-              </>
-            ) : (
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{
-                  display: { md: "none" },
-                  color: scrolled ? "primary.main" : "primary.main",
-                }}
-              >
-                <MenuIcon />
-              </IconButton>
-            )}
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{
+                display: { lg: "none", },
+                color: scrolled ? "primary.main" : "primary.main",
+                border: "1px solid #eee",
+                borderRadius: 0,
+              }}
+            >
+              <img src="/hamb.svg" className="w-[56px] h-[40px]" />
+            </IconButton>
           </Toolbar>
         </Container>
-      </Box>
-      <Box
+        <div
+          className="w-full absolute top-[76px] left-0  bg-[rgba(255,255,255,1)] transition-all duration-250 ease-in-out  overflow-hidden "
+          style={{
+            boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.3)",
+            // border: open ? "2px solid rgba(255,255,255,0.2)" : "",
+            maxHeight: mobileOpen ? "1150px" : 0,
+          }}
+        >
+          <div className="flex flex-col items-start pl-4">
+            {menuItems.map((item) => (
+              <Box
+                key={item.label}
+                style={{
+                  fontFamily: "Oswald",
+                }}
+                className="!text-[#000203] p-2 !text-left !uppercase !text-[14.4px]"
+                onClick={() => handleMenuClick(item.id)}
+                sx={{
+                  color: scrolled ? "primary.main" : "white",
+                  "&:hover": {
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    color: "#0e3b7c",
+                  },
+                }}
+              >
+                {item.label}
+              </Box>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* <Box
         component={motion.div}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -190,8 +197,8 @@ const Header = ({ onNavigate }: HeaderProps) => {
           flexDirection: "column",
           gap: 2,
         }}
-      >
-        <Box
+      > */}
+        {/* <Box
           sx={{
             bgcolor: "primary.main",
             color: "white",
@@ -208,8 +215,8 @@ const Header = ({ onNavigate }: HeaderProps) => {
           }}
         >
           0977 48 7777
-        </Box>
-        <Box
+        </Box> */}
+        {/* <Box
           sx={{
             bgcolor: "secondary.main",
             color: "white",
@@ -228,8 +235,8 @@ const Header = ({ onNavigate }: HeaderProps) => {
           }}
         >
           Chat
-        </Box>
-      </Box>
+        </Box> */}
+      {/* </Box> */}
     </>
   );
 };
