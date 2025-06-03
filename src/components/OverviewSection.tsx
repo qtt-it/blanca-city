@@ -1,57 +1,43 @@
 "use client";
 
-import { Box, Container, Typography, Grid, Paper } from "@mui/material";
+import { Box, Container, Typography, Grid, Divider } from "@mui/material";
 import { motion } from "framer-motion";
 
 const OverviewSection = () => {
   return (
     <Box
-      id="overview"
       sx={{
-        py: 8,
+        height: { xs: "600px", md: "910px" },
+        py: 4,
+        paddingTop: { xs: 0, md: "130px" },
+        paddingBottom: 0,
         bgcolor: "#0e3b7c",
         color: "white",
+        overflow: "hidden",
       }}
     >
-      <Container maxWidth="lg">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <Typography
-            variant="h2"
-            component="h2"
-            sx={{
-              color: "secondary.main",
-              mb: 6,
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
-          >
-            Tổng Quan Dự Án
-          </Typography>
-        </motion.div>
+      <Box id="overview" sx={{ position: "relative", height: "100%" }}>
+        {/* Background image with animation */}
 
-        <Grid container spacing={6} alignItems="center">
-          <Grid size={{ xs: 12, md: 5 }}>
-            <Box
-              component={motion.div}
-              initial={{ opacity: 0, x: -50 }}
+        {/* Content */}
+        {/* <Container sx={{ position: "relative", margin: 0,  zIndex: 1 }}> */}
+        <Grid container spacing={4} alignItems="center" width="100%">
+          <Grid size={{ xs: 12, md: 6 }}></Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
-              sx={{
-                width: "100%",
-                height: { xs: "300px", md: "500px" },
-                borderRadius: 2,
-                overflow: "hidden",
-              }}
+              // sx={{
+              //   width: "100%",
+              //   height: { xs: "300px", md: "500px" },
+              //   borderRadius: 2,
+              //   overflow: "hidden",
+              // }}
             />
           </Grid>
 
-          <Grid size={{ xs: 12, md: 7 }}>
             <Box
               component={motion.div}
               initial={{ opacity: 0, x: 50 }}
@@ -59,29 +45,63 @@ const OverviewSection = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-                <Box sx={{ color: "secondary.main", mr: 2 }}>◆</Box>
-                <Typography variant="body1" sx={{ fontSize: "1.1rem" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "8px",
+                }}
+              >
+                <Box sx={{ color: "secondary.main", mr: "2px" }}>⬘</Box>
+                <Typography sx={{ fontSize: "18px", fontWeight: 500 }}>
                   <strong>Tên dự án:</strong> Khu đô thị Blanca City by Sun
                   Group
                 </Typography>
               </Box>
+              <Divider
+                sx={{
+                  width: "70%",
+                  marginTop: "5px",
+                  marginBottom: "10px",
+                  backgroundColor: "white",
+                }}
+              />
 
-              <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-                <Box sx={{ color: "secondary.main", mr: 2 }}>◆</Box>
-                <Typography variant="body1" sx={{ fontSize: "1.1rem" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "8px",
+                }}
+              >
+                <Box sx={{ color: "secondary.main", mr: "2px" }}>⬘</Box>
+                <Typography sx={{ fontSize: "18px", fontWeight: 500 }}>
                   <strong>Vị trí:</strong> Mặt tiền đường 3/2, Phường 10, Phường
                   11, TP Vũng Tàu, TP HCM
                 </Typography>
               </Box>
-
-              <Box sx={{ display: "flex", alignItems: "flex-start", mb: 3 }}>
-                <Box sx={{ color: "secondary.main", mr: 2, mt: 0.5 }}>◆</Box>
+              <Divider
+                sx={{
+                  width: "70%",
+                  marginTop: "5px",
+                  marginBottom: "10px",
+                  backgroundColor: "white",
+                }}
+              />
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  height: "32px",
+                  marginBottom: "8px",
+                }}
+              >
+                <Box sx={{ color: "secondary.main", mr: "2px" }}>⬘</Box>
                 <Box>
                   <Typography
-                    variant="body1"
                     sx={{
-                      fontSize: "1.1rem",
+                      fontSize: "18px",
+                      fontWeight: 500,
                       display: "flex",
                       alignItems: "center",
                     }}
@@ -91,7 +111,7 @@ const OverviewSection = () => {
                       component="span"
                       sx={{
                         color: "secondary.main",
-                        fontSize: "2.5rem",
+                        fontSize: "2rem",
                         fontWeight: "bold",
                         mx: 1,
                       }}
@@ -102,14 +122,28 @@ const OverviewSection = () => {
                   </Typography>
                 </Box>
               </Box>
-
-              <Box sx={{ display: "flex", alignItems: "flex-start", mb: 3 }}>
-                <Box sx={{ color: "secondary.main", mr: 2, mt: 0.5 }}>◆</Box>
+              <Divider
+                sx={{
+                  width: "70%",
+                  marginTop: "5px",
+                  marginBottom: "10px",
+                  backgroundColor: "white",
+                }}
+              />
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  height: "32px",
+                  marginBottom: "8px",
+                }}
+              >
+                <Box sx={{ color: "secondary.main", mr: "2px" }}>⬘</Box>
                 <Box>
                   <Typography
-                    variant="body1"
                     sx={{
-                      fontSize: "1.1rem",
+                      fontSize: "18px",
+                      fontWeight: 500,
                       display: "flex",
                       alignItems: "center",
                     }}
@@ -119,7 +153,7 @@ const OverviewSection = () => {
                       component="span"
                       sx={{
                         color: "secondary.main",
-                        fontSize: "2.5rem",
+                        fontSize: "2rem",
                         fontWeight: "bold",
                         mx: 1,
                       }}
@@ -130,18 +164,81 @@ const OverviewSection = () => {
                   </Typography>
                 </Box>
               </Box>
+              <Divider
+                sx={{
+                  width: "70%",
+                  marginTop: "5px",
+                  marginBottom: "10px",
+                  backgroundColor: "white",
+                }}
+              />
 
-              <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-                <Box sx={{ color: "secondary.main", mr: 2 }}>◆</Box>
-                <Typography variant="body1" sx={{ fontSize: "1.1rem" }}>
-                  <strong>Tiện ích:</strong> Công viên nước Sun World, Trung tâm
-                  thương mại Sun Retail, Khách sạn 5 sao
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "8px",
+                }}
+              >
+                <Box sx={{ color: "secondary.main", mr: "2px" }}>⬘</Box>
+                <Typography
+                  sx={{ width: "680px", fontSize: "18px", fontWeight: 500 }}
+                >
+                  <strong> Tiện ích:</strong> Công viên nước Sun World, Trung
+                  tâm thương mại Sun Retail, Khách sạn 5 sao
                 </Typography>
               </Box>
+              <Divider
+                sx={{
+                  width: "70%",
+                  marginTop: "5px",
+                  marginBottom: "10px",
+                  backgroundColor: "white",
+                }}
+              />
             </Box>
           </Grid>
-        </Grid>
-      </Container>
+          
+        {/* </Grid> */}
+     
+        {/* </Container> */}
+        <Box
+          sx={{
+            position: "absolute",
+            top: { xs: "unset", md: 0 },
+            bottom: { xs: 0, md: "unset" },
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 0,
+            overflow: "hidden",
+            pointerEvents: "none",
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+          >
+            <img
+              src="/ProjectOverview/tong-quan-du-an-min.png"
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "cover",
+                objectPosition: "bottom center",
+                display: "block",
+              }}
+            />
+          </motion.div>
+        </Box>
+        
+      </Box>
     </Box>
   );
 };
