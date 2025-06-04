@@ -2,7 +2,8 @@
 
 import React from "react";
 import { ButtonComponent, InputComponent } from "../../components/commons";
-import { Box, Grid } from "@mui/material";
+import { Alert, Box, CircularProgress, Grid, Snackbar } from "@mui/material";
+import useCommentSubmit from "@/hook/useSubmit";
 
 interface IFormConsultationProps {
   layout: "vertical" | "grid";
@@ -17,24 +18,26 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
   isInputEmail = true,
   isTextarea = true,
   btnClassName,
-  textBtn
+  textBtn,
 }) => {
   const [formData, setFormData] = React.useState({
     name: "",
     phone: "",
     email: "",
+    product: "",
   });
 
   const [errors, setErrors] = React.useState({
     name: "",
     phone: "",
     email: "",
+    product: "",
   });
 
   const [formHasError, setFormHasError] = React.useState(false);
 
   const validate = () => {
-    let newErrors = { name: "", phone: "", email: "" };
+    let newErrors = { name: "", phone: "", email: "", product: "" };
     let hasError = false;
 
     if (!formData.name.trim()) {
@@ -58,11 +61,26 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
     setFormHasError(hasError);
     return !hasError;
   };
+  const {
+    loading,
+    snackbarMessage,
+    snackbarSeverity,
+    openSnackbar,
+    onSubmit,
+    handleCloseSnackbar,
+  } = useCommentSubmit();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Form hợp lệ:", formData);
+      await onSubmit(formData, "", () =>
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          product: "",
+        })
+      ); // Assuming rootComment is not used, pass an empty value
     }
   };
 
@@ -149,7 +167,7 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
           </Grid>
           <Box className="flex justify-center" style={gridItemStyle}>
             <ButtonComponent className={btnClassName}>
-            {textBtn ||  "ĐĂNG KÝ TƯ VẤN"}
+              {textBtn || "ĐĂNG KÝ TƯ VẤN"}
             </ButtonComponent>
           </Box>
         </Grid>
@@ -180,14 +198,18 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
           <InputComponent
             placeholder="Quan tâm sản phẩm..."
             value={formData.email}
-            onChange={handleChange("email")}
+            onChange={handleChange("product")}
             error={errors.email}
           />
         )}
 
         {isTextarea ?? <textarea />}
         <ButtonComponent className={btnClassName}>
-          {textBtn ||  "GỬI THÔNG TIN"}
+          {loading ? (
+            <CircularProgress style={{ width: "28px", height: "28px" }} />
+          ) : (
+            textBtn || "GỬI THÔNG TIN"
+          )}
         </ButtonComponent>
         {/* <p style={italicNoteStyle}>(*) = thông tin bắt buộc</p> */}
       </div>
@@ -197,6 +219,24 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
   return (
     <>
       <form onSubmit={handleSubmit}>
+        {openSnackbar && (
+          <Box className="z-[11] w-full relative">
+            <Snackbar
+              anchorOrigin={{ vertical: "top", horizontal: "center" }}
+              open={openSnackbar}
+              autoHideDuration={1000}
+              onClose={handleCloseSnackbar}
+              key={"center" + "center"}
+              style={{
+                top: "100px",
+              }}
+            >
+              <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity}>
+                {snackbarMessage}
+              </Alert>
+            </Snackbar>
+          </Box>
+        )}
         <Grid container>
           <Grid size={{ xs: 12 }}>{renderForm()}</Grid>
           <Grid size={{ xs: 12 }}>

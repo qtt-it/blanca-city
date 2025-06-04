@@ -70,12 +70,12 @@ const LocationSection = () => {
       }
       className="bg-gradient-to-b relative text-white from-[#0f184c] to-[#0565a8]"
     >
-       <Box className="xl:w-[39%] md:w-full  lg:w-full w-[150%] lg:h-[75%] md:h-1/2 h-3/10 absolute right-0 bottom-0">
+       <Box className="xl:w-[39%] md:w-full  lg:w-full w-[180%] lg:h-[75%] md:h-1/2 h-3/10 absolute right-0 bottom-0">
         <img src="/decor1.png" className="w-full h-full " />
       </Box>
       <Container>
         <Box className="flex w-full lg:gap-x-[70px] flex-wrap lg:flex-nowrap justify-between mb-3 lg:mb-12 items-end">
-          <Box className="mb-10 md:mt-0">
+          <Box className="mb-10 md:mb-0">
             <span
               style={{
                 fontFamily: "Newsreader",
@@ -111,7 +111,7 @@ const LocationSection = () => {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
               }}
-              className=" z-[3] !lg:w-1/2 mt-4 border border-solid border-[#f08daf] lg:mt-0 !xl:w-1/4 w-full rounded-lg overflow-hidden duration-500 hover:translate-y-[-10px]"
+              className=" z-[3] !lg:w-1/2 mt-4 border border-solid border-[#f08daf] lg:mt-0 !xl:w-1/4 w-full rounded-xl overflow-hidden duration-500 hover:translate-y-[-10px]"
               key={idx}
             >
               <Paper

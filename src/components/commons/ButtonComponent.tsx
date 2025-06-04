@@ -3,7 +3,7 @@ import clsx from "clsx";
 import React from "react";
 
 interface IButtonComponentProps {
-  children: string;
+  children: any;
   className?: string
 }
 

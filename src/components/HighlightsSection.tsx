@@ -1,7 +1,8 @@
 "use client";
 
-import { Box, Container, Typography, Grid, Paper } from "@mui/material";
+import { Box, Typography, Grid, Paper } from "@mui/material";
 import { motion } from "framer-motion";
+import Container from "./container/container";
 
 const HighlightsSection = () => {
   return (
@@ -10,217 +11,142 @@ const HighlightsSection = () => {
       sx={{
         py: 8,
         bgcolor: "#ffffff",
-        color: "#333",
+        color: "#10184C",
       }}
+      className="relative"
     >
-      <Container maxWidth="lg">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <Typography
-            variant="h2"
-            component="h2"
-            sx={{
-              color: "secondary.main",
-              mb: 1,
-              fontWeight: "bold",
-              textAlign: "center",
+      <Box className="xl:w-[39%] md:w-full  lg:w-full w-[180%] lg:h-[75%] md:h-1/2 h-3/10 absolute right-0 bottom-0">
+        <img src="/decor2.png" className="w-full h-full " />
+      </Box>
+      <Container className="text-[#10184C] font-[500]">
+        <Box className="mb-10 md:mt-0">
+          <span
+            style={{
+              fontFamily: "Newsreader",
             }}
+            className="text-[48px] mx-1 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f190b1] bg-clip-text text-transparent"
           >
             Điểm Nhấn Nổi Bật
-          </Typography>
-
+          </span>
           <Typography
-            variant="h4"
-            component="h3"
             sx={{
-              color: "#0e3b7c",
               fontStyle: "italic",
-              mb: 6,
-              textAlign: "center",
+              fontFamily: "Newsreader",
             }}
+            className="!lg:text-[32px] text-[#0665a8] font-semibold w-max !text-[30px] mb-[40px] lg:mb-0 mt-[-10px] md:mt-0"
           >
             Tại Blanca City
           </Typography>
-        </motion.div>
+        </Box>
 
-        <Grid container spacing={4}>
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Paper
-              component={motion.div}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              elevation={3}
-              sx={{
-                p: 3,
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <Typography
-                variant="h5"
-                sx={{ mb: 3, color: "#0e3b7c", fontWeight: "bold" }}
-              >
-                Sun World Vũng Tàu
-              </Typography>
-
-              <Typography variant="body1" sx={{ mb: 3 }}>
-                Có quy mô lớn nhất của Sun Group với 15ha, 21 trò chơi đặc sắc
-                tái hiện vẻ đẹp của sông nước miền Tây Nam Bộ:
-              </Typography>
-
-              <Box sx={{ display: "flex", alignItems: "flex-start", mb: 2 }}>
-                <Box sx={{ color: "secondary.main", mr: 1, mt: 0.5 }}>◆</Box>
-                <Typography variant="body1">
-                  Công viên đầu tiên ở Đông Nam Á có trò chơi tàu lượn siêu tốc
-                  phiên bản nước
-                </Typography>
-              </Box>
-
-              <Box sx={{ display: "flex", alignItems: "flex-start", mb: 2 }}>
-                <Box sx={{ color: "secondary.main", mr: 1, mt: 0.5 }}>◆</Box>
-                <Typography variant="body1">
-                  Rally Racer 10 làn đầu tiên trên thế giới
-                </Typography>
-              </Box>
-
-              <Box sx={{ display: "flex", alignItems: "flex-start", mb: 2 }}>
-                <Box sx={{ color: "secondary.main", mr: 1, mt: 0.5 }}>◆</Box>
-                <Typography variant="body1">
-                  Công viên đầu tiên ở Việt Nam có bể tạo sóng đôi cao nhất
+        <div className="flex flex-col lg:flex-row gap-4 text-[#10184c]">
+          <div className="lg:w-1/3 mb-8 lg:mb-0">
+            <h2 className="text-xl font-semibold text-[#e16a92]">
+              Sun World Vũng Tàu
+            </h2>
+            <p className=" text-gray-700 mt-2">
+              <strong className="text-[#0665A8] mr-1">
+                Quy mô lớn nhất của Sun Group với 15ha, 21 trò chơi đặc sắc
+              </strong>
+              tái hiện vẻ đẹp của sông nước miền Tây Nam Bộ:
+              <Box className="flex flex-col gap-2 mt-2">
+                <p>
+                  ⬘ Công viên đầu tiên ở Đông Nam Á có trò chơi tàu lượn siêu
+                  tốc phiên bản nước
+                </p>
+                <path>⬘ Rally Racer 10 lần đầu tiên trên thế giới</path>
+                <span>
+                  ⬘ Công viên đầu tiên ở Việt Nam có bể tạo sóng đôi cao nhất
                   (1,8m & 2,4m)
-                </Typography>
-              </Box>
-
-              <Box sx={{ display: "flex", alignItems: "flex-start", mb: 2 }}>
-                <Box sx={{ color: "secondary.main", mr: 1, mt: 0.5 }}>◆</Box>
-                <Typography variant="body1">
-                  Bể tạo sóng và tàu lượn nước mini cho trẻ em tại công viên đầu
-                  tiên ở Việt Nam
-                </Typography>
-              </Box>
-
-              <Box sx={{ display: "flex", alignItems: "flex-start", mb: 2 }}>
-                <Box sx={{ color: "secondary.main", mr: 1, mt: 0.5 }}>◆</Box>
-                <Typography variant="body1">
-                  Công viên đầu tiên ở Việt Nam có dòng sông thư thác Action
+                </span>
+                <path>
+                  ⬘ Bể tạo sóng và tàu lượn nước mini cho trẻ em tại công viên
+                  đầu tiên ở Việt Nam
+                </path>
+                <path>
+                  ⬘ Công viên đầu tiên ở Việt Nam có dòng sông thử thác Action
                   River.
-                </Typography>
+                </path>
               </Box>
+            </p>
 
-              <Box
-                sx={{
-                  mt: "auto",
-                  width: "100%",
-                  height: 200,
-                  borderRadius: 1,
-                  overflow: "hidden",
-                }}
-              />
-            </Paper>
-          </Grid>
+            <div className="rounded-lg block mt-8 md:hidden overflow-hidden">
+              <img src="/light3.jpg" alt="Image 1" className="w-full h-auto" />
+            </div>
+          </div>
 
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Paper
-              component={motion.div}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              elevation={3}
-              sx={{
-                p: 3,
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <Typography
-                variant="h5"
-                sx={{ mb: 3, color: "#0e3b7c", fontWeight: "bold" }}
-              >
-                Coastal Hotel Perspective
-              </Typography>
+          <div className="lg:w-2/3">
+            <div className="grid md:grid-cols-2 gap-4 lg:gap-0 lg:gap-x-2">
+              <div>
+                <h3 className="text-lg font-semibold text-[#e16a92]">
+                  Coastal Hotel
+                </h3>
+                <p className=" text-gray-700 mt-2">
+                  <strong className="text-[#0665A8]">
+                    Thương hiệu khách sạn 5 sao quốc tế đầu tiên tại Vũng Tàu{" "}
+                  </strong>
+                  , với sự góp mặt của một trong những đối tác của Sun Group:
+                  Hilton, Capella, Marriott, IHG, Accor, IMG...
+                </p>
+                <div className="rounded-lg block mt-8 md:hidden overflow-hidden">
+                  <img
+                    src="/light1.jpg"
+                    alt="Image 1"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+              <div className="mt-8 md:mt-0">
+                <h3 className="text-lg font-semibold text-[#e16a92]">
+                  Sun Retail Vũng Tàu
+                </h3>
+                <p className=" text-gray-700 mt-2">
+                  <strong className="text-[#0665A8]">
+                    Trung tâm thương mại biển mặt biển lớn nhất miền Nam,{" "}
+                  </strong>
+                </p>
+                <p className="  mt-2">
+                  ⬘ Phố đi bộ thương mại sầm uất, mang lại trải nghiệm khác biệt
+                  nhất cho du khách.
+                </p>
+                <p className="  mt-2">
+                  ⬘ Trung tâm hội nghị, thương mại, triển lãm quốc tế.
+                </p>
+                <div className="rounded-lg block mt-8 md:hidden overflow-hidden">
+                  <img
+                    src="/light2.jpg"
+                    alt="Image 1"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+            </div>
 
-              <Typography variant="body1" sx={{ mb: 3 }}>
-                Thương hiệu khách sạn 5 sao quốc tế đầu tiên tại Vũng Tàu, với
-                sự góp mặt của một trong những đối tác của Sun Group: Hilton,
-                Capella, Marriott, IHG, Accor, IMG...
-              </Typography>
-
-              <Box
-                sx={{
-                  mt: "auto",
-                  width: "100%",
-                  height: 200,
-                  bgcolor: "red", // Placeholder for image
-                  borderRadius: 1,
-                  overflow: "hidden",
-                }}
-              />
-            </Paper>
-          </Grid>
-
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Paper
-              component={motion.div}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              elevation={3}
-              sx={{
-                p: 3,
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <Typography
-                variant="h5"
-                sx={{ mb: 3, color: "#0e3b7c", fontWeight: "bold" }}
-              >
-                Sun Retail Vũng Tàu
-              </Typography>
-
-              <Typography variant="body1" sx={{ mb: 3 }}>
-                Trung tâm thương mại mặt biển lớn nhất miền Nam
-              </Typography>
-
-              <Box sx={{ display: "flex", alignItems: "flex-start", mb: 2 }}>
-                <Box sx={{ color: "secondary.main", mr: 1, mt: 0.5 }}>◆</Box>
-                <Typography variant="body1">
-                  Phố đi bộ sầm uất, nhộn nhịp, sôi động trải nghiệm mua sắm, ẩm
-                  thực
-                </Typography>
-              </Box>
-
-              <Box sx={{ display: "flex", alignItems: "flex-start", mb: 2 }}>
-                <Box sx={{ color: "secondary.main", mr: 1, mt: 0.5 }}>◆</Box>
-                <Typography variant="body1">
-                  Tổ hợp giải trí đẳng cấp quốc tế.
-                </Typography>
-              </Box>
-
-              <Box
-                sx={{
-                  mt: "auto",
-                  width: "100%",
-                  height: 200,
-                  bgcolor: "red", // Placeholder for image
-                  borderRadius: 1,
-                  overflow: "hidden",
-                }}
-              />
-            </Paper>
-          </Grid>
-        </Grid>
+            <div className="hidden md:grid grid-cols-3 gap-2 mt-6">
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/light1.jpg"
+                  alt="Image 1"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/light2.jpg"
+                  alt="Image 2"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/light3.jpg"
+                  alt="Image 3"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </Container>
     </Box>
   );

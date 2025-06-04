@@ -18,7 +18,9 @@ const Container = ({
       style={style}
       className={clsx(
         `w-full mx-auto 2xl:w-[1320px] `,
-        isDefaultPadding ? `px-4 lg:px-[36px] xl:px-0 xl:pt-[60px] xl:pb-[80px] lg:pt-[60px] lg:pb-[92px] ` : "",
+        isDefaultPadding
+          ? `px-4 lg:px-[36px] xl:px-[32[x]] xl:pt-[60px] xl:pb-[80px] lg:pt-[60px] lg:pb-[92px] `
+          : "",
         className,
         "pt-[60px] pb-[60px] md:pb-[100px]"
       )}

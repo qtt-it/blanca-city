@@ -109,7 +109,7 @@ export const MainPage: React.FC = () => {
             {
               title: "Ocean Waves",
               description:
-                "Shophouse STC Long Thành - 'Cực Phẩm' đáp ứng đúng nhu cầu mà các nhà đầu tư đang tìm kiếm đầu năm 2025.",
+                "Blanca City - 'Cực Phẩm' đáp ứng đúng nhu cầu mà các nhà đầu tư đang tìm kiếm đầu năm 2025.",
               src: "https://www.youtube.com/embed/VFkb7z127x0?si=BluHcSgR8J2HokbG",
               thumbnail: "/video1.jpg",
             },
@@ -119,7 +119,11 @@ export const MainPage: React.FC = () => {
       <Grid size={{ xs: 12 }}>
         {" "}
         {/*xong, chưa review */}
-        <ConsultingSection />
+        {/* <ConsultingSection /> */}
+        <ReceiveInformationSection
+          isLogo={false}
+          text={"Tư vấn tiềm năng đô thị biển Blanca City by Sun Group."}
+        />
       </Grid>
       <Grid size={{ xs: 12 }}>
         <Box ref={overviewRef}>
@@ -152,9 +156,6 @@ export const MainPage: React.FC = () => {
           {/*xong, chưa review */}
           <SunGroupSection />
         </Box>
-      </Grid>
-      <Grid size={{ xs: 12 }}>
-        {/* <ConsultingSection />  // xong, chưa review  */}
       </Grid>
 
       <Grid size={{ xs: 12 }}>

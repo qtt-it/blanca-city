@@ -63,7 +63,7 @@ const ProductsSection = () => {
         position: "relative",
       }}
     >
-      <Box className="xl:w-[39%] md:w-full  lg:w-full w-[150%] lg:h-[75%] md:h-1/2 h-3/10 absolute right-0 bottom-0">
+      <Box className="xl:w-[39%] md:w-full  lg:w-full w-[180%] lg:h-[75%] md:h-1/2 h-3/10 absolute right-0 bottom-0">
         <img src="/decor2.png" className="w-full h-full " />
       </Box>
       <Container className="!lg:px-0 relative z-0 flex gap-x-7 flex-wrap lg:flex-nowrap items-center">

@@ -141,7 +141,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
               edge="start"
               onClick={handleDrawerToggle}
               sx={{
-                display: { lg: "none", },
+                display: { md: "none", },
                 color: scrolled ? "primary.main" : "primary.main",
                 border: "1px solid #eee",
                 borderRadius: 0,

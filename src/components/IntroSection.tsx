@@ -22,7 +22,7 @@ const IntroSection = () => {
         color: "white",
       }}
     >
-      <Container className="!lg:px-0 !py-0 flex gap-x-7 flex-wrap lg:flex-nowrap items-center">
+      <Container className="!lg:py-0 !py-0 flex gap-x-7 flex-wrap lg:flex-nowrap items-center">
         <Box
           component={motion.div}
           initial={{ opacity: 0 }}
@@ -157,7 +157,7 @@ const IntroSection = () => {
                 "fixed z-50 transition-all duration-500",
                 !open
                   ? "opacity-0 invisible translate-y-[-30px]"
-                  : "opacity-100 translate-y-[-50%]"
+                  : "opacity-100 lg:translate-y-[-50%]"
               )}
               sx={{
                 bgcolor: "white",

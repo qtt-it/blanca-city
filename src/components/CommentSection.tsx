@@ -134,7 +134,7 @@ const commentSchema = z
     path: ["phone"], // gán lỗi cho phone
   });
 
-type CommentFormType = z.infer<typeof commentSchema>;
+export type CommentFormType = z.infer<typeof commentSchema>;
 
 export const CommentSection = () => {
   const comment = [

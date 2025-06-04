@@ -105,7 +105,7 @@ const OverviewSection = () => {
                     padding: "4px 0",
                     fontWeight: 500,
                     display: "flex",
-                    alignItems: "end",
+                    alignItems: "center",
                   }}
                 >
                   <strong>
@@ -123,14 +123,15 @@ const OverviewSection = () => {
                       ml: 1,
                     }}
                   >
-                    <p
+                    <span
                       style={{
                         fontFamily: "Newsreader",
+                        lineHeight: 1
                       }}
-                      className="  leading-none font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
+                      className=" mr-1  !leading-none    font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
                     >
                       96
-                    </p>
+                    </span>
                   </Typography>
                   ha
                 </Typography>
@@ -175,14 +176,14 @@ const OverviewSection = () => {
                       mx: 1,
                     }}
                   >
-                    <h2
+                    <span
                       style={{
                         fontFamily: "Newsreader",
                       }}
-                      className="  lg:mt-4 xl:mb-5 font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
+                      className="lg:mt-4 xl:mb-5 font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
                     >
                       27,6
-                    </h2>
+                    </span>
                   </Typography>
                   %
                 </Typography>

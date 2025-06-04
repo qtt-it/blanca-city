@@ -5,7 +5,13 @@ import { Box, Stack } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 
-export const ReceiveInformationSection: React.FC = () => {
+export const ReceiveInformationSection = ({
+  isLogo = true,
+  text,
+}: {
+  isLogo?: boolean;
+  text?: string;
+}) => {
   return (
     <Box>
       <Stack
@@ -19,9 +25,11 @@ export const ReceiveInformationSection: React.FC = () => {
         className="bg-right lg:bg-auto"
       >
         <Container className="flex w-full lg:py-[80px] flex-col items-center">
-          <Box width="184px" height="110px">
-            <ImageComponent img="/ReceiveInfo/logo-blanca-city-vungtau-2.png" />
-          </Box>
+          {isLogo && (
+            <Box width="184px" height="110px">
+              <ImageComponent img="/ReceiveInfo/logo-blanca-city-vungtau-2.png" />
+            </Box>
+          )}
           <Box
             sx={{
               textAlign: "center",
@@ -33,14 +41,16 @@ export const ReceiveInformationSection: React.FC = () => {
               marginBottom: "20px",
             }}
           >
-            Quý khách hàng điền thông tin bên dưới để nhận tư vấn chi tiết các
-            dòng sản phẩm đặc biệt tại dự án Blanca City by Sun Group.
+            {text ||
+              `Quý khách hàng điền thông tin bên dưới để nhận tư vấn chi tiết các
+            dòng sản phẩm đặc biệt tại dự án Blanca City by Sun Group.`}
           </Box>
           <Box className="w-full">
             <FormConsultation
               layout="grid"
+              isInputEmail={false}
               textBtn={"NHẬN THÔNG TIN"}
-              btnClassName="!flex-1 !w-[193px] !h-[36px] !font-[600]"
+              btnClassName="!flex-1 !w-[193px] !h-[36px] !font-[800]"
             />
           </Box>
           <Stack
