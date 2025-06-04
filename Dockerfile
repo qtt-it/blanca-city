@@ -2,9 +2,9 @@ FROM oven/bun:latest
 COPY package.json ./
 COPY bun.lock ./
 # RUN bun install
-# RUN apt-get update && apt-get install -y nodejs npm
-
 RUN bun install
+RUN apt-get update && apt-get install -y nodejs npm
+
 COPY . .
 # ENV NEXT_TELEMETRY_DISABLED 1
 RUN bun --bun next build
