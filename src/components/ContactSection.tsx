@@ -9,7 +9,7 @@ import {
   Divider,
   Grid,
 } from "@mui/material";
-import { Oswald } from "next/font/google";
+// import { Oswald } from "next/font/google";
 import { styled } from "@mui/material/styles";
 
 export const InputCustom = styled("input")(({ theme }) => ({
