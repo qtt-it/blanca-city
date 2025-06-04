@@ -16,12 +16,14 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import Container from "./container/container";
+import Link from "next/link";
 // import Container from "./container/container";
 interface HeaderProps {
-  onNavigate: (section: string) => void;
+  // onNavigate: (section: string) => void;
 }
 
-const Header = ({ onNavigate }: HeaderProps) => {
+const Header = ({}: // onNavigate
+HeaderProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
@@ -73,12 +75,12 @@ const Header = ({ onNavigate }: HeaderProps) => {
     setMobileOpen(!mobileOpen);
   };
 
-  const handleMenuClick = (id: string) => {
-    onNavigate(id);
-    if (mobileOpen) {
-      setMobileOpen(false);
-    }
-  };
+  // const handleMenuClick = (id: string) => {
+  //   // onNavigate(id);
+  //   if (mobileOpen) {
+  //     setMobileOpen(false);
+  //   }
+  // };
 
   return (
     <>
@@ -116,12 +118,13 @@ const Header = ({ onNavigate }: HeaderProps) => {
             >
               {menuItems.map((item) => (
                 <Button
-                  style={{
-                    fontFamily: "Oswald",
-                  } as any}
+                  style={
+                    {
+                      fontFamily: "Oswald",
+                    } as any
+                  }
                   className="!text-[#000203] !uppercase !text-[14.4px]"
                   key={item.id}
-                  onClick={() => handleMenuClick(item.id)}
                   sx={{
                     color: scrolled ? "primary.main" : "white",
                     // mx: 1,
@@ -131,7 +134,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
                     },
                   }}
                 >
-                  {item.label}
+                    <Link href={item.id}>{item.label}</Link>
                 </Button>
               ))}
             </Box>
@@ -141,7 +144,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
               edge="start"
               onClick={handleDrawerToggle}
               sx={{
-                display: { md: "none", },
+                display: { md: "none" },
                 color: scrolled ? "primary.main" : "primary.main",
                 border: "1px solid #eee",
                 borderRadius: 0,
@@ -167,7 +170,6 @@ const Header = ({ onNavigate }: HeaderProps) => {
                   fontFamily: "Oswald",
                 }}
                 className="!text-[#000203] p-2 !text-left !uppercase !text-[14.4px]"
-                onClick={() => handleMenuClick(item.id)}
                 sx={{
                   color: scrolled ? "primary.main" : "white",
                   "&:hover": {
@@ -176,7 +178,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
                   },
                 }}
               >
-                {item.label}
+                <Link href={item.id}>{item.label}</Link>
               </Box>
             ))}
           </div>
@@ -198,7 +200,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
           gap: 2,
         }}
       > */}
-        {/* <Box
+      {/* <Box
           sx={{
             bgcolor: "primary.main",
             color: "white",
@@ -216,7 +218,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
         >
           0977 48 7777
         </Box> */}
-        {/* <Box
+      {/* <Box
           sx={{
             bgcolor: "secondary.main",
             color: "white",

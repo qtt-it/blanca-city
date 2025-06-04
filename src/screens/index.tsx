@@ -1,6 +1,3 @@
-"use client";
-
-import ContactSection from "@/components/ContactSection";
 import { ContactWidget } from "@/components/ContactWidget";
 import DesignSection from "@/components/DesignSection";
 import Footer from "@/components/Footer";
@@ -14,48 +11,46 @@ import OverviewSection from "@/components/OverviewSection";
 import ProductsSection from "@/components/ProductsSection";
 import SunGroupSection from "@/components/SunGroupSection";
 import { Box, Grid } from "@mui/material";
-import React, { useRef } from "react";
+import React from "react";
 import { ReceiveInformationSection } from "./ReceiveInformationSection";
 import { TotalAreaSection } from "./TotalAreaSection";
 import { MapAddressSection } from "./MapAddressSection";
-import { ConsultingSection } from "./ConsultingSection";
 import BannerComponent from "@/components/commons/HeroBannerComponent";
 import { CommentSection } from "@/components/CommentSection";
 import VideoSlider from "@/components/VideoSlider";
-import Link from "next/link";
 
 export const MainPage: React.FC = () => {
-  const locationRef = useRef<HTMLDivElement>(null);
-  const overviewRef = useRef<HTMLDivElement>(null);
-  const highlightsRef = useRef<HTMLDivElement>(null);
-  const productsRef = useRef<HTMLDivElement>(null);
-  const designRef = useRef<HTMLDivElement>(null);
-  const sungroupRef = useRef<HTMLDivElement>(null);
+  // const locationRef = useRef<HTMLDivElement>(null);
+  // const overviewRef = useRef<HTMLDivElement>(null);
+  // const highlightsRef = useRef<HTMLDivElement>(null);
+  // const productsRef = useRef<HTMLDivElement>(null);
+  // const designRef = useRef<HTMLDivElement>(null);
+  // const sungroupRef = useRef<HTMLDivElement>(null);
 
-  const handleNavigate = (section: string) => {
-    switch (section) {
-      case "location":
-        locationRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "overview":
-        overviewRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "highlights":
-        highlightsRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "products":
-        productsRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "design":
-        designRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "sungroup":
-        sungroupRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      default:
-        break;
-    }
-  };
+  // const handleNavigate = (section: string) => {
+  //   switch (section) {
+  //     case "location":
+  //       locationRef.current?.scrollIntoView({ behavior: "smooth" });
+  //       break;
+  //     case "overview":
+  //       overviewRef.current?.scrollIntoView({ behavior: "smooth" });
+  //       break;
+  //     case "highlights":
+  //       highlightsRef.current?.scrollIntoView({ behavior: "smooth" });
+  //       break;
+  //     case "products":
+  //       productsRef.current?.scrollIntoView({ behavior: "smooth" });
+  //       break;
+  //     case "design":
+  //       designRef.current?.scrollIntoView({ behavior: "smooth" });
+  //       break;
+  //     case "sungroup":
+  //       sungroupRef.current?.scrollIntoView({ behavior: "smooth" });
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // };
 
   return (
     <Box>
@@ -73,7 +68,7 @@ export const MainPage: React.FC = () => {
           </Box>
         </Box>
       </Box>
-      <Header onNavigate={handleNavigate} />
+      <Header />
       <Grid size={{ xs: 12 }}></Grid>
       <Grid size={{ xs: 12 }}>
         <Box
@@ -91,7 +86,7 @@ export const MainPage: React.FC = () => {
         </Box>
       </Grid>
       <Grid size={{ xs: 12 }}>
-        <Box ref={locationRef}>
+        <Box>
           <LocationSection />
         </Box>
       </Grid>
@@ -126,12 +121,12 @@ export const MainPage: React.FC = () => {
         />
       </Grid>
       <Grid size={{ xs: 12 }}>
-        <Box ref={overviewRef}>
+        <Box>
           <OverviewSection />
         </Box>
       </Grid>
       <Grid size={{ xs: 12 }}>
-        <Box ref={highlightsRef}>
+        <Box>
           <HighlightsSection />
         </Box>
       </Grid>
@@ -141,17 +136,17 @@ export const MainPage: React.FC = () => {
         <TotalAreaSection />
       </Grid>
       <Grid size={{ xs: 12 }}>
-        <Box ref={productsRef}>
+        <Box>
           <ProductsSection />
         </Box>
       </Grid>
       <Grid size={{ xs: 12 }}>
-        <Box ref={designRef}>
+        <Box>
           <DesignSection />
         </Box>
       </Grid>
       <Grid size={{ xs: 12 }}>
-        <Box ref={sungroupRef}>
+        <Box>
           {" "}
           {/*xong, chưa review */}
           <SunGroupSection />

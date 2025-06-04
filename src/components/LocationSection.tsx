@@ -1,3 +1,4 @@
+"use client"
 import { Box, Typography, Grid, Paper } from "@mui/material";
 import { motion } from "framer-motion";
 import Container from "./container/container";

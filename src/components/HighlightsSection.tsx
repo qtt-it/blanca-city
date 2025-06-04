@@ -44,7 +44,7 @@ const HighlightsSection = () => {
             <h2 className="text-xl font-semibold text-[#e16a92]">
               Sun World Vũng Tàu
             </h2>
-            <p className=" text-gray-700 mt-2">
+            <Box className="text-gray-700 mt-2">
               <strong className="text-[#0665A8] mr-1">
                 Quy mô lớn nhất của Sun Group với 15ha, 21 trò chơi đặc sắc
               </strong>
@@ -68,7 +68,7 @@ const HighlightsSection = () => {
                   River.
                 </path>
               </Box>
-            </p>
+            </Box>
 
             <div className="rounded-lg block mt-8 md:hidden overflow-hidden">
               <img src="/light3.jpg" alt="Image 1" className="w-full h-auto" />
@@ -81,13 +81,13 @@ const HighlightsSection = () => {
                 <h3 className="text-lg font-semibold text-[#e16a92]">
                   Coastal Hotel
                 </h3>
-                <p className=" text-gray-700 mt-2">
+                <Box className=" text-gray-700 mt-2">
                   <strong className="text-[#0665A8]">
                     Thương hiệu khách sạn 5 sao quốc tế đầu tiên tại Vũng Tàu{" "}
                   </strong>
                   , với sự góp mặt của một trong những đối tác của Sun Group:
                   Hilton, Capella, Marriott, IHG, Accor, IMG...
-                </p>
+                </Box>
                 <div className="rounded-lg block mt-8 md:hidden overflow-hidden">
                   <img
                     src="/light1.jpg"
@@ -100,11 +100,11 @@ const HighlightsSection = () => {
                 <h3 className="text-lg font-semibold text-[#e16a92]">
                   Sun Retail Vũng Tàu
                 </h3>
-                <p className=" text-gray-700 mt-2">
+                <Box className=" text-gray-700 mt-2">
                   <strong className="text-[#0665A8]">
                     Trung tâm thương mại biển mặt biển lớn nhất miền Nam,{" "}
                   </strong>
-                </p>
+                </Box>
                 <p className="  mt-2">
                   ⬘ Phố đi bộ thương mại sầm uất, mang lại trải nghiệm khác biệt
                   nhất cho du khách.
