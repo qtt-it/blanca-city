@@ -9,7 +9,7 @@ import {
   Divider,
   Grid,
 } from "@mui/material";
-import { Oswald } from "next/font/google";
+// import { Oswald } from "next/font/google";
 import { styled } from "@mui/material/styles";
 
 export const InputCustom = styled("input")(({ theme }) => ({
@@ -40,11 +40,11 @@ export const InputCustom = styled("input")(({ theme }) => ({
   },
 }));
 
-const oswald = Oswald({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-oswald",
-});
+// const oswald = Oswald({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "700"],
+//   variable: "--font-oswald",
+// });
 
 const commentBoxStyle = {
   fontFamily: `"Krub",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
