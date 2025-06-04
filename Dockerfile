@@ -13,12 +13,12 @@
 # Stage 1: Build the application
 FROM node:18-alpine
 
-WORKDIR /app/v2-stc
+# WORKDIR /app/v2-stc
 
 COPY . .
 RUN npm install -g npm
 RUN npm install --force
 RUN npm run build
-COPY .env .env
+# COPY .env .env
 EXPOSE 3000
 CMD ["npm", "start"]
