@@ -29,7 +29,7 @@ jobs:
               git pull
               CONTAINER_EXISTS=$(docker-compose -f docker-compose.yml ps -q ${{ steps.get_project.outputs.project }})
               if [ -n "$CONTAINER_EXISTS" ]; then
-                IMAGE_NAME="nguyenphuloc/${{ steps.get_project.outputs.project }}"
+                IMAGE_NAME="blancacity_container"
                 CONTAINER_ID=$(docker ps -q --filter "ancestor=$IMAGE_NAME")
                 docker stop $CONTAINER_ID
                 docker rm $CONTAINER_ID 
