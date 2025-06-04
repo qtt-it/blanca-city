@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      
       args:
         PROJECT_NAME: web
         PORT_PROGRAM: 6002:3000
