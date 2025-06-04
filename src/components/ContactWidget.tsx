@@ -1,17 +1,20 @@
 import React from "react";
 import { Button, Box } from "@mui/material";
-import { Oswald } from "next/font/google";
+// import { Oswald } from "next/font/google";
 
-const oswald = Oswald({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-oswald",
-});
+// const oswald = Oswald({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "700"],
+//   variable: "--font-oswald",
+// });
 
 export const ContactWidget: React.FC = () => {
   return (
     <Box
-      className={oswald.variable}
+      style={{
+        fontFamily: "Oswald",
+      }}
+      // className={oswald.variable}
       sx={{
         position: "fixed",
         bottom: 16,
