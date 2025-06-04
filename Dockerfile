@@ -12,8 +12,15 @@
 
 # Stage 1: Build the application
 FROM node:18-alpine
+WORKDIR /app
 
 # WORKDIR /app/v2-stc
+COPY package*.json ./
+
+# Cài đặt các dependencies của dự án
+RUN npm install --frozen-lockfile
+
+# Copy toàn bộ mã nguồn vào container
 
 COPY . .
 RUN npm install -g npm
