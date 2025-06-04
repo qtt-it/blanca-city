@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Manrope } from "next/font/google";
 import ThemeRegistry from "./ThmeRegistry";
 import "./globals.css";
 import Head from "next/head";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'BLANCA CITY - Đô thị "Biểu tượng mới" của Sun Group tại TP Vũng Tàu',
