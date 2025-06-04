@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+// import { Manrope } from "next/font/google";
 import ThemeRegistry from "./ThmeRegistry";
 import "./globals.css";
 import Head from "next/head";
@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   title: 'BLANCA CITY - Đô thị "Biểu tượng mới" của Sun Group tại TP Vũng Tàu',
   description: 'Đô thị "Biểu tượng mới" của Sun Group tại TP Vũng Tàu',
 };
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"], // tương ứng với các trọng số (wght) bạn cần
-  display: "swap",
-});
+// const manrope = Manrope({
+//   subsets: ["latin"],
+//   weight: ["300", "400", "500", "600", "700", "800"], // tương ứng với các trọng số (wght) bạn cần
+//   display: "swap",
+// });
 
 export default function RootLayout({
   children,
@@ -29,7 +29,12 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </Head>
-      <body className={manrope.className}>
+      <body
+        style={{
+          fontFamily: "Manrope",
+        }}
+        // className={manrope.className}
+      >
         <ThemeRegistry>{children}</ThemeRegistry>
       </body>
     </html>
