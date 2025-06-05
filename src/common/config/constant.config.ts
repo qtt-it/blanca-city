@@ -1,7 +1,7 @@
 import { Metadata, MetadataRoute } from "next";
 
 export class ConstantConfig {
-  public static BASE_URL = "http://14.225.205.200:6002";
+  public static BASE_URL = "https://blanca-city.vercel.app";
 
   public static readonly DEFAULT_DESCRIPTION =
     "Nổi tiếng trên bản đồ du lịch Đông Nam Bộ và cả miền Nam nhưng Vũng Tàu chưa có một dự án đô thị đẳng cấp đúng nghĩa, chưa có các khu vui chơi, giải trí hoành tráng hay những công trình mang tính biểu tượng để “check-in” . Tất cả những mong đợi này sẽ xuất hiện ở BLANCA CITY - “Biểu tượng đô thị all-in-one” đầu tiên của […]";
@@ -236,7 +236,7 @@ export class ConstantConfig {
   public static DEFAULT_METADATA(): Metadata {
     return {
       title: "BLANCA CITY",
-      metadataBase: new URL("http://14.225.205.200:6002/"),
+      metadataBase: new URL("https://blanca-city.vercel.app/"),
       applicationName: "BLANCA CITY",
       authors: [
         {
@@ -257,7 +257,7 @@ export class ConstantConfig {
         },
       ],
       alternates: {
-        canonical: "http://14.225.205.200:6002/",
+        canonical: "https://blanca-city.vercel.app/",
       },
       openGraph: {
         type: "website",
@@ -265,7 +265,7 @@ export class ConstantConfig {
         siteName: "STC Golden Land",
         countryName: "Việt Nam",
         description: this.DEFAULT_DESCRIPTION,
-        url: "http://14.225.205.200:6002/",
+        url: "https://blanca-city.vercel.app/",
         locale: "vi_VN",
         images: this.DEFAULT_OG_IMAGE,
       },
