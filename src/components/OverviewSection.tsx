@@ -3,8 +3,35 @@
 import { Box, Typography, Grid, Divider } from "@mui/material";
 import { motion } from "framer-motion";
 import Container from "./container/container";
+import { useEffect, useRef, useState } from "react";
 
 const OverviewSection = () => {
+  const [isInView, setIsInView] = useState(false);
+  const boxRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (boxRef.current) {
+      observer.observe(boxRef.current);
+    }
+
+    return () => {
+      if (boxRef.current) {
+        observer.unobserve(boxRef.current);
+      }
+    };
+  }, []);
+
   return (
     <Box
       sx={{
@@ -27,13 +54,12 @@ const OverviewSection = () => {
         {/* Content */}
         {/* <Container sx={{ position: "relative", margin: 0,  zIndex: 1 }}> */}
         <Container className="relative !pt-0">
-          <Box
-            component={motion.div}
-            initial={{ opacity: 0, x: 50 }}
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="lg:w-[45%] lg:top-[64px]  lg:absolute w-full lg:left-[52%]"
+            className="lg:w-[45%] lg:top-[64px] lg:absolute w-full lg:left-[52%]"
           >
             <h2
               style={{
@@ -43,6 +69,8 @@ const OverviewSection = () => {
             >
               Tổng Quan Dự Án
             </h2>
+          </motion.div>
+          <Box className="lg:w-[45%] lg:top-[64px]  lg:absolute w-full lg:left-[52%] mt-[70px]">
             <Box
               sx={{
                 display: "flex",
@@ -126,7 +154,7 @@ const OverviewSection = () => {
                     <span
                       style={{
                         fontFamily: "Newsreader",
-                        lineHeight: 1
+                        lineHeight: 1,
                       }}
                       className=" mr-1  !leading-none    font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
                     >
@@ -246,8 +274,8 @@ const OverviewSection = () => {
             pointerEvents: "none",
           }}
         >
-          {/* <motion.div
-            initial={{ opacity: 0, y: 100 }}
+          <motion.div
+            initial={{ opacity: 0, y: 300 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
@@ -255,28 +283,28 @@ const OverviewSection = () => {
               width: "100%",
               height: "auto",
             }}
-          > */}
-          <img
-            src="/ProjectOverview/tong-quan-du-an-min.png"
-            style={{
-              width: "100%",
-              height: "auto",
-              objectFit: "cover",
-              objectPosition: "bottom center",
-            }}
-            className="lg:flex hidden"
-          />
-          <img
-            src="/ProjectOverview/tong-quan-du-an-min-mb.png"
-            style={{
-              width: "100%",
-              height: "auto",
-              objectFit: "cover",
-              objectPosition: "bottom center",
-            }}
-            className="flex lg:hidden"
-          />
-          {/* </motion.div> */}
+          >
+            <img
+              src="/ProjectOverview/tong-quan-du-an-min.png"
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "cover",
+                objectPosition: "bottom center",
+              }}
+              className="lg:flex hidden"
+            />
+            <img
+              src="/ProjectOverview/tong-quan-du-an-min-mb.png"
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "cover",
+                objectPosition: "bottom center",
+              }}
+              className="flex lg:hidden"
+            />
+          </motion.div>
         </Box>
       </Box>
     </Box>

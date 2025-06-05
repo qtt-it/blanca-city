@@ -20,38 +20,6 @@ import { CommentSection } from "@/components/CommentSection";
 import VideoSlider from "@/components/VideoSlider";
 
 export const MainPage: React.FC = () => {
-  // const locationRef = useRef<HTMLDivElement>(null);
-  // const overviewRef = useRef<HTMLDivElement>(null);
-  // const highlightsRef = useRef<HTMLDivElement>(null);
-  // const productsRef = useRef<HTMLDivElement>(null);
-  // const designRef = useRef<HTMLDivElement>(null);
-  // const sungroupRef = useRef<HTMLDivElement>(null);
-
-  // const handleNavigate = (section: string) => {
-  //   switch (section) {
-  //     case "location":
-  //       locationRef.current?.scrollIntoView({ behavior: "smooth" });
-  //       break;
-  //     case "overview":
-  //       overviewRef.current?.scrollIntoView({ behavior: "smooth" });
-  //       break;
-  //     case "highlights":
-  //       highlightsRef.current?.scrollIntoView({ behavior: "smooth" });
-  //       break;
-  //     case "products":
-  //       productsRef.current?.scrollIntoView({ behavior: "smooth" });
-  //       break;
-  //     case "design":
-  //       designRef.current?.scrollIntoView({ behavior: "smooth" });
-  //       break;
-  //     case "sungroup":
-  //       sungroupRef.current?.scrollIntoView({ behavior: "smooth" });
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
-
   return (
     <Box>
       <Box>
@@ -136,7 +104,7 @@ export const MainPage: React.FC = () => {
         <TotalAreaSection />
       </Grid>
       <Grid size={{ xs: 12 }}>
-        <Box>
+        <Box id="products">
           <ProductsSection />
         </Box>
       </Grid>

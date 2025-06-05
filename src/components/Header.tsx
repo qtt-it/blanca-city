@@ -1,26 +1,11 @@
 "use client";
 
-import {
-  Box,
-  AppBar,
-  Toolbar,
-  Button,
-  IconButton,
-  Drawer,
-  List,
-  ListItemText,
-  ListItemButton,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Box, Toolbar, Button, IconButton } from "@mui/material";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import clsx from "clsx";
 import Container from "./container/container";
 import Link from "next/link";
-// import Container from "./container/container";
-interface HeaderProps {
-  // onNavigate: (section: string) => void;
-}
+interface HeaderProps {}
 
 const Header = ({}: // onNavigate
 HeaderProps) => {
@@ -134,7 +119,7 @@ HeaderProps) => {
                     },
                   }}
                 >
-                    <Link href={item.id}>{item.label}</Link>
+                  <Link href={`#${item.id}`}>{item.label}</Link>
                 </Button>
               ))}
             </Box>
@@ -158,7 +143,6 @@ HeaderProps) => {
           className="w-full absolute top-[76px] left-0  bg-[rgba(255,255,255,1)] transition-all duration-250 ease-in-out  overflow-hidden "
           style={{
             boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.3)",
-            // border: open ? "2px solid rgba(255,255,255,0.2)" : "",
             maxHeight: mobileOpen ? "1150px" : 0,
           }}
         >
@@ -178,7 +162,7 @@ HeaderProps) => {
                   },
                 }}
               >
-                <Link href={item.id}>{item.label}</Link>
+                <Link href={`#${item.id}`}>{item.label}</Link>
               </Box>
             ))}
           </div>

@@ -5,11 +5,36 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import clsx from "clsx";
 import Container from "./container/container";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FormConsultation } from "./form/FormConsultation";
 
 const IntroSection = () => {
   const [open, setOpen] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const boxRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (boxRef.current) {
+      observer.observe(boxRef.current);
+    }
+
+    return () => {
+      if (boxRef.current) {
+        observer.unobserve(boxRef.current);
+      }
+    };
+  }, []);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -84,7 +109,13 @@ const IntroSection = () => {
             dưỡng của TP HCM.
           </p>
         </Box>
-        <Box className="lg:w-1/2 w-full">
+        <motion.div
+          ref={boxRef}
+          className="lg:w-1/2 w-full"
+          initial={{ y: 50 }}
+          animate={{ y: isInView ? 0 : 500 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
           <Box
             sx={{
               background: "linear-gradient(to bottom, #e88da4, transparent)",
@@ -104,36 +135,44 @@ const IntroSection = () => {
               <img src="/banner-sub.jpg" alt="" className="w-full h-full" />
             </Box>
           </Box>
-        </Box>
+        </motion.div>
       </Container>
       <Container className="mt-[-28px] lg:mt-0">
-        <button
-          style={{
-            fontFamily: "Newsreader",
-            // fontSize: 20 !important
-          }}
-          onClick={handleOpen}
-          className={clsx(
-            "text-white duration-500 !text-[20px]  border-solid border-white rounded-md  cursor-pointer mx-auto flex items-center py-[8px] px-[30px] font-[500]",
-            {
-              "bg-gradient-to-l from-[#e16a92] to-[#f190b1] border": !isHovered,
-              "bg-[#0b3051] border-0": isHovered,
-            }
-          )}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          // className="text-white !hover:bg-[#0b3051]  text-[20px]  border border-solid rounded-md border-white cursor-pointer mx-auto items-center flex bg-gradient-to-l from-[#e16a92] to-[#f190b1] py-[8px] px-[30px] font-[500]"
+        <motion.div
+          ref={boxRef}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isInView ? 1 : 0 }}
+          transition={{ duration: 1 }}
         >
-          <p className="justify-center md:jutify-start !text-[20px] md:text-lg flex-wrap items-center flex ">
-            <img
-              src={"/ic_post.png"}
-              className={clsx("w-6 mr-2 h-6 duration-100 blinking-image")}
-            />
-            Nhận trọn bộ thông tin dự án
-            <strong className="mx-1">Blanca City by Sun Group</strong>
-            tại đây
-          </p>
-        </button>
+          <button
+            style={{
+              fontFamily: "Newsreader",
+              // fontSize: 20 !important
+            }}
+            onClick={handleOpen}
+            className={clsx(
+              "text-white duration-500 !text-[20px]  border-solid border-white rounded-md  cursor-pointer mx-auto flex items-center py-[8px] px-[30px] font-[500]",
+              {
+                "bg-gradient-to-l from-[#e16a92] to-[#f190b1] border":
+                  !isHovered,
+                "bg-[#0b3051] border-0": isHovered,
+              }
+            )}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            // className="text-white !hover:bg-[#0b3051]  text-[20px]  border border-solid rounded-md border-white cursor-pointer mx-auto items-center flex bg-gradient-to-l from-[#e16a92] to-[#f190b1] py-[8px] px-[30px] font-[500]"
+          >
+            <p className="justify-center md:jutify-start !text-[20px] md:text-lg flex-wrap items-center flex ">
+              <img
+                src={"/ic_post.png"}
+                className={clsx("w-6 mr-2 h-6 duration-100 blinking-image")}
+              />
+              Nhận trọn bộ thông tin dự án
+              <strong className="mx-1">Blanca City by Sun Group</strong>
+              tại đây
+            </p>
+          </button>
+        </motion.div>
         {
           <>
             {/* Overlay mờ nền */}

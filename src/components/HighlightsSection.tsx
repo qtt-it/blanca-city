@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Typography, Grid, Paper } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import Container from "./container/container";
 
@@ -20,14 +20,25 @@ const HighlightsSection = () => {
       </Box>
       <Container className="text-[#10184C] font-[500]">
         <Box className="mb-10 md:mt-0">
-          <span
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
             style={{
-              fontFamily: "Newsreader",
+              width: "100%",
+              height: "auto",
             }}
-            className="text-[48px] mx-1 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f190b1] bg-clip-text text-transparent"
           >
-            Điểm Nhấn Nổi Bật
-          </span>
+            <span
+              style={{
+                fontFamily: "Newsreader",
+              }}
+              className="text-[48px] mx-1 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f190b1] bg-clip-text text-transparent"
+            >
+              Điểm Nhấn Nổi Bật
+            </span>
+          </motion.div>
           <Typography
             sx={{
               fontStyle: "italic",
@@ -35,7 +46,19 @@ const HighlightsSection = () => {
             }}
             className="!lg:text-[32px] text-[#0665a8] font-semibold w-max !text-[30px] mb-[40px] lg:mb-0 mt-[-10px] md:mt-0"
           >
+             <motion.span
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+          >
+
             Tại Blanca City
+          </motion.span>
           </Typography>
         </Box>
 
@@ -122,6 +145,16 @@ const HighlightsSection = () => {
               </div>
             </div>
 
+            <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+          >
             <div className="hidden md:grid grid-cols-3 gap-2 mt-6">
               <div className="rounded-lg overflow-hidden">
                 <img
@@ -145,6 +178,7 @@ const HighlightsSection = () => {
                 />
               </div>
             </div>
+</motion.div>
           </div>
         </div>
       </Container>

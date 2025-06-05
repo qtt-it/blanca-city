@@ -1,10 +1,11 @@
 "use client";
 
-import { Box, Typography, Grid, Paper } from "@mui/material";
+import { Box, Typography, Paper } from "@mui/material";
 import { motion } from "framer-motion";
 import Container from "./container/container";
 import { FormConsultation } from "./form/FormConsultation";
 import BannerComponent from "./commons/HeroBannerComponent";
+import { SlideInAnimation } from "./commons/Animations";
 
 export const FormDesign = ({ isBorder = true }) => {
   return (
@@ -80,28 +81,27 @@ const DesignSection = () => {
     >
       <Container className="flex flex-col-reverse lg:flex-row justify-between items-center gap-x-7">
         <Box className="lg:w-1/2 w-full mt-4 lg:mt-0">
-          <Box className="rounded-lg overflow-hidden border border-solid border-[#f191b1]">
-            <BannerComponent
-              img="/inspiration.webp"
-              imgTablet="/inspiration.webp"
-              imgMb="/inspiration-mb.webp"
-            />
-          </Box>
+          <SlideInAnimation type="bottom">
+            <Box className="rounded-lg overflow-hidden border border-solid border-[#f191b1]">
+              <BannerComponent
+                img="/inspiration.webp"
+                imgTablet="/inspiration.webp"
+                imgMb="/inspiration-mb.webp"
+              />
+            </Box>
+          </SlideInAnimation>
         </Box>
         <Box className="lg:w-1/2 w-full text-[#E3E3E3]">
-          <Box
-            component={motion.div}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <Box>
             <h2
-            style={{
-              fontFamily: "Newsreader"
-            }}
-            className="xl:text-[48px] text-[44px] lg:mb-4 mb-8 lg:mt-4 xl:mb-5 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f192b1] bg-clip-text text-transparent">
-              Cảm Hứng Thiết Kế
+              style={{
+                fontFamily: "Newsreader",
+              }}
+              className="xl:text-[48px] text-[44px] lg:mb-4 mb-8 lg:mt-4 xl:mb-5 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f192b1] bg-clip-text text-transparent"
+            >
+              <SlideInAnimation type="right">
+                Cảm Hứng Thiết Kế
+              </SlideInAnimation>
             </h2>
             <Typography
               variant="body1"

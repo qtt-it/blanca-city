@@ -9,6 +9,13 @@
   --accent-color: #f97316;
 }
 
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 68px; /* mặc định cho desktop */
+}
+
+
 body {
   color: rgb(var(--foreground-rgb));
 

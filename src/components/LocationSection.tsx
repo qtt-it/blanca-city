@@ -1,10 +1,36 @@
-"use client"
+"use client";
 import { Box, Typography, Grid, Paper } from "@mui/material";
 import { motion } from "framer-motion";
 import Container from "./container/container";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const LocationSection = () => {
+  const [isInView, setIsInView] = useState(false);
+  const boxRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (boxRef.current) {
+      observer.observe(boxRef.current);
+    }
+
+    return () => {
+      if (boxRef.current) {
+        observer.unobserve(boxRef.current);
+      }
+    };
+  }, []);
+
   const transportOptions = [
     {
       title: "Đường bộ:",
@@ -71,20 +97,27 @@ const LocationSection = () => {
       }
       className="bg-gradient-to-b relative text-white from-[#0f184c] to-[#0565a8]"
     >
-       <Box className="xl:w-[39%] md:w-full  lg:w-full w-[180%] lg:h-[75%] md:h-1/2 h-3/10 absolute right-0 bottom-0">
+      <Box className="xl:w-[39%] md:w-full  lg:w-full w-[180%] lg:h-[75%] md:h-1/2 h-3/10 absolute right-0 bottom-0">
         <img src="/decor1.png" className="w-full h-full " />
       </Box>
       <Container>
         <Box className="flex w-full lg:gap-x-[70px] flex-wrap lg:flex-nowrap justify-between mb-3 lg:mb-12 items-end">
           <Box className="mb-10 md:mb-0">
-            <span
-              style={{
-                fontFamily: "Newsreader",
-              }}
-              className="text-[48px] mx-1 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f190b1] bg-clip-text text-transparent"
+            <motion.div
+              ref={boxRef}
+              initial={{ x: -100 }}
+              animate={{ x: isInView ? 0 : -100 }}
+              transition={{ type: "spring", stiffness: 150, damping: 20 }} 
             >
-              Vị trí
-            </span>
+              <span
+                style={{
+                  fontFamily: "Newsreader",
+                }}
+                className="text-[48px] mx-1 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f190b1] bg-clip-text text-transparent"
+              >
+                Vị trí
+              </span>
+            </motion.div>
             <Typography
               sx={{
                 fontStyle: "italic",

@@ -4,6 +4,7 @@ import { Box, Typography, Grid, Paper, Stack } from "@mui/material";
 import { motion } from "framer-motion";
 import { ImageComponent } from "./commons/ImageComponent";
 import Container from "./container/container";
+import { SlideInAnimation } from "./commons/Animations";
 
 const SunGroupSection = () => {
   return (
@@ -22,31 +23,35 @@ const SunGroupSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Stack
-            sx={{
-              // background: "linear-gradient(90deg, #df658e 0, #f293b3)",
-              // WebkitBackgroundClip: "text",
-              // color: "transparent",
-              fontSize: "48px",
-              fontWeight: 600,
-              fontFamily: "Newsreader",
-            }}
-            className="lg:w-1/2 w-full"
-          >
-            <span className="text-[#e7779c]">Những "Biểu Tượng"</span>
-            <span className="text-[#f292b3]">Du Lịch & Đô Thị Sun Group</span>
-          </Stack>
-          <Typography
-            sx={{
-              marginBottom: "70px",
-              fontStyle: "italic",
-              fontSize: "32px",
-              fontWeight: 600,
-              fontFamily: "Newsreader",
-            }}
-          >
-            Đã triển khai
-          </Typography>
+          <SlideInAnimation type="left">
+            <Stack
+              sx={{
+                // background: "linear-gradient(90deg, #df658e 0, #f293b3)",
+                // WebkitBackgroundClip: "text",
+                // color: "transparent",
+                fontSize: "48px",
+                fontWeight: 600,
+                fontFamily: "Newsreader",
+              }}
+              className="lg:w-1/2 w-full"
+            >
+              <span className="text-[#e7779c]">Những "Biểu Tượng"</span>
+              <span className="text-[#f292b3]">Du Lịch & Đô Thị Sun Group</span>
+            </Stack>
+          </SlideInAnimation>
+          <SlideInAnimation type="bottom">
+            <Typography
+              sx={{
+                marginBottom: "70px",
+                fontStyle: "italic",
+                fontSize: "32px",
+                fontWeight: 600,
+                fontFamily: "Newsreader",
+              }}
+            >
+              Đã triển khai
+            </Typography>
+          </SlideInAnimation>
         </motion.div>
         <Box className="flex flex-col lg:flex-row gap-y-4 lg:gap-x-2">
           {[
@@ -72,7 +77,9 @@ const SunGroupSection = () => {
         }}
         className="lg:mt-[-140px] md:mt-[-120px] mt-[-40px]"
       >
-        <ImageComponent img={"/SunGroup/sungroup.png"} />
+        <SlideInAnimation type="bottom">
+          <ImageComponent img={"/SunGroup/sungroup.png"} />
+        </SlideInAnimation>
       </Box>
     </Box>
   );

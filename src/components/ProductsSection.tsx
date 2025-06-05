@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Typography, Grid, Paper } from "@mui/material";
+import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import Container from "./container/container";
 import { map } from "lodash";
@@ -67,21 +67,25 @@ const ProductsSection = () => {
         <img src="/decor2.png" className="w-full h-full " />
       </Box>
       <Container className="!lg:px-0 relative z-0 flex gap-x-7 flex-wrap lg:flex-nowrap items-center">
-        <Box
-          component={motion.div}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="lg:w-1/2 w-full"
-        >
+        <Box className="lg:w-1/2 w-full">
           <h2
             style={{
               fontFamily: "Newsreader",
             }}
             className="xl:text-[48px] text-[44px] mb-5 lg:mt-4 lg:mb-5 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f192b1] bg-clip-text text-transparent"
           >
-            Các Dòng Sản Phẩm
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+            >
+              Các Dòng Sản Phẩm
+            </motion.div>
           </h2>
 
           {/* List product lines */}
@@ -137,26 +141,37 @@ const ProductsSection = () => {
           ))}
         </Box>
         <Box className="lg:w-1/2 w-full">
-          <Box
-            sx={{
-              background: "linear-gradient(to bottom, #e88da4, transparent)",
-              borderRadius: 3, // ~24px
-
-              padding: "12px",
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            style={{
+              width: "100%",
+              height: "auto",
             }}
-            className="xl:mt-4 lg:mt-8 mt-1 !w-full"
           >
             <Box
               sx={{
-                borderRadius: 3,
-                overflow: "hidden",
-                borderWidth: 0,
+                background: "linear-gradient(to bottom, #e88da4, transparent)",
+                borderRadius: 3, // ~24px
+
+                padding: "12px",
               }}
-              className="w-full h-full"
+              className="xl:mt-4 lg:mt-8 mt-1 !w-full"
             >
-              <img src="/product-big.jpg" alt="" className="w-full h-full" />
+              <Box
+                sx={{
+                  borderRadius: 3,
+                  overflow: "hidden",
+                  borderWidth: 0,
+                }}
+                className="w-full h-full"
+              >
+                <img src="/product-big.jpg" alt="" className="w-full h-full" />
+              </Box>
             </Box>
-          </Box>
+          </motion.div>
         </Box>
       </Container>
     </Box>
