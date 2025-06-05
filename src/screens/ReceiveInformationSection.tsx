@@ -57,9 +57,9 @@ export const ReceiveInformationSection = ({
             flexDirection="row"
             sx={{ marginTop: "40px", color: "#f5b1bf" }}
           >
-            <Link href="tel:+0977487777" className="ml-[6px] flex gap-x-1 ">
+            <Link href="tel:+0939374739" className="ml-[6px] flex gap-x-1 ">
               <Box className="font-bold">HOTLINE: </Box>
-              <strong className="font-extrabold"> 0977 48 7777</strong>
+              <strong className="font-extrabold">0939 37 4739</strong>
             </Link>
           </Stack>
         </Container>

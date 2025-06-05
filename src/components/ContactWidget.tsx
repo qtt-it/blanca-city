@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const oswald = Oswald({
   subsets: ["latin"],
-  weight: ["400", "500", "600","700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-oswald",
 });
 
@@ -30,7 +30,7 @@ export const ContactWidget: React.FC = () => {
     >
       <Box sx={{ position: "relative" }}></Box>
 
-      <Box sx={{ display: "flex", gap: 2 }}>
+      <Box sx={{ display: "flex", alignItems:"end",gap: 2 }}>
         <Button
           variant="contained"
           sx={{
@@ -53,20 +53,18 @@ export const ContactWidget: React.FC = () => {
             alt="dong tay land"
             sx={{ width: 20, height: 20, mr: 1 }}
           />
-          0977 48 7777
+         0939 37 4739
         </Button>
 
-       
         <Link
           href="https://zalo.me/0939374739"
-          // href="https://www.facebook.com/share/1ASJ747GS1/?mibextid=wwXIfr"
           passHref
           target="_blank"
-          className="w-[px] h-[50px]  rounded-lg  relative overflow-hidden" 
+          className="w-[px] h-[50px]  rounded-lg  relative overflow-hidden"
         >
-  <div className="absolute top-[2px] rounded-lg right-0 bottom-0 w-[50px] h-[42px] z-1 bg-opacity-50 bg-white">
-    {/* Bạn có thể thêm nội dung vào div này nếu muốn */}
-  </div>
+          <div className="absolute top-[2px] rounded-lg right-0 bottom-0 w-[50px] h-[42px] z-1 bg-opacity-50 bg-white">
+            {/* Bạn có thể thêm nội dung vào div này nếu muốn */}
+          </div>
 
           <img
             // src="/ic_zalo.png"

@@ -18,7 +18,7 @@ export default function TermsOfUse() {
     >
       <Stack spacing={isMobile ? 1.5 : 2.5}>
         <Typography
-          variant={isMobile ? "h6" : "h5"}
+          // variant={isMobile ? "span" : "span"}
           fontWeight="bold"
           sx={{ textAlign: "center", color: theme.palette.primary.main }}
         >

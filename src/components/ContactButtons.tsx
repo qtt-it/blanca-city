@@ -31,7 +31,7 @@ const ContactButtons = () => {
             className="contact-float"
           >
             <a
-              href="tel:0977487777"
+              href="tel:0939374739"
               className="contact-button"
               aria-label="Gọi điện"
             >
