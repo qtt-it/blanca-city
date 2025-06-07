@@ -18,21 +18,27 @@ import { MapAddressSection } from "./MapAddressSection";
 import BannerComponent from "@/components/commons/HeroBannerComponent";
 import { CommentSection } from "@/components/CommentSection";
 import VideoSlider from "@/components/VideoSlider";
+import HeaderForm from "@/components/HeaderForm";
 
 export const MainPage: React.FC = () => {
   return (
     <Box>
       <Box>
         <Box id="#hero" className="max-w-[1920px]  relative mx-auto w-full">
-          <BannerComponent
-            img="/hero1.jpg"
-            imgTablet="/hero1-tablet.jpg"
-            imgMb="/hero1-mb.webp"
-          />
-          <Box className="absolute hidden md:flex left-[50%] translate-x-[-50%] bottom-[30px] z-10 cursor-pointer z-10 mx-auto w-full flex-col  justify-center items-center">
-            <span className="border-t-2 animationInOut1 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
-            <span className="border-t-2 animationInOut2 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
-            <span className="border-t-2 animationInOut3 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
+          <Box className="w-full relative">
+            <Box className="absolute w-full top-4 left-[50%] translate-x-[-50%] z-10">
+              <HeaderForm />
+            </Box>
+            <BannerComponent
+              img="/hero1.jpg"
+              imgTablet="/hero1-tablet.jpg"
+              imgMb="/hero1-mb.webp"
+            />
+            <Box className="absolute hidden md:flex left-[50%] translate-x-[-50%] bottom-[30px] z-10 cursor-pointer z-10 mx-auto w-full flex-col  justify-center items-center">
+              <span className="border-t-2 animationInOut1 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
+              <span className="border-t-2 animationInOut2 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
+              <span className="border-t-2 animationInOut3 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
+            </Box>
           </Box>
         </Box>
       </Box>

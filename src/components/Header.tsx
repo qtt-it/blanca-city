@@ -135,7 +135,10 @@ HeaderProps) => {
                 borderRadius: 0,
               }}
             >
-              <img src="/hamb.svg" className="w-[56px] h-[40px]" />
+              <img
+                src="/hamb.svg"
+                className="lg:w-[56px] lg:h-[40px] w-[40px] h-[32px]"
+              />
             </IconButton>
           </Toolbar>
         </Container>

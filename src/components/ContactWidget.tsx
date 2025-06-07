@@ -30,7 +30,7 @@ export const ContactWidget: React.FC = () => {
     >
       <Box sx={{ position: "relative" }}></Box>
 
-      <Box sx={{ display: "flex", alignItems:"end",gap: 2 }}>
+      <Box sx={{ display: "flex", alignItems: "end", gap: 2 }}>
         <Button
           variant="contained"
           sx={{
@@ -53,7 +53,7 @@ export const ContactWidget: React.FC = () => {
             alt="dong tay land"
             sx={{ width: 20, height: 20, mr: 1 }}
           />
-         0939 37 4739
+          <Link href="tel:+0939374739">0939 37 4739</Link>
         </Button>
 
         <Link
