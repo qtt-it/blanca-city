@@ -4,7 +4,7 @@ node_modules/
 out/
 dist/
 build/
-.env
+# .env
 yarn.lock 
 package-lock.json
 
