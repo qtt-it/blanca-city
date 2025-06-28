@@ -2,7 +2,7 @@ import { Metadata, MetadataRoute } from "next";
 
 export class ConstantConfig {
   public static BASE_URL = "https://blancacity.sungroup.io.vn";
-  public static BACKEND_URL =  "http://14.225.205.200:2228/insert-excel" 
+  public static BACKEND_URL =  "https://stc.sungroup.io.vn/insert-excel" 
 
   public static readonly DEFAULT_DESCRIPTION =
     "Nổi tiếng trên bản đồ du lịch Đông Nam Bộ và cả miền Nam nhưng Vũng Tàu chưa có một dự án đô thị đẳng cấp đúng nghĩa, chưa có các khu vui chơi, giải trí hoành tráng hay những công trình mang tính biểu tượng để “check-in” . Tất cả những mong đợi này sẽ xuất hiện ở BLANCA CITY - “Biểu tượng đô thị all-in-one” đầu tiên của […]";
