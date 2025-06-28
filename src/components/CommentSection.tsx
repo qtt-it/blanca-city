@@ -1,4 +1,5 @@
 "use client";
+import { ConstantConfig } from "@/common/config/constant.config";
 import { InputComponent } from "@/components/commons";
 import Container from "@/components/container/container";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -225,15 +226,12 @@ const FormComment = ({
     // console.log("Dữ liệu gửi:", { ...data, rootComment: currentComment });
     try {
       setLoading(true);
-      const res = await axios.post(
-        "http://14.225.205.200:2228/insert-excel" || "",
-        {
-          ...data,
-          // rootComment: currentComment,
-          sheet_id: "1qKZ02of1fnr4Anc1QNB5fHVoPW_i3ke4q07RkS7j4Eg",
-          sheet_name: "Blanca",
-        }
-      );
+      const res = await axios.post(ConstantConfig.BACKEND_URL, {
+        ...data,
+        // rootComment: currentComment,
+        sheet_id: "1qKZ02of1fnr4Anc1QNB5fHVoPW_i3ke4q07RkS7j4Eg",
+        sheet_name: "Blanca",
+      });
       setLoading(false);
       reset();
       setSnackbarMessage(

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { CommentFormType } from "@/components/CommentSection";
+import { ConstantConfig } from "@/common/config/constant.config";
 
 const useCommentSubmit = () => {
   const [loading, setLoading] = useState(false);
@@ -18,7 +19,7 @@ const useCommentSubmit = () => {
     // console.log("Dữ liệu gửi:", { ...data, rootComment: currentComment });
     try {
       setLoading(true);
-      const res = await axios.post("http://14.225.205.200:2228/insert-excel" || "", {
+      const res = await axios.post(ConstantConfig.BACKEND_URL, {
         ...data,
         sheet_id: "1qKZ02of1fnr4Anc1QNB5fHVoPW_i3ke4q07RkS7j4Eg",
         sheet_name: "Blanca",
