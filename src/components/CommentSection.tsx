@@ -44,7 +44,7 @@ const CommentItem = ({
   idCur,
   setindexForm,
 }: CommentType) => {
-  console.log("setindexForm", setindexForm);
+  // console.log("setindexForm", setindexForm);
 
   return (
     <Box className={clsx("relative", isSub ? "pl-4 lg:pl-6 lg:mt-5" : "")}>
@@ -222,10 +222,10 @@ const FormComment = ({
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data: CommentFormType) => {
-    console.log("Dữ liệu gửi:", { ...data, rootComment: currentComment });
+    // console.log("Dữ liệu gửi:", { ...data, rootComment: currentComment });
     try {
       setLoading(true);
-      const res = await axios.post("http://14.225.205.200:2228/insert-excel", {
+      const res = await axios.post(process.env.BACK_END_URL || "", {
         ...data,
         // rootComment: currentComment,
         sheet_id: "1qKZ02of1fnr4Anc1QNB5fHVoPW_i3ke4q07RkS7j4Eg",
@@ -234,7 +234,7 @@ const FormComment = ({
       setLoading(false);
       reset();
       setSnackbarMessage(
-        "Bình luận thành công, chúng tôi sẽ liên hệ trong thời gian sớm nhất!"
+        "Gửi thông tin thành công, chúng tôi sẽ liên hệ trong thời gian sớm nhất!"
       );
       setSnackbarSeverity("success");
       setOpenSnackbar(true);
@@ -248,9 +248,9 @@ const FormComment = ({
         comment: "",
       });
 
-      console.log("res", res);
+      // console.log("res", res);
     } catch (error) {
-      console.log("error", error);
+      // console.log("error", error);
       setLoading(false);
       setSnackbarMessage("Bình luận thất bại. Vui lòng thử lại sau.");
       setSnackbarSeverity("error");
@@ -263,7 +263,7 @@ const FormComment = ({
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
   };
-  console.log("openSnackbar", openSnackbar, "snackbarMessage", snackbarMessage);
+  // console.log("openSnackbar", openSnackbar, "snackbarMessage", snackbarMessage);
 
   return (
     <Box className="relative z-[3] mt-[40px] lg:mt-0">
@@ -311,9 +311,9 @@ const FormComment = ({
             Ngoài Họ tên (*), Số điện thoại{" "}
             <span className="text-black">hoặc</span> Email là trường bắt buộc.
             <br />
-            BLANCA CITY tuyệt đối tôn trọng quyền riêng tư của khách hàng,
-            chúng tôi KHÔNG công khai hoặc sử dụng thông tin liên lạc cho mục
-            đích khác.
+            BLANCA CITY tuyệt đối tôn trọng quyền riêng tư của khách hàng, chúng
+            tôi KHÔNG công khai hoặc sử dụng thông tin liên lạc cho mục đích
+            khác.
           </p>
         </Box>
 

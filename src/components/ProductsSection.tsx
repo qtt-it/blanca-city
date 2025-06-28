@@ -5,7 +5,9 @@ import { motion } from "framer-motion";
 import Container from "./container/container";
 import { map } from "lodash";
 import clsx from "clsx";
-
+// import Slider from "react-slick";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 interface ProductLine {
   title: string[];
   subtitle: string[];
@@ -20,8 +22,8 @@ interface ProductLine {
 
 const productLines: ProductLine[] = [
   {
-    title: ["Căn hộ Blanca", "Căn hộ Beacon"],
-    subtitle: ["ĐANG RA MẮT", "SẮP RA MẮT"],
+    title: ["Căn hộ Beacon", "Căn hộ Blanca"],
+    subtitle: ["SẮP RA MẮT)", "ĐANG NHẬN BOOKING"],
     highlights: [
       { label: "Loại hình sản phẩm", value: "Studio, 1PN, 2PN, 2PN góc" },
       { label: "Diện tích", value: "30.6m² - 68.6m²" },
@@ -34,7 +36,7 @@ const productLines: ProductLine[] = [
 
   {
     title: ["Casa Villa"],
-    subtitle: ["SẮP RA MẮT"],
+    subtitle: ["ĐANG NHẬN BOOKING"],
     highlights: [
       { label: "Loại hình sản phẩm", value: "Song Lập, Đơn Lập, Grand Villa" },
       { label: "Diện tích", value: "266m² - 319m²" },
@@ -45,7 +47,7 @@ const productLines: ProductLine[] = [
   },
   {
     title: ["Casa Townhouse"],
-    subtitle: ["SẮP RA MẮT"],
+    subtitle: ["ĐANG RA MẮT"],
     highlights: [
       { label: "Diện tích", value: "131m² - 150m²" },
       { label: "Chiều cao", value: "4 tầng + 1 tầng hầm" },
@@ -54,7 +56,12 @@ const productLines: ProductLine[] = [
     imgAlt: "Casa Townhouse",
   },
 ];
-
+const imageSlides = [
+  { url: "/product-big.jpg" },
+  { url: "/product-big-2.jpg" },
+  { url: "/product-big-3.jpg" },
+  { url: "/product-big-4.jpg" },
+];
 const ProductsSection = () => {
   return (
     <Box
@@ -140,7 +147,7 @@ const ProductsSection = () => {
             </div>
           ))}
         </Box>
-        <Box className="lg:w-1/2 w-full">
+        {/* <Box className="lg:w-1/2 w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -155,24 +162,89 @@ const ProductsSection = () => {
               sx={{
                 background: "linear-gradient(to bottom, #e88da4, transparent)",
                 borderRadius: 3, // ~24px
-
                 padding: "12px",
               }}
               className="xl:mt-4 lg:mt-8 mt-1 !w-full"
             >
-              <Box
-                sx={{
-                  borderRadius: 3,
-                  overflow: "hidden",
-                  borderWidth: 0,
+              <Slider
+                {...{
+                  infinite: true,
+                  speed: 500,
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  arrow: false,
+                  dots: true,
                 }}
-                className="w-full h-full"
               >
-                <img src="/product-big.jpg" alt="" className="w-full h-full" />
-              </Box>
+                <Box
+                  sx={{
+                    borderRadius: 3,
+                    overflow: "hidden",
+                    borderWidth: 0,
+                  }}
+                  className="w-full h-full"
+                >
+                  <img
+                    src="/product-big.jpg"
+                    alt=""
+                    className="w-full h-full"
+                  />
+                </Box>
+              </Slider>
             </Box>
           </motion.div>
-        </Box>
+        </Box> */}
+        <div
+          style={{
+            background: "linear-gradient(to bottom, #e88da4, transparent)",
+            borderRadius: 16, // ~24px
+            padding: "10px",
+          }}
+          className="!relative !aspect-[1/1] lg:w-1/2 w-full overflow-hidden"
+        >
+          {/* <Box
+            sx={{
+              background: "linear-gradient(to bottom, #e88da4, transparent)",
+              borderRadius: 3, // ~24px
+              padding: "12px",
+            }}
+            className="xl:mt-4 relative lg:mt-8 mt-1 !w-full"
+          > */}
+          <Swiper
+            modules={[Pagination]}
+            slidesPerView={1}
+            loop={true}
+            speed={500}
+            autoplay={{ delay: 3000 }} // 👉 auto slide sau mỗi 3000ms = 3 giây
+            pagination={{
+              el: ".custom-swiper-pagination",
+              clickable: true,
+              renderBullet: (index, className) => {
+                return `<span class="${className} !w-[12px]  !h-[12px]  rounded-full inline-block transition-all duration-300"></span>`;
+              },
+            }}
+            className="rounded-2xl"
+          >
+            {imageSlides.map((item, index) => (
+              <SwiperSlide className="!h-full" key={index}>
+                <img
+                  src={item.url}
+                  alt={`slide-${index}`}
+                  style={{ height: "100%" }}
+                  className="!w-full  aspect-[380/390] lg:aspect-[1/1] !h-full !object-cover rounded-xl"
+                />
+              </SwiperSlide>
+            ))}
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10">
+              <div className="bg-transparent  custom-swiper-pagination rounded-full px-6 lg:px-3 py-1">
+                <div className=" !w-max  absolute bottom-2 !left-1/2 -translate-x-1/2   z-10" />
+              </div>
+            </div>
+          </Swiper>
+
+          {/* Dots container */}
+          {/* </Box> */}
+        </div>
       </Container>
     </Box>
   );

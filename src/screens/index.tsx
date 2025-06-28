@@ -19,39 +19,47 @@ import BannerComponent from "@/components/commons/HeroBannerComponent";
 import { CommentSection } from "@/components/CommentSection";
 import VideoSlider from "@/components/VideoSlider";
 import HeaderForm from "@/components/HeaderForm";
+import Link from "next/link";
 
 export const MainPage: React.FC = () => {
   return (
     <Box>
-      <Box>
-        <Box id="#hero" className="max-w-[1920px]  relative mx-auto w-full">
-          <Box className="w-full relative">
-            <Box className="absolute w-full top-4 left-[50%] translate-x-[-50%] z-10">
-              <HeaderForm />
-            </Box>
-            <BannerComponent
-              img="/hero1.jpg"
-              imgTablet="/hero1-tablet.jpg"
-              imgMb="/hero1-mb.webp"
-            />
-            <Box className="absolute hidden md:flex left-[50%] translate-x-[-50%] bottom-[30px] z-10 cursor-pointer z-10 mx-auto w-full flex-col  justify-center items-center">
-              <span className="border-t-2 animationInOut1 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
-              <span className="border-t-2 animationInOut2 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
-              <span className="border-t-2 animationInOut3 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
-            </Box>
+      {/* <Box> */}
+      <Box id="#hero" className="max-w-[1920px] relative mx-auto w-full">
+        <Box className="w-full relative">
+          <Box className="absolute w-full top-4 left-[50%] translate-x-[-50%] z-10">
+            {/* <HeaderForm /> */}
           </Box>
+          <BannerComponent
+            img="/hero1.jpg"
+            imgTablet="/hero1-tablet.jpg"
+            imgMb="/hero1-mb.webp"
+          />
+          <Link
+       
+            href="#intro"
+            className=" absolute hidden md:flex left-[50%] translate-x-[-50%] bottom-[30px] z-10 cursor-pointer mx-auto w-full flex-col  justify-center items-center"
+          >
+            <span className="border-t-2 animationInOut1 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
+            <span className="border-t-2 animationInOut2 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
+            <span className="border-t-2 animationInOut3 border-r-2 mt-[-4px] border-gray-300 rotate-135 transform w-7 h-7 inline-block"></span>
+          </Link>
         </Box>
       </Box>
-      <Header />
-      <Grid size={{ xs: 12 }}></Grid>
+      {/* </Box> */}
+      {/* <Box id="first"> */}
+        <Header />
+      {/* </Box> */}
+      {/* <Grid size={{ xs: 12 }}></Grid> */}
       <Grid size={{ xs: 12 }}>
         <Box
-        // className="lg:pt-[64px] xl:pt-[76px] pt-[80px] md:pt-[80px]"
+          
+          // className="lg:pt-[64px] xl:pt-[76px] pt-[80px] md:pt-[80px]"
         >
           <HeroSection />
         </Box>
       </Grid>
-      <Grid size={{ xs: 12 }}>
+      <Grid size={{ xs: 12 }} id="intro">
         <Box
           className="
           mt-[-56px] md:mt-[-100px] lg:mt-[-160px] !xl:mt-[-200px] relative z-[2]"

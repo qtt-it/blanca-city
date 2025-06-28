@@ -1,7 +1,7 @@
 import { Metadata, MetadataRoute } from "next";
 
 export class ConstantConfig {
-  public static BASE_URL = "https://blanca-city.vercel.app";
+  public static BASE_URL = "https://blancacity.sungroup.io.vn";
 
   public static readonly DEFAULT_DESCRIPTION =
     "Nổi tiếng trên bản đồ du lịch Đông Nam Bộ và cả miền Nam nhưng Vũng Tàu chưa có một dự án đô thị đẳng cấp đúng nghĩa, chưa có các khu vui chơi, giải trí hoành tráng hay những công trình mang tính biểu tượng để “check-in” . Tất cả những mong đợi này sẽ xuất hiện ở BLANCA CITY - “Biểu tượng đô thị all-in-one” đầu tiên của […]";
@@ -127,11 +127,11 @@ export class ConstantConfig {
       "@context": "https://schema.org",
       graph: [
         {
-          "@id": "https://longthanh.stcgoldenland.com/",
+          "@id": this.BASE_URL,
           "@type": ["http://schema.org/CollectionPage"],
           "http://schema.org/breadcrumb": [
             {
-              "@id": "https://longthanh.stcgoldenland.com/",
+              "@id": this.BASE_URL,
             },
           ],
           "http://schema.org/inLanguage": [
@@ -141,7 +141,7 @@ export class ConstantConfig {
           ],
           "http://schema.org/isPartOf": [
             {
-              "@id": "https://longthanh.stcgoldenland.com/",
+              "@id": this.BASE_URL,
             },
           ],
           "http://schema.org/name": [
@@ -151,12 +151,12 @@ export class ConstantConfig {
           ],
           "http://schema.org/url": [
             {
-              "@id": "https://longthanh.stcgoldenland.com/",
+              "@id": this.BASE_URL,
             },
           ],
         },
         {
-          "@id": "https://longthanh.stcgoldenland.com/#breadcrumb",
+          "@id": `${this.BASE_URL}/#breadcrumb`,
           "@type": ["http://schema.org/BreadcrumbList"],
           "http://schema.org/itemListElement": [
             {
@@ -175,7 +175,7 @@ export class ConstantConfig {
           ],
         },
         {
-          "@id": "https://longthanh.stcgoldenland.com/#website",
+          "@id": `${this.BASE_URL}/#website`,
           "@type": ["http://schema.org/WebSite"],
           "http://schema.org/description": [
             {
@@ -215,8 +215,7 @@ export class ConstantConfig {
                   "@type": ["http://schema.org/EntryPoint"],
                   "http://schema.org/urlTemplate": [
                     {
-                      "@value":
-                        "https://longthanh.stcgoldenland.com/?s={search_term_string}",
+                      "@value": `${this.BASE_URL}/?s={search_term_string}`,
                     },
                   ],
                 },
@@ -235,8 +234,8 @@ export class ConstantConfig {
 
   public static DEFAULT_METADATA(): Metadata {
     return {
-      title: "BLANCA CITY",
-      metadataBase: new URL("https://blanca-city.vercel.app/"),
+      title: "Blanca City by Sun Group",
+      metadataBase: new URL("https://blancacity.sungroup.io.vn/"),
       applicationName: "BLANCA CITY",
       authors: [
         {
@@ -257,7 +256,7 @@ export class ConstantConfig {
         },
       ],
       alternates: {
-        canonical: "https://blanca-city.vercel.app/",
+        canonical: this.BASE_URL,
       },
       openGraph: {
         type: "website",
@@ -265,7 +264,7 @@ export class ConstantConfig {
         siteName: "STC Golden Land",
         countryName: "Việt Nam",
         description: this.DEFAULT_DESCRIPTION,
-        url: "https://blanca-city.vercel.app/",
+        url: this.BASE_URL,
         locale: "vi_VN",
         images: this.DEFAULT_OG_IMAGE,
       },

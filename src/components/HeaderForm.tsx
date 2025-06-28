@@ -1,10 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { AppBar, Toolbar, Typography } from "@mui/material";
-// import Container from "../container/container";
 import { toString } from "lodash";
-import Link from "next/link";
 import Container from "./container/container";
 
 const HeaderForm: React.FC = () => {
@@ -67,7 +64,6 @@ const HeaderForm: React.FC = () => {
   return (
     <>
       <div className="w-full mx-auto z-10 bg-transparent  top-0 left-0">
-        {/* <div className="aspect-[1920/872] relative mx-auto max-w-[1920px] w-full"> */}
         <Container className="!py-0 xl:bg-[rgba(255,255,255,0.3)] xl:shadow-[0_0_10px_0_rgba(0,0,0,0.3)] xl:border-[2px_solid_rgba(255,255,255,0.2)]">
           <div
             style={
@@ -175,7 +171,6 @@ const HeaderForm: React.FC = () => {
             <div
               style={
                 {
-                  // background: "rgba(187,106,18,0.8)",
                 }
               }
             >
@@ -196,8 +191,6 @@ const HeaderForm: React.FC = () => {
             </div>
           </div>
         </Container>
-        {/* <img src="/section1.webp" className="w-full h-full" /> */}
-        {/* </div> */}
       </div>
       {/* //   </Toolbar> */}
       {/* // </AppBar> */}

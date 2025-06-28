@@ -196,7 +196,7 @@ const IntroSection = () => {
                 "fixed z-50 transition-all duration-500",
                 !open
                   ? "opacity-0 invisible translate-y-[-30px]"
-                  : "opacity-100 lg:translate-y-[-50%]"
+                  : "opacity-100 lg:translate-y-[-30%]"
               )}
               sx={{
                 bgcolor: "white",

@@ -77,19 +77,19 @@ const HighlightsSection = () => {
                   ⬘ Công viên đầu tiên ở Đông Nam Á có trò chơi tàu lượn siêu
                   tốc phiên bản nước
                 </p>
-                <path>⬘ Rally Racer 10 lần đầu tiên trên thế giới</path>
+                <span>⬘ Rally Racer 10 lần đầu tiên trên thế giới</span>
                 <span>
                   ⬘ Công viên đầu tiên ở Việt Nam có bể tạo sóng đôi cao nhất
                   (1,8m & 2,4m)
                 </span>
-                <path>
+                <span>
                   ⬘ Bể tạo sóng và tàu lượn nước mini cho trẻ em tại công viên
                   đầu tiên ở Việt Nam
-                </path>
-                <path>
+                </span>
+                <span>
                   ⬘ Công viên đầu tiên ở Việt Nam có dòng sông thử thác Action
                   River.
-                </path>
+                </span>
               </Box>
             </Box>
 

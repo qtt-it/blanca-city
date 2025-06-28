@@ -4,6 +4,7 @@ import React from "react";
 import { ButtonComponent, InputComponent } from "../../components/commons";
 import { Alert, Box, CircularProgress, Grid, Snackbar } from "@mui/material";
 import useCommentSubmit from "@/hook/useSubmit";
+import clsx from "clsx";
 
 interface IFormConsultationProps {
   layout: "vertical" | "grid";
@@ -159,14 +160,14 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
             ) : (
               <InputComponent
                 placeholder="Quan tâm sản phẩm..."
-                value={formData.email}
-                onChange={handleChange("email")}
-                error={errors.email}
+                value={formData.product}
+                onChange={handleChange("product")}
+                error={errors.product}
               />
             )}
           </Grid>
-          <Box className="flex justify-center" style={gridItemStyle}>
-            <ButtonComponent className={btnClassName}>
+          <Box className="flex items-center justify-center w-full lg:w-max" style={gridItemStyle}>
+            <ButtonComponent className={clsx(btnClassName, "mx-auto")}>
               {textBtn || "ĐĂNG KÝ TƯ VẤN"}
             </ButtonComponent>
           </Box>
@@ -197,9 +198,9 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
         ) : (
           <InputComponent
             placeholder="Quan tâm sản phẩm..."
-            value={formData.email}
+            value={formData.product}
             onChange={handleChange("product")}
-            error={errors.email}
+            error={errors.product}
           />
         )}
 

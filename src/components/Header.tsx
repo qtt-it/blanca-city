@@ -38,7 +38,6 @@ HeaderProps) => {
     }
   }, []);
 
-  console.log("isFixed", isFixed);
 
   useEffect(() => {
     const handleScroll = () => {

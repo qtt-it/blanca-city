@@ -50,7 +50,7 @@ export const ReceiveInformationSection = ({
               layout="grid"
               isInputEmail={false}
               textBtn={"NHẬN THÔNG TIN"}
-              btnClassName="!flex-1 !w-[193px] !h-[36px] !font-[800]"
+              btnClassName="!mx-auto !w-[193px] !h-[36px] !font-[800]"
             />
           </Box>
           <Stack

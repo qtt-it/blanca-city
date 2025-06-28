@@ -67,9 +67,7 @@ export const ContactWidget: React.FC = () => {
           </div>
 
           <img
-            // src="/ic_zalo.png"
             src="/zalo-1.svg"
-            // src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
             alt="dong tay land"
             className=" object-contain relative z-2 duration-500  hover:scale-[1.1 w-full h-full   relative"
           />

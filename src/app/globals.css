@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/pagination";
 
 :root {
   --foreground-rgb: 255, 255, 255;
@@ -9,19 +11,17 @@
   --accent-color: #f97316;
 }
 
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 68px; /* mặc định cho desktop */
 }
 
-
 body {
   color: rgb(var(--foreground-rgb));
 
-    font-family: 'Manrope';
+  font-family: "Manrope";
 
-background-color: #11174c !important;
+  background-color: #11174c !important;
   font-size: 17.333px !important;
 }
 
@@ -107,8 +107,6 @@ background-color: #11174c !important;
   shadow-lg hover:bg-amber-600 transition-all duration-300;
 }
 
-
-
 .blinking-image {
   animation: blink 1s step-start infinite;
 }
@@ -118,7 +116,6 @@ background-color: #11174c !important;
     opacity: 0;
   }
 }
-
 
 @keyframes inOut1 {
   0% {
@@ -230,4 +227,24 @@ background-color: #11174c !important;
 
 .animationScale {
   animation: scaleAnimation 1s ease-in-out infinite;
+}
+
+.swiper-pagination-bullet {
+  background-color: white;
+  /* transition: background-color 0.3s ease, transform 0.3s ease; */
+  opacity: 100;
+}
+
+.swiper-pagination-bullet:hover {
+  background-color: rgb(242, 147, 179);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(242, 147, 179) !important;
+  transform: scale(1.1);
+}
+
+.swiper-slide,
+.swiper-slide-active {
+  height: 100% !important;
 }
