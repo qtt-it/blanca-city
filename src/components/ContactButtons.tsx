@@ -99,7 +99,7 @@ const ContactButtons = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-24 right-6 z-50 w-80 bg-white rounded-lg shadow-2xl overflow-hidden"
+            className="fixed bottom-24 right-6 z-30 w-80 bg-white rounded-lg shadow-2xl overflow-hidden"
           >
             <div className="bg-blue-900 text-white p-4 flex justify-between items-center">
               <h3 className="font-bold">Liên hệ tư vấn</h3>

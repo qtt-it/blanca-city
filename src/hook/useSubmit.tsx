@@ -18,7 +18,7 @@ const useCommentSubmit = () => {
     // console.log("Dữ liệu gửi:", { ...data, rootComment: currentComment });
     try {
       setLoading(true);
-      const res = await axios.post(process.env.BACK_END_URL || "", {
+      const res = await axios.post("http://14.225.205.200:2228/insert-excel" || "", {
         ...data,
         sheet_id: "1qKZ02of1fnr4Anc1QNB5fHVoPW_i3ke4q07RkS7j4Eg",
         sheet_name: "Blanca",
@@ -38,7 +38,7 @@ const useCommentSubmit = () => {
     } catch (error) {
       // console.log("error", error);
       setLoading(false);
-      setSnackbarMessage("Bình luận thất bại. Vui lòng thử lại sau.");
+      setSnackbarMessage("Gửi thông tin thất bại. Vui lòng thử lại sau.");
       setSnackbarSeverity("error");
       setOpenSnackbar(true);
       setTimeout(() => {

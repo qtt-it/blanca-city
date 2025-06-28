@@ -74,10 +74,11 @@ HeaderProps) => {
           position: isFixed ? "sticky" : "relative",
           left: 0,
           top: 0,
+          zIndex: 50 
         }}
         className={clsx(
           // isFixed ? "sticky" : "relative",
-          "left-0 top-0 !w-full z-50 px-4 shadow-lg py-2 lg:py-0 duration-[300ms] ease-in-out !bg-white "
+          "left-0 top-0 !w-full !z-10 px-4 shadow-lg py-2 lg:py-0 duration-[300ms] ease-in-out !bg-white "
         )}
       >
         <Container className="!py-0 !max-w-full">

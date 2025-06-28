@@ -146,7 +146,7 @@ const ContactSection = () => {
               <b>Email </b>
               là trường bắt buộc.
               <br />
-              Đông Tây Land tuyệt đối tôn trọng quyền riêng tư của khách hàng,
+              Sun Group tuyệt đối tôn trọng quyền riêng tư của khách hàng,
               chúng tôi <b>KHÔNG</b> công khai hoặc sử dụng thông tin liên lạc
               cho mục đích khác.
             </span>

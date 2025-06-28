@@ -145,7 +145,7 @@ const LocationSection = () => {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
               }}
-              className=" z-[3] !lg:w-1/2 mt-4 border border-solid border-[#f08daf] lg:mt-0 !xl:w-1/4 w-full rounded-xl overflow-hidden duration-500 hover:translate-y-[-10px]"
+              className=" !lg:w-1/2 mt-4 border border-solid border-[#f08daf] lg:mt-0 !xl:w-1/4 w-full rounded-xl overflow-hidden duration-500 hover:translate-y-[-10px]"
               key={idx}
             >
               <Paper

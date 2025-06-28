@@ -225,12 +225,15 @@ const FormComment = ({
     // console.log("Dữ liệu gửi:", { ...data, rootComment: currentComment });
     try {
       setLoading(true);
-      const res = await axios.post(process.env.BACK_END_URL || "", {
-        ...data,
-        // rootComment: currentComment,
-        sheet_id: "1qKZ02of1fnr4Anc1QNB5fHVoPW_i3ke4q07RkS7j4Eg",
-        sheet_name: "Blanca",
-      });
+      const res = await axios.post(
+        "http://14.225.205.200:2228/insert-excel" || "",
+        {
+          ...data,
+          // rootComment: currentComment,
+          sheet_id: "1qKZ02of1fnr4Anc1QNB5fHVoPW_i3ke4q07RkS7j4Eg",
+          sheet_name: "Blanca",
+        }
+      );
       setLoading(false);
       reset();
       setSnackbarMessage(
@@ -252,7 +255,7 @@ const FormComment = ({
     } catch (error) {
       // console.log("error", error);
       setLoading(false);
-      setSnackbarMessage("Bình luận thất bại. Vui lòng thử lại sau.");
+      setSnackbarMessage("Gửi thông tin thất bại. Vui lòng thử lại sau.");
       setSnackbarSeverity("error");
       setOpenSnackbar(true);
       delay(() => {
@@ -266,7 +269,7 @@ const FormComment = ({
   // console.log("openSnackbar", openSnackbar, "snackbarMessage", snackbarMessage);
 
   return (
-    <Box className="relative z-[3] mt-[40px] lg:mt-0">
+    <Box className="relative mt-[40px] lg:mt-0">
       {openSnackbar && (
         <Box className="z-[11] relative">
           <Snackbar

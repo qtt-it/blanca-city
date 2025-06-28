@@ -39,7 +39,18 @@ const IntroSection = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [isHovered, setIsHovered] = useState(false);
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden"; // 👉 khóa scroll
+    } else {
+      document.body.style.overflow = ""; // 👉 khôi phục scroll
+    }
 
+    // Clean up khi unmount
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
   return (
     <Box
       sx={{
@@ -192,8 +203,11 @@ const IntroSection = () => {
 
             {/* Popup chính */}
             <Box
+              // style={{
+              //   zIndex:99999
+              // }}
               className={clsx(
-                "fixed z-50 transition-all duration-500",
+                "fixed !z-[100] transition-all duration-500",
                 !open
                   ? "opacity-0 invisible translate-y-[-30px]"
                   : "opacity-100 lg:translate-y-[-30%]"
@@ -246,8 +260,8 @@ const IntroSection = () => {
                 }}
               >
                 * Thông tin của Quý khách gửi đi sẽ không được công khai hoặc sử
-                dụng với mục đích spam. Đông Tây Land chỉ kết nối tư vấn đúng dự
-                án và những thắc mắc của Quý khách.
+                dụng với mục đích spam. Sun Group chỉ kết nối tư vấn đúng dự án
+                và những thắc mắc của Quý khách.
               </p>
             </Box>
           </>

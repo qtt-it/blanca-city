@@ -36,7 +36,6 @@ export const MainPage: React.FC = () => {
             imgMb="/hero1-mb.webp"
           />
           <Link
-       
             href="#intro"
             className=" absolute hidden md:flex left-[50%] translate-x-[-50%] bottom-[30px] z-10 cursor-pointer mx-auto w-full flex-col  justify-center items-center"
           >
@@ -48,13 +47,13 @@ export const MainPage: React.FC = () => {
       </Box>
       {/* </Box> */}
       {/* <Box id="first"> */}
-        <Header />
+      <Header />
       {/* </Box> */}
       {/* <Grid size={{ xs: 12 }}></Grid> */}
       <Grid size={{ xs: 12 }}>
         <Box
-          
-          // className="lg:pt-[64px] xl:pt-[76px] pt-[80px] md:pt-[80px]"
+
+        // className="lg:pt-[64px] xl:pt-[76px] pt-[80px] md:pt-[80px]"
         >
           <HeroSection />
         </Box>
