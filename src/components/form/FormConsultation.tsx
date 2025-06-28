@@ -48,7 +48,7 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
 
     if (!formData.phone.trim()) {
       newErrors.phone = "Mục này là bắt buộc.";
-    } else if (!/^\d{9,11}$/.test(formData.phone)) {
+    } else if (!/^\d{10,11}$/.test(formData.phone)) {
       newErrors.phone = "Số điện thoại không hợp lệ.";
       hasError = true;
     }

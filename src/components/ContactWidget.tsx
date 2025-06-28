@@ -53,7 +53,7 @@ export const ContactWidget: React.FC = () => {
             alt="dong tay land"
             sx={{ width: 20, height: 20, mr: 1 }}
           />
-          <Link href="tel:+0939374739">0939 37 4739</Link>
+          <Link href="tel:0939374739">0939 37 4739</Link>
         </Button>
 
         <Link

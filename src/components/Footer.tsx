@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
                 {/* <span className="text-4xl mx-2 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f190b1] bg-clip-text text-transparent">
                   90 phút
                 </span> */}
-                <Link href="tel:+0939374739" className="ml-[6px] flex gap-x-1 ">
+                <Link href="tel:0939374739" className="ml-[6px] flex gap-x-1 ">
                   <span className="font-bold">Hotline: </span>
                   <strong className="font-extrabold">0939 37 4739</strong>
                 </Link>{" "}
