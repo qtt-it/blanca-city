@@ -20,7 +20,7 @@ body {
   color: rgb(var(--foreground-rgb));
 
   font-family: "Manrope";
-
+overflow-x: hidden;
   background-color: #11174c !important;
   font-size: 17.333px !important;
 }
