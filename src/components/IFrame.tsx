@@ -7,8 +7,8 @@ const IframeMap: React.FC = () => {
       <section style={{ height: "90vh", width: "100%", overflow: "auto" }}>
         <iframe
           // src="https://360batdongsan.com/360-sun-vung-tau"
-          src="/api/proxy"
-
+          // src="/api/proxy"
+          src="/sun360.html"
           title="Web 3D"
           style={{
             width: "100%",
