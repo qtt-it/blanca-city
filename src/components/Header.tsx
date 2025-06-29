@@ -203,7 +203,7 @@ HeaderProps) => {
             },
           }}
         >
-         0939 37 4739
+        <strong> 0939 37 4739 </strong>
         </Box> */}
       {/* <Box
           sx={{

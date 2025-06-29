@@ -116,8 +116,8 @@ const IntroSection = () => {
           <p className="mt-4 italic items-center leading-6">
             Sun Group - Chủ đầu tư của những "biểu tượng" như Bà Nà Hills (Đà
             Nẵng), Sunset Town (Phú Quốc), Fansipan Legend (Sapa),... hứa hẹn sẽ
-            tiếp tục đưa Blanca City trở thành "tâm điểm" Sống - Giải trí - Nghỉ
-            dưỡng của TP HCM.
+            tiếp tục đưa <strong>Blanca City</strong>  trở thành <strong>"tâm điểm" Sống - Giải trí - Nghỉ
+            dưỡng của TP HCM.</strong>
           </p>
         </Box>
         <motion.div
@@ -203,9 +203,7 @@ const IntroSection = () => {
 
             {/* Popup chính */}
             <Box
-              // style={{
-              //   zIndex:99999
-              // }}
+           
               className={clsx(
                 "fixed !z-[100] transition-all duration-500",
                 !open

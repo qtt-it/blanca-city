@@ -115,7 +115,7 @@ const LocationSection = () => {
                 }}
                 className="text-[48px] mx-1 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f190b1] bg-clip-text text-transparent"
               >
-                Vị trí
+                Vị Trí
               </span>
             </motion.div>
             <Typography

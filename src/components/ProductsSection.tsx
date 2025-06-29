@@ -112,8 +112,8 @@ const ProductsSection = () => {
                         }}
                         className="!text-[#0565a8] text-[20px]"
                       >
-                        <span key={idx} className={clsx()}>
-                          {title}
+                        <span key={idx} className={clsx("font-semibold")}>
+                          <strong> {title} </strong>
                         </span>
                         <span className="ml-1">({line.subtitle[idx]})</span>
                       </Box>

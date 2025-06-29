@@ -83,7 +83,7 @@ const OverviewSection = () => {
               >
                 <span className="mr-1 text-secondary  text-[#e16a92] ">⬘</span>
                 <strong className="text-white">Tên dự án:</strong> Khu đô thị
-                Blanca City by Sun Group
+                <strong> Blanca City</strong> by <strong>Sun Group</strong>
               </Typography>
             </Box>
             <Divider

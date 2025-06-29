@@ -20,6 +20,7 @@ import { CommentSection } from "@/components/CommentSection";
 import VideoSlider from "@/components/VideoSlider";
 import HeaderForm from "@/components/HeaderForm";
 import Link from "next/link";
+import AgencySection from "@/components/AgencySection";
 
 export const MainPage: React.FC = () => {
   return (
@@ -45,10 +46,7 @@ export const MainPage: React.FC = () => {
           </Link>
         </Box>
       </Box>
-      {/* </Box> */}
-      {/* <Box id="first"> */}
       <Header />
-      {/* </Box> */}
       {/* <Grid size={{ xs: 12 }}></Grid> */}
       <Grid size={{ xs: 12 }}>
         <Box
@@ -128,22 +126,19 @@ export const MainPage: React.FC = () => {
       </Grid>
       <Grid size={{ xs: 12 }}>
         <Box>
-          {" "}
-          {/*xong, chưa review */}
           <SunGroupSection />
         </Box>
       </Grid>
-
+      <Grid size={{ xs: 12 }}>
+        <Box>
+          <AgencySection />
+        </Box>
+      </Grid>
       <Grid size={{ xs: 12 }}>
         {" "}
-        {/*xong, chưa review */}
         <ReceiveInformationSection />
       </Grid>
-      <Grid size={{ xs: 12 }}>
-        {" "}
-        {/*xong, chưa review */}
-        {/* <ContactSection /> */}
-      </Grid>
+
       <Grid size={{ xs: 12 }}>
         <CommentSection />
       </Grid>
