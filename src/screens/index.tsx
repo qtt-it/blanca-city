@@ -1,5 +1,5 @@
 import { ContactWidget } from "@/components/ContactWidget";
-import DesignSection from "@/components/DesignSection";
+import DesignSection from "@/components/DesignSectionV2";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -20,12 +20,14 @@ import { CommentSection } from "@/components/CommentSection";
 import VideoSlider from "@/components/VideoSlider";
 import HeaderForm from "@/components/HeaderForm";
 import Link from "next/link";
-import AgencySection from "@/components/AgencySection";
+import SellSection from "@/components/SellSection";
+// import AgencySection from "@/components/AgencySection";
 
 export const MainPage: React.FC = () => {
   return (
     <Box>
       {/* <Box> */}
+    
       <Box id="#hero" className="max-w-[1920px] relative mx-auto w-full">
         <Box className="w-full relative">
           <Box className="absolute w-full top-4 left-[50%] translate-x-[-50%] z-10">
@@ -49,10 +51,7 @@ export const MainPage: React.FC = () => {
       <Header />
       {/* <Grid size={{ xs: 12 }}></Grid> */}
       <Grid size={{ xs: 12 }}>
-        <Box
-
-        // className="lg:pt-[64px] xl:pt-[76px] pt-[80px] md:pt-[80px]"
-        >
+        <Box>
           <HeroSection />
         </Box>
       </Grid>
@@ -90,15 +89,13 @@ export const MainPage: React.FC = () => {
           ]}
         />
       </Grid>
-      <Grid size={{ xs: 12 }}>
+      {/* <Grid size={{ xs: 12 }}>
         {" "}
-        {/*xong, chưa review */}
-        {/* <ConsultingSection /> */}
         <ReceiveInformationSection
           isLogo={false}
           text={"Tư vấn tiềm năng đô thị biển Blanca City by Sun Group."}
         />
-      </Grid>
+      </Grid> */}
       <Grid size={{ xs: 12 }}>
         <Box>
           <OverviewSection />
@@ -108,6 +105,33 @@ export const MainPage: React.FC = () => {
         <Box>
           <HighlightsSection />
         </Box>
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        <BannerComponent
+          img="/hero-release.jpg"
+          imgTablet="/hero1-tablet.jpg"
+          imgMb="/hero1-mb.webp"
+        />
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        {" "}
+        <ReceiveInformationSection
+          isLogo={false}
+          text={
+            <div
+              style={{ fontFamily: "Newsreader", fontWeight: 800 }}
+              className="flex !font-[800] text-[24px] text-whote flex-col gap-y-1"
+            >
+              <p className="!font-[700]">
+                Quý Anh/Chị điền thông tin bên dưới để nhận tư vấn chi tiết về
+              </p>
+
+              <p className="!font-[700]">
+                "Tư vấn tiềm năng đô thị biển Blanca City by Sun Group."
+              </p>
+            </div>
+          }
+        />
       </Grid>
       <Grid size={{ xs: 12 }}>
         {" "}
@@ -120,8 +144,21 @@ export const MainPage: React.FC = () => {
         </Box>
       </Grid>
       <Grid size={{ xs: 12 }}>
+        <BannerComponent
+          img="/hero-map.jpg"
+          imgTablet="/hero1-tablet.jpg"
+          imgMb="/hero1-mb.webp"
+        />
+      </Grid>
+     
+      <Grid size={{ xs: 12 }}>
         <Box>
           <DesignSection />
+        </Box>
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        <Box>
+          <SellSection />
         </Box>
       </Grid>
       <Grid size={{ xs: 12 }}>
@@ -129,11 +166,11 @@ export const MainPage: React.FC = () => {
           <SunGroupSection />
         </Box>
       </Grid>
-      <Grid size={{ xs: 12 }}>
+      {/* <Grid size={{ xs: 12 }}>
         <Box>
           <AgencySection />
         </Box>
-      </Grid>
+      </Grid> */}
       <Grid size={{ xs: 12 }}>
         {" "}
         <ReceiveInformationSection />

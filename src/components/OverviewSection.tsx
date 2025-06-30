@@ -5,6 +5,122 @@ import { motion } from "framer-motion";
 import Container from "./container/container";
 import { useEffect, useRef, useState } from "react";
 
+export const InfoItem = ({
+  label,
+  value = "",
+  className = "",
+}: {
+  label: string | React.ReactElement;
+  value?: string | React.ReactElement;
+  className: string;
+}) => (
+  <>
+    <Box sx={{ display: "flex", alignItems: "center", marginBottom: "8px" }}>
+      <Typography
+        sx={{ fontSize: "17px", padding: "4px 0", fontWeight: 500 }}
+        className={className}
+      >
+        <span className="mr-1 text-secondary text-[#e16a92]">⬘</span>
+        <strong className="text-white">{label}</strong> {value}
+      </Typography>
+    </Box>
+    <Divider
+      sx={{ marginTop: "5px", marginBottom: "10px", backgroundColor: "white" }}
+    />
+  </>
+);
+const projectInfo = [
+  { label: "Tên dự án:", value: "Khu đô thị Blanca City" },
+  {
+    label: "Chủ đầu tư:",
+    value: "Tập đoàn Sun Group",
+  },
+  {
+    label: "Vị trí:",
+    value: "Mặt tiền đường 3/2, Vũng Tàu, TP HCM",
+  },
+  {
+    label: "Quy mô:",
+    value: (
+      <Typography
+        component="span"
+        sx={{
+          color: "secondary.main",
+          fontSize: "27px",
+          fontWeight: "bold",
+          ml: 1,
+        }}
+      >
+        <span
+          style={{ fontFamily: "Newsreader", lineHeight: 1 }}
+          className="mr-1 !leading-none font-semibold bg-gradient-to-r from-[#ce255e] to-[#f08eaf] bg-clip-text text-transparent"
+        >
+          96
+        </span>
+        ha
+      </Typography>
+    ),
+  },
+  {
+    label: "Mật độ xây dựng:",
+    value: (
+      <Typography
+        component="span"
+        sx={{
+          color: "secondary.main",
+          fontSize: "27px",
+          fontWeight: "bold",
+          mx: 1,
+        }}
+      >
+        <span
+          style={{ fontFamily: "Newsreader" }}
+          className=" xl:mb-5 font-semibold bg-gradient-to-r from-[#ca4874] to-[#f08eaf] bg-clip-text text-transparent"
+        >
+          27,6
+        </span>
+        %
+      </Typography>
+    ),
+  },
+  {
+    label: "Tiện ích:",
+    value:
+      "Công viên nước Sun World, Trung tâm thương mại Sun Retail, Khách sạn 5 sao, Trung tâm văn hóa - thể thao, Trường học liên cấp, Y tế...",
+  },
+  {
+    label: "Bàn giao:",
+    value: (
+      <span
+        style={{ fontFamily: "Newsreader", lineHeight: 1 }}
+        className="mr-1 !leading-none ml-1 text-[24px] font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
+      >
+        IV/2027
+      </span>
+    ),
+  },
+  {
+    label: "Pháp lý:",
+    value: (
+      <>
+        <span
+          style={{ fontFamily: "Newsreader", lineHeight: 1 }}
+          className="mr-1 !leading-none ml-1 text-[24px] font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
+        >
+          50
+        </span>
+        năm &
+        <span
+          style={{ fontFamily: "Newsreader", lineHeight: 1 }}
+          className="mr-1 !leading-none ml-1 text-[24px] font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
+        >
+          Sở hữu lâu dài
+        </span>
+      </>
+    ),
+  },
+];
+
 const OverviewSection = () => {
   const [isInView, setIsInView] = useState(false);
   const boxRef = useRef(null);
@@ -53,7 +169,7 @@ const OverviewSection = () => {
 
         {/* Content */}
         {/* <Container sx={{ position: "relative", margin: 0,  zIndex: 1 }}> */}
-        <Container className="relative !pt-0">
+        <Container style={{}} className="relative !pt-0">
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -70,7 +186,7 @@ const OverviewSection = () => {
               Tổng Quan Dự Án
             </h2>
           </motion.div>
-          <Box className="lg:w-[45%] lg:top-[64px]  lg:absolute w-full lg:left-[52%] mt-[70px]">
+          {/* <Box className="lg:w-[45%] lg:top-[64px]  lg:absolute w-full lg:left-[52%] mt-[70px]">
             <Box
               sx={{
                 display: "flex",
@@ -254,6 +370,91 @@ const OverviewSection = () => {
                 backgroundColor: "white",
               }}
             />
+
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "8px",
+              }}
+            >
+              <Typography
+                sx={{
+                  width: "680px",
+                  fontSize: "17px",
+                  padding: "4px 0",
+                  fontWeight: 500,
+                }}
+              >
+                <span className="mr-1 text-secondary  text-[#e16a92] ">⬘</span>
+                <strong className="text-white"> Bàn giao:</strong> Dự kiến quý
+                <span
+                  style={{
+                    fontFamily: "Newsreader",
+                    lineHeight: 1,
+                  }}
+                  className=" mr-1  !leading-none ml-1 text-[24px] font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
+                >
+                  IV/2027
+                </span>
+              </Typography>
+            </Box>
+            <Divider
+              sx={{
+                // width: "70%",
+                marginTop: "5px",
+                marginBottom: "10px",
+                backgroundColor: "white",
+              }}
+            />
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "8px",
+              }}
+            >
+              <Typography
+                sx={{
+                  width: "680px",
+                  fontSize: "17px",
+                  padding: "4px 0",
+                  fontWeight: 500,
+                }}
+              >
+                <span className="mr-1 text-secondary  text-[#e16a92] ">⬘</span>
+                <strong className="text-white"> Pháp lý:</strong> Sở hữu
+                <span
+                  style={{
+                    fontFamily: "Newsreader",
+                    lineHeight: 1,
+                  }}
+                  className=" mr-1  !leading-none ml-1 text-[24px] font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
+                >
+                  IV/2027
+                </span>
+                năm &
+                <span
+                  style={{
+                    fontFamily: "Newsreader",
+                    lineHeight: 1,
+                  }}
+                  className=" mr-1  !leading-none ml-1 text-[24px] font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
+                >
+                  Sở hữu lâu dài
+                </span>
+              </Typography>
+            </Box>
+          </Box> */}
+          <Box className="lg:w-[45%] lg:top-[64px] lg:absolute w-full lg:left-[52%] mt-[70px]">
+            {projectInfo.map((item, index) => (
+              <InfoItem
+                key={index}
+                label={item.label}
+                value={item.value}
+                className={""}
+              />
+            ))}
           </Box>
         </Container>
 
@@ -261,7 +462,7 @@ const OverviewSection = () => {
 
         {/* </Container> */}
         <Box
-          className=""
+          className="lg:mt-30"
           sx={{
             // position: "absolute",
             top: { xs: "unset", md: 0 },

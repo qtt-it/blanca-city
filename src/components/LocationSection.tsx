@@ -38,11 +38,11 @@ const LocationSection = () => {
       items: [
         {
           time: "90 phút:",
-          desc: "Kết nối TPHCM & Đông Nam Bộ, qua 2 trục cao tốc Biên Hòa - Vũng Tàu & cao tốc TPHCM - Long Thành",
+          desc: "Kết nối trung tâm TPHCM & Đông Nam Bộ, qua 2 trục cao tốc Biên Hòa - Vũng Tàu & cao tốc TPHCM - Long Thành",
         },
         {
           time: "90 phút:",
-          desc: "Kết nối Tây Nam Bộ, qua 2 trục cao tốc Bến Lức - Long Thành (hoạt động 2026) & cao tốc TPHCM - Trung Lương (sắp mở rộng lên 8 làn xe)",
+          desc: "Kết nối Tây Nam Bộ, qua 2 trục cao tốc Bến Lức - Long Thành & cao tốc TPHCM - Trung Lương",
         },
       ],
       delay: 0.1,
@@ -79,8 +79,8 @@ const LocationSection = () => {
       image: "/sublocation4.jpg",
 
       description: [
-        `Tọa lạc ngay mặt tiền đường 3/2 - một trong 3  <span style="color: #0665a8; font-weight: bold">"trục xương sống"</span> của Vũng Tàu, kết nối đường Thùy Vân, Bãi Sau và hàng loạt các địa điểm khác của thành phố.`,
-        `Đây cũng là vị trí <span style="color: #0665a8; font-weight: bold">trung tâm mới</span> của Vũng Tàu, TPHCM.`,
+        `Tọa lạc ngay mặt tiền đường 3/2 - một trong 3  <span style="color: #0665a8; font-weight: bold">"trục xương sống"</span> của Vũng Tàu, kết nối đường Thùy Vân, Bãi Sau và hàng loạt các địa điểm khác của thành phố. Đây cũng là vị trí <span style="color: #0665a8; font-weight: bold">trung tâm mới</span> của Vũng Tàu, TPHCM.`,
+        // `Đây cũng là vị trí <span style="color: #0665a8; font-weight: bold">trung tâm mới</span> của Vũng Tàu, TPHCM.`,
       ],
       delay: 0.4,
     },

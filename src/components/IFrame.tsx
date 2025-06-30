@@ -8,7 +8,7 @@ const IframeMap: React.FC = () => {
         <iframe
           // src="https://360batdongsan.com/360-sun-vung-tau"
           // src="/api/proxy"
-          src="/sun360.html"
+          src="/sun361.html"
           title="Web 3D"
           style={{
             width: "100%",

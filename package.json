@@ -30,6 +30,7 @@
     "react-intersection-observer": "^9.16.0",
     "react-slick": "^0.30.3",
     "schema-dts": "^1.1.5",
+    "serve": "^14.2.4",
     "style-loader": "^4.0.0",
     "swiper": "^11.2.9",
     "zod": "^3.25.47"

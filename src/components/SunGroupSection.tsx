@@ -33,13 +33,13 @@ const SunGroupSection = () => {
                 fontWeight: 600,
                 fontFamily: "Newsreader",
               }}
-              className="lg:w-1/2 w-full"
+              className="lg:w-full w-full text-center"
             >
               <span className="text-[#e7779c]">Những "Biểu Tượng"</span>
               <span className="text-[#f292b3]">Du Lịch & Đô Thị Sun Group</span>
             </Stack>
           </SlideInAnimation>
-          <SlideInAnimation type="bottom">
+          <SlideInAnimation type="bottom" >
             <Typography
               sx={{
                 marginBottom: "70px",
@@ -48,6 +48,7 @@ const SunGroupSection = () => {
                 fontWeight: 600,
                 fontFamily: "Newsreader",
               }}
+              className="mx-auto text-center"
             >
               Đã triển khai
             </Typography>

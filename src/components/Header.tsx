@@ -151,12 +151,13 @@ HeaderProps) => {
         >
           <div className="flex flex-col items-start pl-4">
             {menuItems.map((item) => (
+               <Link href={`#${item.id}`} className="!w-full">
               <Box
                 key={item.label}
                 style={{
                   fontFamily: "Oswald",
                 }}
-                className="!text-[#000203] p-2 !text-left !uppercase !text-[14.4px]"
+                className="!text-[#000203] p-2 !text-left !uppercase !text-[14.4px] w-full"
                 sx={{
                   color: scrolled ? "primary.main" : "white",
                   "&:hover": {
@@ -165,8 +166,9 @@ HeaderProps) => {
                   },
                 }}
               >
-                <Link href={`#${item.id}`}>{item.label}</Link>
+               {item.label}
               </Box>
+              </Link>
             ))}
           </div>
         </div>

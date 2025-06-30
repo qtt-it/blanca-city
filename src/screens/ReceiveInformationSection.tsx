@@ -10,7 +10,7 @@ export const ReceiveInformationSection = ({
   text,
 }: {
   isLogo?: boolean;
-  text?: string;
+  text?: string | React.ReactElement;
 }) => {
   return (
     <Box>
@@ -19,6 +19,7 @@ export const ReceiveInformationSection = ({
           // alignItems: "center",
           backgroundImage: `url("/ReceiveInfo/CTA.jpg")`,
           backgroundSize: "cover",
+          backgroundPosition:"center",
           // backgroundPosition: "right",
           backgroundRepeat: "no-repeat",
         }}

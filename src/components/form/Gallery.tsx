@@ -16,22 +16,28 @@ const Gallery = ({
   setCurrentImageIndex: (index: number) => void;
   openSlider: (index: number) => void;
 }) => {
-  const classNameWidth = "xl:w-[640px]  aspect-[1/1]";
+  const classNameWidth =
+    "xl:w-[640px]  lg:w-[540px] md:w-[400px] w-[280px] mx-auto";
   return (
     <Box
       onClick={closeSlider}
       className={clsx(
         isOpen ? "opacity-[100%] visible" : "opacity-0  invisible",
-        `fixed inset-0 z-10 duration-500 bg-[rgba(0,0,0,0.8)] bg-opacity-50 flex justify-center items-center z-1`
+        `fixed inset-0 z-10 duration-500 bg-[rgba(0,0,0,0.8)] bg-opacity-50 flex justify-center items-center`
       )}
     >
       <Box className="relative w-full px-3">
-        <Box className="relative overflow-hidden rounded-xs shadow-lg flex flex-col justify-center">
+        <Box
+          className={clsx(
+            classNameWidth,
+            "relative overflow-hidden rounded-xs shadow-lg flex flex-col justify-center"
+          )}
+        >
           <Box
             onClick={(e) => {
               e.stopPropagation();
             }}
-            className="relative w-full xl:w-[640px] z-0 mx-auto xl:h-[588px]"
+            className="relative w-full aspect-[1/1]   z-0 mx-auto h-auto"
           >
             {images?.map((image, index) => (
               <Box

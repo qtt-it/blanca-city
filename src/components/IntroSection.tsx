@@ -68,13 +68,12 @@ const IntroSection = () => {
           className="lg:w-1/2"
         >
           <p className="leading-[1.5] mb-2">
-            Nổi tiếng trên bản đồ du lịch Đông Nam Bộ và cả miền Nam nhưng Vũng
-            Tàu chưa có một dự án đô thị đẳng cấp đúng nghĩa, chưa có các khu
-            vui chơi, giải trí hoành tráng hay những công trình mang tính biểu
-            tượng để "check-in".
+            NLần đầu tiên Sun Group đặt chân đến TP HCM và phát triển mô hình đô
+            thị biển kiểu mẫu all-in-one chuẩn quốc tế - BLANCA CITY - "Mảnh
+            ghép" không thể thiếu để tạo nên tầm vóc của Siêu đô thị TP HCM.
           </p>
 
-          <p className="leading-[1.5] mb-2">
+          {/* <p className="leading-[1.5] mb-2">
             Tất cả những mong đợi này sẽ xuất hiện ở{" "}
             <strong>
               BLANCA CITY - "Biểu tượng đô thị all-in-one" đầu tiên của Sun
@@ -82,16 +81,16 @@ const IntroSection = () => {
             </strong>{" "}
             ngay trung tâm Vũng Tàu. Đó là lý do rất nhiều khách hàng, nhà đầu
             tư mong đợi về sự "bùng nổ" khi thành phố biển có Blanca City.
-          </p>
+          </p> */}
 
           <p className="mt-2  items-center leading-6">
-            <span className="mr-2 text-secondary  text-[#e16a92]">⬘</span>
-            Chỉ
+            <span className="mr-1 text-secondary  text-[#e16a92]">⬘</span>
+            {/* Chỉ */}
             <span
               style={{
                 fontFamily: "Newsreader",
               }}
-              className="text-[32px] text-4xl mx-1 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f190b1] bg-clip-text text-transparent"
+              className="text-[32px] text-4xl font-semibold bg-gradient-to-r from-[#e16a92] to-[#f190b1] bg-clip-text text-transparent"
             >
               40 phút
             </span>
@@ -100,7 +99,7 @@ const IntroSection = () => {
 
           <p className="mt-2  items-center leading-6">
             <span className="mr-1 text-secondary  text-[#e16a92]">⬘</span>
-            Và chỉ
+            Chưa đầy
             <span
               style={{
                 fontFamily: "Newsreader",
@@ -116,8 +115,8 @@ const IntroSection = () => {
           <p className="mt-4 italic items-center leading-6">
             Sun Group - Chủ đầu tư của những "biểu tượng" như Bà Nà Hills (Đà
             Nẵng), Sunset Town (Phú Quốc), Fansipan Legend (Sapa),... hứa hẹn sẽ
-            tiếp tục đưa <strong>Blanca City</strong>  trở thành <strong>"tâm điểm" Sống - Giải trí - Nghỉ
-            dưỡng của TP HCM.</strong>
+            tiếp tục đưa <strong>Blanca City</strong> trở thành{" "}
+            <strong>"tâm điểm" Sống - Giải trí - Nghỉ dưỡng của TP HCM.</strong>
           </p>
         </Box>
         <motion.div
@@ -173,15 +172,22 @@ const IntroSection = () => {
             onMouseLeave={() => setIsHovered(false)}
             // className="text-white !hover:bg-[#0b3051]  text-[20px]  border border-solid rounded-md border-white cursor-pointer mx-auto items-center flex bg-gradient-to-l from-[#e16a92] to-[#f190b1] py-[8px] px-[30px] font-[500]"
           >
-            <p className="justify-center md:jutify-start !text-[20px] md:text-lg flex-wrap items-center flex ">
-              <img
-                src={"/ic_post.png"}
-                className={clsx("w-6 mr-2 h-6 duration-100 blinking-image")}
-              />
-              Nhận trọn bộ thông tin dự án
-              <strong className="mx-1">Blanca City by Sun Group</strong>
-              tại đây
-            </p>
+            <div className="justify-center md:jutify-start !text-[20px] !gap-0 md:text-lg flex-wrap items-center flex flex-col ">
+              <div className="flex-row flex items-start justify-start lg:items-center">
+                  <img
+                    src={"/ic_post.png"}
+                    className={clsx("w-6 mr-2 h-6 mt-1 lg:mt-0 duration-100 blinking-image")}
+                  />
+                <strong className="mx-1">
+                  Mở bán khu căn hộ biển đầu tiên tại Blanca City by Sun Group.
+                </strong>
+              </div>
+              {/* <br /> */}
+              <p>
+                Xem ngay giỏ hàng căn đẹp - giá tốt nhất - ưu đãi hấp dẫn tại
+                đây!
+              </p>
+            </div>
           </button>
         </motion.div>
         {
@@ -203,7 +209,6 @@ const IntroSection = () => {
 
             {/* Popup chính */}
             <Box
-           
               className={clsx(
                 "fixed !z-[100] transition-all duration-500",
                 !open
