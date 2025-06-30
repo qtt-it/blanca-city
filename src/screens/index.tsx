@@ -179,13 +179,12 @@ export const MainPage: React.FC = () => {
       <Grid size={{ xs: 12 }}>
         <CommentSection />
       </Grid>
-      <Grid size={{ xs: 12 }}>
-        {" "}
-        {/*xong Ifram */}
+      {/* <Grid size={{ xs: 12 }}>
+       
         <Box>
           <IFrameMap />
         </Box>
-      </Grid>
+      </Grid> */}
       <Grid size={{ xs: 12 }}>
         <ContactWidget />
         <Footer />
