@@ -131,13 +131,13 @@ const DesignSection = () => {
               className="pt-4 py-5 border-t border-solid border-[#E3E3E3]"
               // sx={{ mb: 4, fontSize: "1.1rem", lineHeight: 1.8 }}
             >
-              <p className="italic text-base mb-2">
+              <span className="italic text-base mb-2">
                 Phía sau cảm hứng thiết kế là một câu chuyện đầy thú vị.
-              </p>
-              <p className=" text-base">
+              </span>
+              <span className=" text-base">
                 *Quý Anh/Chị điền thông tin bên dưới để nghe chia sẻ nhiều hơn
                 qua Zalo/Viber/iMess... nhé!
-              </p>
+              </span>
             </Typography>
           </Box>
 

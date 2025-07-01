@@ -74,11 +74,7 @@ export const FormDesign = ({ isBorder = true }) => {
 const SellSection = () => {
   return (
     <Box
-      id="design"
-      // sx={{
-      //   bgcolor: "#0e3b7c",
-      //   color: "white",
-      // }}
+      id="price"
       className="bg-gradient-to-b text-white from-[#12194f] to-[#0764a6]"
     >
       <Container className="flex flex-col-reverse lg:flex-row justify-between items-center gap-x-7">
@@ -91,72 +87,56 @@ const SellSection = () => {
               className="xl:text-[48px] text-[44px] lg:mb-4 mb-8 lg:mt-4 xl:mb-5 font-semibold bg-gradient-to-r from-[#e16a92] to-[#f192b1] bg-clip-text text-transparent"
             >
               <SlideInAnimation type="right">
-                Giá Bán <br/> & Chính Sách Thanh Toán
+                Giá Bán <br /> & Chính Sách Thanh Toán
               </SlideInAnimation>
             </h2>
             <Typography
               variant="body1"
               sx={{ mb: 2, fontSize: "1.1rem", lineHeight: 1.8 }}
             >
-              Cơ hội sở hữu các sản phẩm trong “biểu tượng mới” của Sun Group tại Siêu đô thị TPHCM với giá tốt nhịp đầu khoảng 
-              
-              
-              
+              Cơ hội sở hữu các sản phẩm trong “biểu tượng mới” của Sun Group
+              tại Siêu đô thị TPHCM với giá tốt nhịp đầu khoảng
               {/* <span
           style={{ fontFamily: "Newsreader", lineHeight: 1 }}
           className="mx-1 text-[24px] !leading-none font-semibold bg-gradient-to-r from-[#d02d63] to-[#f08eaf] bg-clip-text text-transparent"
         >
        2,8 tỷ/căn
         </span> */}
-        <GradientText text="2,8 tỷ/căn"/>
-              
-               view biển & full nội thất.
-
+              <GradientText text="2,8 tỷ/căn" />
+              view biển & full nội thất.
             </Typography>
-
           </Box>
 
-          {[{
-label:  <p>
-Ưu đãi lên đến <GradientText text="17%"/>
-               </p>,
-
-
-
-          },
-          {
-            label:  <p>
-             Thanh toán <GradientText text="15% "/>ký HĐMB, chỉ
-             <GradientText text="30%"/>
-             đến khi nhận nhà.
-                           </p>,
-            
-            
-            
-                      },   
-                      {
-                        label:  <p>
-                         Ngân hàng cho vay <GradientText text="70%"/>, HTLS 
-                         <GradientText text="0%"/>
-                         đến    <GradientText text="36"/> tháng.
-
-
-                                       </p>,
-                        
-                        
-                        
-                                  },   
-        
-        ].map((item, index) => (
-              <InfoItem
-                key={index}
-                label={
-                 item.label
-                }
-                // value={item.value}
-                className={"flex"}
-              />
-            ))}
+          {[
+            {
+              label: (
+                <span>
+                  Ưu đãi lên đến <GradientText text="17%" />
+                </span>
+              ),
+            },
+            {
+              label: (
+                <span>
+                  Thanh toán <GradientText text="15% " />
+                  ký HĐMB, chỉ
+                  <GradientText text="30%" />
+                  đến khi nhận nhà.
+                </span>
+              ),
+            },
+            {
+              label: (
+                <span>
+                  Ngân hàng cho vay <GradientText text="70%" />, HTLS
+                  <GradientText text="0%" />
+                  đến <GradientText text="36" /> tháng.
+                </span>
+              ),
+            },
+          ].map((item, index) => (
+            <InfoItem key={index} label={item.label} className={"flex"} />
+          ))}
         </Box>
         <Box className="lg:w-1/2 w-full mb-4 lg:mb-0">
           <SlideInAnimation type="bottom">
@@ -169,12 +149,11 @@ label:  <p>
               className="!relative w-full overflow-hidden"
             >
               <Box className="overflow-hidden rounded-md border-2 border-solid border-white">
-
-              <BannerComponent
-                img="/inspiration.webp"
-                imgTablet="/inspiration.webp"
-                imgMb="/inspiration-mb.webp"
-              />
+                <BannerComponent
+                  img="/inspiration.webp"
+                  imgTablet="/inspiration.webp"
+                  imgMb="/inspiration-mb.webp"
+                />
               </Box>
             </div>
           </SlideInAnimation>

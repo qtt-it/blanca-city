@@ -5,6 +5,7 @@ import { ButtonComponent, InputComponent } from "../../components/commons";
 import { Alert, Box, CircularProgress, Grid, Snackbar } from "@mui/material";
 import useCommentSubmit from "@/hook/useSubmit";
 import clsx from "clsx";
+import SuccessOverlay from "./SuccesdOverlay";
 
 interface IFormConsultationProps {
   layout: "vertical" | "grid";
@@ -36,6 +37,7 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
   });
 
   const [formHasError, setFormHasError] = React.useState(false);
+  const [openSucess, setOpenSucess] = React.useState(true);
 
   const validate = () => {
     let newErrors = { name: "", phone: "", email: "", product: "" };
@@ -82,6 +84,7 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
           product: "",
         })
       ); // Assuming rootComment is not used, pass an empty value
+      setOpenSucess(true);
     }
   };
 
@@ -166,7 +169,10 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
               />
             )}
           </Grid>
-          <Box className="flex items-center justify-center w-full lg:w-max" style={gridItemStyle}>
+          <Box
+            className="flex items-center justify-center w-full lg:w-max"
+            style={gridItemStyle}
+          >
             <ButtonComponent className={clsx(btnClassName, "mx-auto")}>
               {textBtn || "ĐĂNG KÝ TƯ VẤN"}
             </ButtonComponent>
@@ -219,6 +225,7 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
 
   return (
     <>
+      <SuccessOverlay open={openSucess} onClose={() => setOpenSucess(false)} />
       <form onSubmit={handleSubmit}>
         {openSnackbar && (
           <Box className="z-[11] w-full relative">
@@ -252,3 +259,5 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
     </>
   );
 };
+
+// background-image: linear-gradient(30deg, rgba(8, 48, 80, .9), rgba(183, 106, 24, .75));

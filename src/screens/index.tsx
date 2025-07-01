@@ -21,13 +21,14 @@ import VideoSlider from "@/components/VideoSlider";
 import HeaderForm from "@/components/HeaderForm";
 import Link from "next/link";
 import SellSection from "@/components/SellSection";
+import SuccessOverlay from "@/components/form/SuccesdOverlay";
 // import AgencySection from "@/components/AgencySection";
 
 export const MainPage: React.FC = () => {
   return (
-    <Box>
+    <Box className="relative">
       {/* <Box> */}
-    
+
       <Box id="#hero" className="max-w-[1920px] relative mx-auto w-full">
         <Box className="w-full relative">
           <Box className="absolute w-full top-4 left-[50%] translate-x-[-50%] z-10">
@@ -109,12 +110,11 @@ export const MainPage: React.FC = () => {
       <Grid size={{ xs: 12 }}>
         <BannerComponent
           img="/hero-release.jpg"
-          imgTablet="/hero1-tablet.jpg"
-          imgMb="/hero1-mb.webp"
+          imgTablet="/hero-release.jpg"
+          imgMb="/hero-release.jpg"
         />
       </Grid>
       <Grid size={{ xs: 12 }}>
-        {" "}
         <ReceiveInformationSection
           isLogo={false}
           text={
@@ -135,7 +135,6 @@ export const MainPage: React.FC = () => {
       </Grid>
       <Grid size={{ xs: 12 }}>
         {" "}
-        {/*xong, sai vị trí, chưa review */}
         <TotalAreaSection />
       </Grid>
       <Grid size={{ xs: 12 }}>
@@ -146,11 +145,11 @@ export const MainPage: React.FC = () => {
       <Grid size={{ xs: 12 }}>
         <BannerComponent
           img="/hero-map.jpg"
-          imgTablet="/hero1-tablet.jpg"
-          imgMb="/hero1-mb.webp"
+          imgTablet="/hero-map.jpg"
+          imgMb="/hero-map.jpg"
         />
       </Grid>
-     
+
       <Grid size={{ xs: 12 }}>
         <Box>
           <DesignSection />
@@ -171,10 +170,6 @@ export const MainPage: React.FC = () => {
           <AgencySection />
         </Box>
       </Grid> */}
-      <Grid size={{ xs: 12 }}>
-        {" "}
-        <ReceiveInformationSection />
-      </Grid>
 
       <Grid size={{ xs: 12 }}>
         <CommentSection />
@@ -185,6 +180,31 @@ export const MainPage: React.FC = () => {
           <IFrameMap />
         </Box>
       </Grid> */}
+      <Grid size={{ xs: 12 }}>
+        <ReceiveInformationSection
+          text={
+            <div
+              style={{ fontFamily: "Newsreader",}}
+              className="flex !font-bold  text-whote flex-col gap-y-1"
+            >
+              <p className="!font-[700] mb-4">
+                <strong>
+                Quý khách đừng ngần ngại liên hệ để nhận tư vấn chi tiết nhất về dự án Blanca City by Sun Group
+
+
+                </strong>
+              </p>
+
+              <p className="!font-[700] italic">
+              Cam kết thông tin uy tín nhất từ Đại lý TOP 1 của Chủ đầu tư!
+
+
+
+              </p>
+            </div>
+          }
+        />
+      </Grid>
       <Grid size={{ xs: 12 }}>
         <ContactWidget />
         <Footer />

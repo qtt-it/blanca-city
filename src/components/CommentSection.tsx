@@ -174,7 +174,7 @@ export const CommentSection = () => {
             Cùng thảo luận bài phân tích dự án
           </h3>
           <p className="text-center text-shadow uppercase text-[#02578a] font-[500] text-[18px] lg:text-2xl">
-            BLANCA CITY – Đô thị “Biểu tượng mới” của Sun Group tại TP Vũng Tàu
+            BLANCA CITY – Đô thị “Biểu tượng mới” của Sun Group tại Vũng Tàu
           </p>
         </Box>
 

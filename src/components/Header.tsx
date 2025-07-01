@@ -19,6 +19,7 @@ HeaderProps) => {
     { label: "Điểm Nhấn", id: "highlights" },
     { label: "Sản phẩm", id: "products" },
     { label: "Thiết kế", id: "design" },
+    { label: "GIÁ & CSBH", id: "price" },
     { label: "Sun Group", id: "sungroup" },
   ];
 
@@ -151,9 +152,9 @@ HeaderProps) => {
         >
           <div className="flex flex-col items-start pl-4">
             {menuItems.map((item) => (
-               <Link href={`#${item.id}`} className="!w-full">
+               <Link key={item.label} href={`#${item.id}`} className="!w-full">
               <Box
-                key={item.label}
+                
                 style={{
                   fontFamily: "Oswald",
                 }}

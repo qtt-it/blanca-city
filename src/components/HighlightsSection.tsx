@@ -64,6 +64,7 @@ const HighlightsSection = () => {
             sx={{
               fontStyle: "italic",
               fontFamily: "Newsreader",
+              
             }}
             className="!lg:text-[32px] text-[#0665a8] !font-semibold w-max !text-[30px] mb-[40px] lg:mb-0 mt-[-10px] md:mt-0"
           >
@@ -77,7 +78,7 @@ const HighlightsSection = () => {
                 height: "auto",
               }}
             >
-              <p className="font-[600]">Tại Blanca City</p>
+            Tại Blanca City
             </motion.span>
           </Typography>
         </Box>
