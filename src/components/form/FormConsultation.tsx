@@ -37,7 +37,7 @@ export const FormConsultation: React.FC<IFormConsultationProps> = ({
   });
 
   const [formHasError, setFormHasError] = React.useState(false);
-  const [openSucess, setOpenSucess] = React.useState(true);
+  const [openSucess, setOpenSucess] = React.useState(false);
 
   const validate = () => {
     let newErrors = { name: "", phone: "", email: "", product: "" };
