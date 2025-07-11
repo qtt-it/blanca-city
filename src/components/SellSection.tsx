@@ -8,6 +8,7 @@ import BannerComponent from "./commons/HeroBannerComponent";
 import { SlideInAnimation } from "./commons/Animations";
 import GradientText from "./form/TextGradient";
 import { InfoItem } from "./OverviewSection";
+import clsx from "clsx";
 
 export const FormDesign = ({ isBorder = true }) => {
   return (
@@ -72,12 +73,61 @@ export const FormDesign = ({ isBorder = true }) => {
 };
 
 const SellSection = () => {
+  const listitems = [
+    {
+      label: (
+        <Box className="flex flex-col">
+          <span>
+            Căn hộ biển full nội thất: Từ <GradientText text="2,8 tỷ/căn" />
+          </span>
+          <span className="-ml-4 mt-2">
+            <span className="mr-1 text-secondary text-[#e16a92]">⬘</span>
+            Nhà phố, biệt thự biển sở hữu lâu dài: Từ{" "}
+            <GradientText text="22,5 tỷ/căn" />
+          </span>
+        </Box>
+      ),
+    },
+    {
+      label: (
+        <span>
+          Ưu đãi lên đến <GradientText text="17%" />
+        </span>
+      ),
+    },
+    {
+      label: (
+        <span>
+          Thanh toán <GradientText text="15% " />
+          ký HĐMB, chỉ
+          <GradientText text="30%" />
+          đến khi nhận nhà.
+        </span>
+      ),
+    },
+    {
+      label: (
+        <span>
+          Ngân hàng cho vay <GradientText text="70%" />, HTLS
+          <GradientText text="0%" />
+          đến <GradientText text="36" /> tháng.
+        </span>
+      ),
+    },
+    {
+      label: (
+        <span className="w-full flex-1">
+          Duy nhất tháng này, ưu đãi tặng vé <GradientText text="5 năm" /> tại
+          công viên nước
+          <GradientText text="Sun World," />
+          áp dụng đến 4 người.
+        </span>
+      ),
+    },
+  ];
   return (
-    <Box
-      id="price"
-      className="bg-gradient-to-b text-white from-[#12194f] to-[#0764a6]"
-    >
-      <Container className="flex flex-col-reverse lg:flex-row justify-between items-center gap-x-7">
+    <Box id="price" className=" text-white ">
+      <Container className="flex flex-col lg:flex-row justify-between items-center gap-x-7">
         <Box className="lg:w-1/2 w-full text-[#E3E3E3]">
           <Box>
             <h2
@@ -94,48 +144,26 @@ const SellSection = () => {
               variant="body1"
               sx={{ mb: 2, fontSize: "1.1rem", lineHeight: 1.8 }}
             >
-              Cơ hội sở hữu các sản phẩm trong “biểu tượng mới” của Sun Group
-              tại Siêu đô thị TPHCM với giá tốt nhịp đầu khoảng
-              {/* <span
-          style={{ fontFamily: "Newsreader", lineHeight: 1 }}
-          className="mx-1 text-[24px] !leading-none font-semibold bg-gradient-to-r from-[#d02d63] to-[#f08eaf] bg-clip-text text-transparent"
-        >
-       2,8 tỷ/căn
-        </span> */}
-              <GradientText text="2,8 tỷ/căn" />
-              view biển & full nội thất.
+              <strong>
+                Cơ hội sở hữu các sản phẩm "biểu tượng" đầu tiên của Sun Group
+                tại TP HCM. Giá tốt nhất nhịp 1:
+              </strong>
+
+              {/* <GradientText text="2,8 tỷ/căn" />
+              view biển & full nội thất. */}
             </Typography>
           </Box>
 
-          {[
-            {
-              label: (
-                <span>
-                  Ưu đãi lên đến <GradientText text="17%" />
-                </span>
-              ),
-            },
-            {
-              label: (
-                <span>
-                  Thanh toán <GradientText text="15% " />
-                  ký HĐMB, chỉ
-                  <GradientText text="30%" />
-                  đến khi nhận nhà.
-                </span>
-              ),
-            },
-            {
-              label: (
-                <span>
-                  Ngân hàng cho vay <GradientText text="70%" />, HTLS
-                  <GradientText text="0%" />
-                  đến <GradientText text="36" /> tháng.
-                </span>
-              ),
-            },
-          ].map((item, index) => (
-            <InfoItem key={index} label={item.label} className={"flex"} />
+          {listitems.map((item, index) => (
+            <InfoItem
+              key={index}
+              label={item.label}
+              isborder={false}
+              className={clsx(
+                "flex",
+                index + 1 === listitems.length ? "mb-4" : ""
+              )}
+            />
           ))}
         </Box>
         <Box className="lg:w-1/2 w-full mb-4 lg:mb-0">
@@ -150,9 +178,9 @@ const SellSection = () => {
             >
               <Box className="overflow-hidden rounded-md border-2 border-solid border-white">
                 <BannerComponent
-                  img="/inspiration.webp"
-                  imgTablet="/inspiration.webp"
-                  imgMb="/inspiration-mb.webp"
+                  img="/inspiration.jpg"
+                  imgTablet="/inspiration.jpg"
+                  imgMb="/inspiration.jpg"
                 />
               </Box>
             </div>

@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { Box, Typography, Paper } from "@mui/material";
 import { motion } from "framer-motion";
 import Container from "./container/container";
@@ -93,13 +92,13 @@ const DesignSection = () => {
                 borderRadius: 12, // ~24px
                 padding: "10px",
               }}
-              className="!relative !aspect-[1/1]  w-full overflow-hidden"
+              className="!relative  w-full overflow-hidden"
             >
               {/* <Box className="rounded-lg overflow-hidden border border-solid border-[#f191b1]"> */}
               <BannerComponent
                 img="/inspiration.webp"
                 imgTablet="/inspiration.webp"
-                imgMb="/inspiration-mb.webp"
+                imgMb="/inspiration.webp"
               />
             </div>
           </SlideInAnimation>

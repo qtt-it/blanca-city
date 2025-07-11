@@ -9,10 +9,12 @@ export const InfoItem = ({
   label,
   value = "",
   className = "",
+  isborder = true,
 }: {
   label: string | React.ReactElement;
   value?: string | React.ReactElement;
   className: string;
+  isborder?: boolean;
 }) => (
   <>
     <Box sx={{ display: "flex", alignItems: "center", marginBottom: "8px" }}>
@@ -24,9 +26,15 @@ export const InfoItem = ({
         <strong className="text-white">{label}</strong> {value}
       </Typography>
     </Box>
-    <Divider
-      sx={{ marginTop: "5px", marginBottom: "10px", backgroundColor: "white" }}
-    />
+    {isborder && (
+      <Divider
+        sx={{
+          marginTop: "5px",
+          marginBottom: "10px",
+          backgroundColor: "white",
+        }}
+      />
+    )}
   </>
 );
 const projectInfo = [
@@ -70,7 +78,7 @@ const projectInfo = [
           color: "secondary.main",
           fontSize: "27px",
           fontWeight: "bold",
-          mx: 1,
+          ml: 1,
         }}
       >
         <span
@@ -186,266 +194,7 @@ const OverviewSection = () => {
               Tổng Quan Dự Án
             </h2>
           </motion.div>
-          {/* <Box className="lg:w-[45%] lg:top-[64px]  lg:absolute w-full lg:left-[52%] mt-[70px]">
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: "8px",
-              }}
-            >
-              <Typography
-                sx={{ fontSize: "17px", padding: "4px 0", fontWeight: 500 }}
-              >
-                <span className="mr-1 text-secondary  text-[#e16a92] ">⬘</span>
-                <strong className="text-white">Tên dự án:</strong> Khu đô thị
-                <strong> Blanca City</strong> by <strong>Sun Group</strong>
-              </Typography>
-            </Box>
-            <Divider
-              sx={{
-                // width: "40%",
-                marginTop: "5px",
-                marginBottom: "10px",
-                backgroundColor: "white",
-              }}
-            />
 
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: "8px",
-              }}
-            >
-              <Typography
-                sx={{ fontSize: "17px", padding: "4px 0", fontWeight: 500 }}
-              >
-                <span className="mr-1 text-secondary  text-[#e16a92] ">⬘</span>
-                <strong className="text-white">Vị trí:</strong> Mặt tiền đường
-                3/2, Phường 10, Phường 11, TP Vũng Tàu, TP HCM
-              </Typography>
-            </Box>
-            <Divider
-              sx={{
-                // width: "70%",
-                marginTop: "5px",
-                marginBottom: "10px",
-                backgroundColor: "white",
-              }}
-            />
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                height: "32px",
-                marginBottom: "8px",
-              }}
-            >
-              <Box>
-                <Typography
-                  sx={{
-                    fontSize: "17px",
-                    padding: "4px 0",
-                    fontWeight: 500,
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <strong>
-                    <span className="mr-1 text-secondary  text-[#e16a92] ">
-                      ⬘
-                    </span>
-                    Quy mô:
-                  </strong>
-                  <Typography
-                    component="span"
-                    sx={{
-                      color: "secondary.main",
-                      fontSize: "2rem",
-                      fontWeight: "bold",
-                      ml: 1,
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontFamily: "Newsreader",
-                        lineHeight: 1,
-                      }}
-                      className=" mr-1  !leading-none    font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
-                    >
-                      96
-                    </span>
-                  </Typography>
-                  ha
-                </Typography>
-              </Box>
-            </Box>
-            <Divider
-              sx={{
-                // width: "70%",
-                marginTop: "5px",
-                marginBottom: "10px",
-                backgroundColor: "white",
-              }}
-            />
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                height: "32px",
-                marginBottom: "8px",
-              }}
-            >
-              <Box>
-                <Typography
-                  sx={{
-                    fontSize: "17px",
-                    padding: "4px 0",
-                    fontWeight: 500,
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <span className="mr-1 text-secondary  text-[#e16a92] ">
-                    ⬘
-                  </span>
-                  <strong className="text-white">Mật độ xây dựng:</strong>
-                  <Typography
-                    component="span"
-                    sx={{
-                      color: "secondary.main",
-                      fontSize: "2rem",
-                      fontWeight: "bold",
-                      mx: 1,
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontFamily: "Newsreader",
-                      }}
-                      className="lg:mt-4 xl:mb-5 font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
-                    >
-                      27,6
-                    </span>
-                  </Typography>
-                  %
-                </Typography>
-              </Box>
-            </Box>
-            <Divider
-              sx={{
-                // width: "70%",
-                marginTop: "5px",
-                marginBottom: "10px",
-                backgroundColor: "white",
-              }}
-            />
-
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: "8px",
-              }}
-            >
-              <Typography
-                sx={{
-                  width: "680px",
-                  fontSize: "17px",
-                  padding: "4px 0",
-                  fontWeight: 500,
-                }}
-              >
-                <span className="mr-1 text-secondary  text-[#e16a92] ">⬘</span>
-                <strong className="text-white"> Tiện ích:</strong> Công viên
-                nước Sun World, Trung tâm thương mại Sun Retail, Khách sạn 5 sao
-              </Typography>
-            </Box>
-            <Divider
-              sx={{
-                // width: "70%",
-                marginTop: "5px",
-                marginBottom: "10px",
-                backgroundColor: "white",
-              }}
-            />
-
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: "8px",
-              }}
-            >
-              <Typography
-                sx={{
-                  width: "680px",
-                  fontSize: "17px",
-                  padding: "4px 0",
-                  fontWeight: 500,
-                }}
-              >
-                <span className="mr-1 text-secondary  text-[#e16a92] ">⬘</span>
-                <strong className="text-white"> Bàn giao:</strong> Dự kiến quý
-                <span
-                  style={{
-                    fontFamily: "Newsreader",
-                    lineHeight: 1,
-                  }}
-                  className=" mr-1  !leading-none ml-1 text-[24px] font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
-                >
-                  IV/2027
-                </span>
-              </Typography>
-            </Box>
-            <Divider
-              sx={{
-                // width: "70%",
-                marginTop: "5px",
-                marginBottom: "10px",
-                backgroundColor: "white",
-              }}
-            />
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: "8px",
-              }}
-            >
-              <Typography
-                sx={{
-                  width: "680px",
-                  fontSize: "17px",
-                  padding: "4px 0",
-                  fontWeight: 500,
-                }}
-              >
-                <span className="mr-1 text-secondary  text-[#e16a92] ">⬘</span>
-                <strong className="text-white"> Pháp lý:</strong> Sở hữu
-                <span
-                  style={{
-                    fontFamily: "Newsreader",
-                    lineHeight: 1,
-                  }}
-                  className=" mr-1  !leading-none ml-1 text-[24px] font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
-                >
-                  IV/2027
-                </span>
-                năm &
-                <span
-                  style={{
-                    fontFamily: "Newsreader",
-                    lineHeight: 1,
-                  }}
-                  className=" mr-1  !leading-none ml-1 text-[24px] font-semibold bg-gradient-to-r from-[#cd1854] to-[#f08eaf] bg-clip-text text-transparent"
-                >
-                  Sở hữu lâu dài
-                </span>
-              </Typography>
-            </Box>
-          </Box> */}
           <Box className="lg:w-[45%] lg:top-[64px] lg:absolute w-full lg:left-[52%] mt-[70px]">
             {projectInfo.map((item, index) => (
               <InfoItem

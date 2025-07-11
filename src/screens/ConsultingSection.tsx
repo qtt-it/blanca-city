@@ -42,7 +42,7 @@ export const ConsultingSection: React.FC = () => {
             sx={{ marginTop: "40px", color: "#f5b1bf" }}
           >
             <Box>HOTLINE: </Box>
-            <Box sx={{ marginLeft: "6px", fontWeight: 700 }}>0939 37 4739</Box>
+            <Box sx={{ marginLeft: "6px", fontWeight: 700 }}>0939 37 47 39</Box>
           </Stack>
         </Container>
       </Stack>

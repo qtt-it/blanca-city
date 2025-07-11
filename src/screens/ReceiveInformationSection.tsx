@@ -19,11 +19,11 @@ export const ReceiveInformationSection = ({
           // alignItems: "center",
           backgroundImage: `url("/ReceiveInfo/CTA.jpg")`,
           backgroundSize: "cover",
-          backgroundPosition:"center",
+          backgroundPosition:"right",
           // backgroundPosition: "right",
           backgroundRepeat: "no-repeat",
         }}
-        className="bg-right lg:bg-auto"
+        className="bg-right lg:bg-center lg:bg-auto"
       >
         <Container className="flex w-full lg:py-[80px] flex-col items-center">
           {isLogo && (
@@ -60,7 +60,7 @@ export const ReceiveInformationSection = ({
           >
             <Link href="tel:0939374739" className="ml-[6px] flex gap-x-1 ">
               <Box className="font-bold">HOTLINE: </Box>
-              <strong className="font-extrabold">0939 37 4739</strong>
+              <strong className="font-extrabold">0939 37 47 39</strong>
             </Link>
           </Stack>
         </Container>

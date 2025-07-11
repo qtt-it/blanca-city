@@ -21,6 +21,8 @@ HeaderProps) => {
     { label: "Thiết kế", id: "design" },
     { label: "GIÁ & CSBH", id: "price" },
     { label: "Sun Group", id: "sungroup" },
+    { label: "ĐẠI LÝ CHIẾN LƯỢC", id: "sell" },
+
   ];
 
   useEffect(() => {
@@ -206,7 +208,7 @@ HeaderProps) => {
             },
           }}
         >
-        <strong> 0939 37 4739 </strong>
+        <strong> 0939 37 47 39 </strong>
         </Box> */}
       {/* <Box
           sx={{
